@@ -1,0 +1,16 @@
+.components {
+  padding: 2rem;
+
+  .group {
+    @include flex(start);
+    gap: 1rem;
+  }
+
+  .Button {
+    margin-bottom: 1rem;
+  }
+
+  .form {
+    padding-top: 5rem;
+  }
+}
