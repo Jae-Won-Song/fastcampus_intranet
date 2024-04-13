@@ -1,5 +1,17 @@
 {
-  "extends": ["react-app", "eslint:recommended", "prettier"],
+  "extends": [
+    "react-app", 
+    "eslint:recommended", 
+    "prettier", 
+    "eslint:recommended", 
+    "plugin:react/recommended", 
+    "plugin:prettier/recommended"
+  ],
+
+  "plugins": [
+    "react",
+    "prettier"
+  ],
   "rules": {
     "no-multiple-empty-lines": "error", // 여러 줄 공백 금지
     "eqeqeq": "error", // 일치 연산자 사용 필수
