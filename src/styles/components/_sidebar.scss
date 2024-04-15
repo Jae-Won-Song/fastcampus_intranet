@@ -1,5 +1,12 @@
+
+body{
+    max-width: 1920px;
+    max-height: 1024px;
+    background-color: $background;
+}
+
 .nav{
-    @include column-flex;
+    @include column-flex(between, center);
     position: fixed;
     top: 0;
     left: 0;
@@ -10,10 +17,10 @@
 }
 
 .nav-logo{
-    margin-bottom: 4.0625rem;
     width: 5.9375rem;
     height: 5.125rem;
-    background: url('./assets/images/logo_fastcampus_column.png') no-repeat center / cover;
+    margin-top: 61px;
+    margin-bottom: 60px;
 }
 
 .nav-icon{
@@ -22,20 +29,15 @@
 
 .word{
     @include text-style(14, $darkgray, 600);
-    padding-top: 1px;
+    padding-top: 3px;
 }
 
 .nav-logout-btn{
     @include flex;
     @include text-style(14, $white, 400);
-    width: 6.6875rem;
-    height: 2.1875rem;
     background-color: $primary;
     border-radius: 6px;
     padding: 8px 20px;
-    margin-top: 14.1875rem;
-}
-
-.icons{
-    margin-top: 55px;
+    margin-bottom: 36px;
+    margin-top: 96px;
 }
