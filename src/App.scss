@@ -1,0 +1,187 @@
+@import './styles/mixins/text-style';
+@import './styles/constants/colors';
+@import './styles/constants/typography';
+@import './styles/mixins/flex';
+@import './styles/base/reset';
+@import './styles/base/fonts';
+@import './styles/modules/buttons';
+
+.common-wrapper {
+  width: 1920px;
+  height: 1024px;
+  // display: flex;
+  @include flex
+}
+
+.main-wrapper {
+  width: 1720px;
+  height: 100%;
+}
+.top-bar {
+  width: 1720px;
+  height: 120px;
+  background-color: $background;
+  position: relative;
+}
+.badge-wrapper {
+  // width: 180px;
+  // right: 0;  
+  // top: 30px;  
+  width: 11.25rem;
+  right: 0;
+  top: 1.875rem;
+  position: absolute;
+  // background-color: aqua;
+  @include flex
+}
+.badge-wrapper span {
+  
+}
+.badge-wrapper img {
+  width: 50px;
+  margin: 0 30px;
+}
+.main-content {
+  // width: 1720px;
+  // height: 904px;
+  width: 107.5rem;
+  height: 56.5rem;
+  display: flex;
+  background-color: $background;
+}
+.left-page {
+  // width: 800px;
+  // height: 874px;
+  width: 50rem;
+  height: 54.625rem;
+  margin: 0 auto;
+  background-color: $white;
+}
+.image-wrapper {
+  width: 44.43rem;
+  height: 17rem;
+  padding: 60px 0 0;
+  margin: 0 auto;
+  @include flex;
+}
+.image-wrapper img {
+  width: 130px;
+  margin: 10px 0;
+  color: $border;
+}
+.image-wrapper button {
+  position: relative;
+  left: 9px;
+}
+.data-wrapper {
+  // width: 711px;
+  // height: 332px;
+  width: 44.43rem;
+  height: 20.75rem;
+  margin: 20px auto 90px;
+}
+.data-wrapper .input {
+  width: 95%;
+  height: 3.125rem;
+  padding: 0 1rem;
+  border-style: solid;
+  border-width: 1px;
+}
+.data-wrapper .email-content {
+  // padding: 24px 0;
+  padding: 0.8rem 0;
+  line-height: 2.5rem;
+}
+.data-wrapper .name-content {
+  // padding: 24px 0;
+  padding: 0.8rem 0;
+  line-height: 2.5rem;
+}
+.data-wrapper .phone-num-content {
+  // padding: 24px 0;
+  padding: 0.8rem 0;
+  line-height: 2.5rem;
+
+}
+.modi-btn-wrapper {
+  width: 44.43rem;
+  height: 5rem;
+  margin: 130px auto;
+  @include flex;
+}
+.modi-btn {
+  background-color: $primary;
+  @include text-style(18);
+  color: $white;
+}
+
+.right-page {
+  // width: 800px;
+  // height: 874px;
+  width: 50rem;
+  height: 54.625rem;
+  background-color: $white;
+  margin: 0 auto;
+}
+.right-page-top__data {
+  // width: 711px;
+  // height: 620px;
+  width: 44.43rem;
+  height: 38.75rem;
+  margin: 0 auto;
+  padding: 25px 0;
+}
+.right-page-top__data img {
+  width: 22px;
+  margin: 0 10px 0 0;
+}
+.status-data-wrapper {
+  padding: 0 0 5px;
+  margin: 70px 0;
+  border-style: solid;
+  border-width: 0 0 1px;
+}
+.text-data {
+  height: 35px;
+}
+.vacation-status button {
+  position: relative;
+  right: -31.25rem;
+  @include text-style(18);
+  background-color: $primary;
+  color: $white;
+}
+.right-page-bottom__data {
+  // width: 711px;
+  // height: 254px;
+  width: 44.43rem;
+  height: 15.875rem;
+  margin: 0 auto;
+  // background-color: black;
+}
+.right-page-bottom__data img {
+  width: 22px;
+  margin: 0 10px 0 0;
+}
+.status-num {
+  // width: 500px;
+  // height: 90px;
+  width: 31.25rem;
+  height: 5.625rem;
+  margin: 20px auto;
+  @include flex;
+}
+.num-wrapper span {
+  @include flex;
+}
+.circle {
+  margin: 0 20px;
+  // width: 60px;
+  // height: 60px;
+  // border: 30px solid $border;
+  width: 3.75rem;
+  height: 3.75rem;
+  border: 1.875rem solid $border;
+  border-radius: 50%;
+  @include flex
+}
