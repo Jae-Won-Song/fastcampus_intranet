@@ -1,0 +1,11 @@
+@import '../constants/colors';
+@import '../main.scss';
+
+.apply-btn{
+
+  @include text-style(18, $white, 600);
+  background-color: $primary;
+  border-radius: 6px;
+  padding: 10px 30px;
+}
+

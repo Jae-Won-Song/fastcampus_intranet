@@ -1,0 +1,26 @@
+@import '../main.scss';
+@import '../constants/colors';
+
+
+body {
+  background-color: $background;
+}
+.wrapper{
+  width: 80vw;
+  height: 42rem;  
+  margin-left: 10rem;
+  background-color: $white;
+  border-radius: 1.5rem;
+  padding: 2.75rem;
+  color: $black;
+  .form { 
+    @include flex(around, start);
+    flex-direction: column;
+    height: 60vh;
+    .__cat {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 70px;
+    }    
+  }
+}
