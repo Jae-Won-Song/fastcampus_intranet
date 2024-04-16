@@ -1,0 +1,15 @@
+@import '../../constants/colors';
+
+.Editor {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 40px;
+
+  input {
+    border: 1px solid $border;
+  
+    &:focus {
+      border-color: $primary;
+    }
+  }
+}
