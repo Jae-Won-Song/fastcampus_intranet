@@ -1,8 +1,6 @@
-import React from 'react';
-import RadioForm from './RadioForm';
-import Article from './Article';
-import FormDate from './FormDate';
-
+import RadioForm from '../components/RadioForm';
+import Article from '../components/Article';
+import FormDate from '../components/FormDate';
 
 import '../styles/components/_apply.scss';
 import '../styles/components/_article.scss';
@@ -10,7 +8,6 @@ import '../styles/components/_button.scss'
 
 const FormTitle = () => {
   return (
-      
     <div className='wrapper'>
       <div className='form'>
           <div className='__cat'>휴가 / 조퇴 / 외출 신청</div>
@@ -25,7 +22,6 @@ const FormTitle = () => {
       <FormDate/>
       <button className='apply-btn'>제출하기</button>
     </div>
-
   );
 }
 

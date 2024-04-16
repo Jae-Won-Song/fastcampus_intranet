@@ -1,15 +1,16 @@
 import { useState } from 'react'
 import './App.css'
-import ApplyList from './pages/ApplyList';
-import FormTitle from './components/ApplyForm';
+
+import FormTitle from './pages/ApplyFormPage';
+import ApplyList from './pages/ApplyListPage';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-  <FormTitle/>
-
+    {/* <FormTitle/> */}
+    <ApplyList/>
     </>
   )
 }

@@ -1,0 +1,26 @@
+@import '../main.scss';
+
+
+.my__list{
+  @include flex(around, start);
+  flex-direction: column;
+  height: 7.7rem;
+  border: 1px solid #e2dede;
+  margin-top: 2rem;
+  padding: 0 1rem;
+  border-radius: 6px;
+  line-height: 2rem;
+  .top-info{
+    @include flex(between,center);
+    width: 100%
+  }
+  .__title {
+    text-align: center;
+    vertical-align: text-top;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .__article {
+    text-align: left;
+  }
+}

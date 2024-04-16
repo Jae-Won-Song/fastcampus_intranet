@@ -3,7 +3,7 @@ import arrowDown from '../assets/images/icon_chevron_down.svg'
 
 export default function Dropdown() {
     const textOptions = [
-        "전체보기",
+        "전체",
         "휴가",
         "조퇴",
         "외출",
@@ -23,15 +23,14 @@ export default function Dropdown() {
     };
 
     return (
-        <div className="DropdownWrapper" ref={dropdownRef}>
-            <div className="DropdownBox" onClick={toggleDropdown}>
-                {selectedOption || '유형을 선택하세요'}
-                <div className="Arrow"><img src={arrowDown} alt="arrowDown" /></div>
+        <div className="dropdownWrapper" ref={dropdownRef}>
+            <div className="dropdownBox" onClick={toggleDropdown}>
+                <div className="dropdown-wrap">{selectedOption || '전체'}</div><img src={arrowDown} alt="arrowDown" />
             </div>
             {isOpen &&
-                <div className="SelectWrapper">
+                <div className="selectWrapper">
                     {textOptions.map((option, index) => (
-                        <div className="SelectOptions" key={index} onClick={() => handleOptionClick(option)}>
+                        <div className="selectOptions" key={index} onClick={() => handleOptionClick(option)}>
                             {option}
                         </div>
                     ))}
