@@ -5,97 +5,74 @@
 @import './styles/base/reset';
 @import './styles/base/fonts';
 
-body{
-    max-width: 1920px;
-    max-height: 1024px;
-    background-color: $background;
+body {
+	background-color: $background;
 }
 
-.nav{
-    @include column-flex(between, center);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 12.5rem;
-    height: 100vh;
-    border: 1px solid $border;
-    border-radius: 0px 24px 24px 0px;;
+.nav {
+	@include column-flex(between, center);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 12.5rem;
+	height: 100vh;
+	border-radius: 0px 24px 24px 0px;
+	background: $white;
 }
 
-.nav-logo{
-    width: 5.9375rem;
-    height: 5.125rem;
-    margin-top: 61px;
-    margin-bottom: 60px;
+.nav-logo {
+	width: 5.9rem;
+	height: 5.1rem;
+	margin-top: 3.8rem;
+	margin-bottom: 3.75rem;
 }
 
-.nav-icon{
-    @include flex;
+.nav-icon {
+	@include flex;
 }
 
-.word{
-    @include text-style(14, $darkgray, 600);
-    padding-top: 3px;
+.word {
+	@include text-style(14, $darkgray, 600);
+	padding-top: 0.5rem;
 }
 
-.nav-logout-btn{
-    @include flex;
-    @include text-style(14, $white, 400);
-    background-color: $primary;
-    border-radius: 6px;
-    padding: 8px 20px;
-    margin-bottom: 36px;
-    margin-top: 96px;
+.nav-logout-btn {
+	@include flex;
+	@include text-style(14, $white, 400);
+	background-color: $primary;
+	border-radius: 0.375rem;
+	padding: 0.5rem 1.25rem;
+	margin-bottom: 2.25rem;
+	margin-top: 6rem;
 }
 
-.announcement{
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 1720px;
-    height: 100vh;
-    background-color: $background;
+.notice-bonus {
+	padding: 2.5rem 2.5rem 0.05rem 15rem;
 }
 
-.announcement-area{
-    position: absolute;
-    @include column-flex;
-    bottom: 36px;
-    right: 44px;
-    width: 1635px;
-    height: 874px;
-    background-color: $white;
-    border-radius: 24px;
-    gap: 40px;
+.notice-bonus-area {
+	background-color: $white;
+	border-radius: 1.5rem;
+	padding: 2.5rem;
+	margin-top: 3.75rem;
 }
 
-.title{
-    position: absolute;
-    top: 40px;
-    left: 44px;
-    @include text-style(36, $black, 700)
+.title {
+	@include text-style(36, $black, 700);
+	display: block;
+	margin-bottom: 1rem;
+	margin-top: 2.5rem;
+	text-align: center;
 }
 
-.announcements{
-    @include column-flex(center,left);
-    width: 1555px;
-    height: 123px;
-    border: 1px solid grey;
-    border-radius: 14px;
+.line {
+	width: 1561px;
+	border-bottom: 1px solid $border;
+	margin-bottom: 1rem;
 }
 
-.arrow-right{
-    margin-left: 1513px;
-    width: 12px;
-    height: 21px;
-}
-
-.announcements span{
-    @include text-style(24, $black, 700);
-    margin-left: 40px;
-    line-height: 160%;
-}
-
-.announcements .date{
-    @include text-style(20, $gray, 500);
+.content {
+	display: block;
+	@include text-style(18, $black, 400);
+	line-height: 4rem;
 }

@@ -1,0 +1,45 @@
+.announcement {
+	padding: 2.5rem 2.5rem 0.05rem 15rem;
+}
+
+.announcement-area {
+	background-color: $white;
+	border-radius: 1.5rem;
+	gap: 2.5rem;
+	padding: 2.5rem;
+	margin-top: 3.75rem;
+}
+
+.title {
+	@include text-style(36, $black, 700);
+	display: block;
+	margin-bottom: 2.5rem;
+}
+
+.announcements {
+	position: relative;
+	border: 1px solid $gray;
+	border-radius: 0.875rem;
+	padding: 2rem 2.5rem;
+	margin-top: 2.5rem;
+	cursor: pointer;
+}
+
+.arrow-right {
+	position: absolute;
+	right: 2.5rem;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 0.75rem;
+	height: 1.3rem;
+}
+
+.announcements span {
+	display: block;
+	@include text-style(24, $black, 700);
+}
+
+.announcements .date {
+	@include text-style(20, $gray, 500);
+	margin-top: 1.5rem;
+}

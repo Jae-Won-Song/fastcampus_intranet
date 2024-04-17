@@ -1,10 +1,6 @@
-import './App.scss';
-import SideBar from './components/SideBar';
-
-function App() {
+function NoticeBonus() {
 	return (
 		<>
-			<SideBar />
 			<div className="notice-bonus">
 				<div className="notice-bonus-area">
 					<span className="title">훈련장려금 신청 지연 안내</span>
@@ -31,4 +27,4 @@ function App() {
 	);
 }
 
-export default App;
+export default NoticeBonus;
