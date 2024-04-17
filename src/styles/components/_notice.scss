@@ -1,8 +1,8 @@
-.announcement {
+.notice {
 	padding: 2.5rem 2.5rem 0.05rem 15rem;
 }
 
-.announcement-area {
+.notice-area {
 	background-color: $white;
 	border-radius: 1.5rem;
 	gap: 2.5rem;
@@ -16,7 +16,7 @@
 	margin-bottom: 2.5rem;
 }
 
-.announcements {
+.notices {
 	position: relative;
 	border: 1px solid $gray;
 	border-radius: 0.875rem;
@@ -34,12 +34,12 @@
 	height: 1.3rem;
 }
 
-.announcements span {
+.notices span {
 	display: block;
 	@include text-style(24, $black, 700);
 }
 
-.announcements .date {
+.notices .date {
 	@include text-style(20, $gray, 500);
 	margin-top: 1.5rem;
 }

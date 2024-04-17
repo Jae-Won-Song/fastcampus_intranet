@@ -1,10 +1,10 @@
-function Announcements() {
+function notices() {
 	return (
 		<>
-			<div className="announcement">
-				<div className="announcement-area">
+			<div className="notice">
+				<div className="notice-area">
 					<span className="title">공지사항</span>
-					<div className="announcements">
+					<div className="notices">
 						<span>토이프로젝트 I 안내</span>
 						<img
 							className="arrow-right"
@@ -13,7 +13,7 @@ function Announcements() {
 						/>
 						<span className="date">2024.04.05</span>
 					</div>
-					<div className="announcements">
+					<div className="notices">
 						<span>이정환 강사님 현직자 특강 만족도 조사 안내</span>
 						<img
 							className="arrow-right"
@@ -22,7 +22,7 @@ function Announcements() {
 						/>
 						<span className="date">2024.04.04</span>
 					</div>
-					<div className="announcements">
+					<div className="notices">
 						<span>훈련장려금 신청 지연 안내</span>
 						<img
 							className="arrow-right"
@@ -31,7 +31,7 @@ function Announcements() {
 						/>
 						<span className="date">2024.04.02</span>
 					</div>
-					<div className="announcements">
+					<div className="notices">
 						<span>그룹스터디 회고 이벤트 결과 발표</span>
 						<img
 							className="arrow-right"
@@ -46,4 +46,4 @@ function Announcements() {
 	);
 }
 
-export default Announcements;
+export default notices;
