@@ -1,42 +1,37 @@
-@import '../../mixins/text-style';
-@import '../../constants/colors';
-@import '../../constants/typography';
-@import '../../mixins/flex';
-@import '../../base/reset';
-@import '../../base/fonts';
+@import "../../mixins/text-style";
+@import "../../constants/colors";
+@import "../../constants/typography";
+@import "../../mixins/flex";
+@import "../../base/reset";
+@import "../../base/fonts";
 
 .todoList__grid {
-  display: grid;
-  grid-template-columns: 1fr 7.6fr .7fr .7fr;
-  border: 1px solid $border;
-  border-radius: 6px;
-  align-items: center;
-  width: 100%;
-  height: 30%;
-  margin-top: 20px;
+	display: grid;
+	grid-template-columns: 1fr 7.6fr 0.7fr 0.7fr;
+	border: 1px solid $border;
+	border-radius: 6px;
+	align-items: center;
+	width: 100%;
+	height: 30%;
+	margin-top: 20px;
 
-  &__checkbox {
-    @include flex;
-    margin: auto;
-  }
+	&__checkbox {
+		@include flex;
+		margin: auto;
+	}
 
-  input[type=checkbox] {
-    accent-color: #ED234B;
-    width: 100%;
-    height: 100%;
-    margin-top: 5px;
-  }
+	input[type="checkbox"] {
+		accent-color: #ed234b;
+		width: 100%;
+		height: 100%;
+		margin-top: 5px;
+	}
 
-  img {
-    width: 40%;
-    margin: 0;
-  }
+	img {
+		width: 40%;
+		margin: 0;
+	}
 }
-
-
-
-
-
 
 // .todo-list-grid .checkbox {
 //   width: 50%;
@@ -74,4 +69,3 @@
 //   background-color: #ED234B;
 //   background-position: center center;
 // }
-
