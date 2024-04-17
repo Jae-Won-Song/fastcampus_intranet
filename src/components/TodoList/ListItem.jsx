@@ -9,25 +9,24 @@ function ListItem({ id, isDone, content, onUpdate, onDelete, onDone }) {
   const [editedContent, setEditedContent] = useState(content);
 
   const onChangeCheckbox = () => {
-    onUpdate(id, isDone, content); // isDone, content 추가했음
+    onUpdate(id, isDone, content);
   }
 
   const onClickDeleteButton = () => {
     onDelete(id);
   }
 
-  const onClickEditButton = () => { // 이거 추가됨
+  const onClickEditButton = () => {
     if (isEditing) {
       onUpdate(id, editedContent);
     }
     setisEditing(!isEditing);
   }
 
-  const onSaveEditedContent = () => { // 이거 추가됨
+  const onSaveEditedContent = () => {
     onUpdate(id, editedContent);
     setisEditing(false);
   }
-
 
 	return (
 		<div className="ListItem">
