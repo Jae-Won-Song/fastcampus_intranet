@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 function notices() {
 	return (
 		<>
@@ -5,12 +7,14 @@ function notices() {
 				<div className="notice-area">
 					<span className="title">공지사항</span>
 					<div className="notices">
-						<span>토이프로젝트 I 안내</span>
-						<img
-							className="arrow-right"
-							src="src/assets/images/icon_chevron_right.svg"
-							alt="fastcampus"
-						/>
+						<Link to="/NoticeToy">
+							<span>토이프로젝트 I 안내</span>
+							<img
+								className="arrow-right"
+								src="src/assets/images/icon_chevron_right.svg"
+								alt="fastcampus"
+							/>
+						</Link>
 						<span className="date">2024.04.05</span>
 					</div>
 					<div className="notices">

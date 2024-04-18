@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function SideBar() {
 	const [slidePosition, setSlidePosition] = useState(264); // 초기 슬라이드 위치
@@ -18,6 +19,7 @@ function SideBar() {
 				</div>
 				<div>
 					<div
+						to="src/components/Notice.jsx"
 						className="nav-icon"
 						onClick={() => handleIconClick(264)}>
 						<img
@@ -26,12 +28,10 @@ function SideBar() {
 						/>
 					</div>
 					<div className="word">마이페이지</div>
-					{/* 슬라이드 위치 조정 */}
 					<div
 						className="slide"
 						style={{ top: slidePosition + 'px' }}></div>
 				</div>
-				{/* 두 번째 아이콘 */}
 				<div>
 					<div
 						className="nav-icon"
@@ -43,19 +43,19 @@ function SideBar() {
 					</div>
 					<div className="word">휴가관리</div>
 				</div>
-				{/* 세 번째 아이콘 */}
 				<div>
 					<div
 						className="nav-icon"
 						onClick={() => handleIconClick(544)}>
-						<img
-							src="src/assets/images/icon_bell.svg"
-							alt="announcement"
-						/>
+						<Link to="/Notice">
+							<img
+								src="src/assets/images/icon_bell.svg"
+								alt="announcement"
+							/>
+						</Link>
 					</div>
 					<div className="word">공지사항</div>
 				</div>
-				{/* 네 번째 아이콘 */}
 				<div>
 					<div
 						className="nav-icon"

@@ -22,11 +22,23 @@ body {
 
 .nav-icon {
 	@include flex;
+	cursor: pointer;
 }
 
 .word {
 	@include text-style(14, $darkgray, 600);
 	padding-top: 0.5rem;
+}
+
+.slide {
+	position: absolute;
+	width: 7px;
+	height: 5rem;
+	background-color: $primary;
+	left: 195px;
+	top: 268px;
+	border-radius: 10px;
+	transition: top 0.3s ease;
 }
 
 .nav-logout-btn {
