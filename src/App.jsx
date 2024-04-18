@@ -1,13 +1,23 @@
-import "./App.css";
-import "./styles/main.scss";
-import "./index.css";
-import MainPage from "./pages/MainPage";
+import { Route, Routes } from "react-router-dom";
+import ApplyListPage from "./pages/ApplyListPage";
+import ApplyFormPage from "./pages/ApplyFormPage";
 
 function App() {
 	return (
-		<>
-			<MainPage />
-		</>
+		<Routes>
+			<Route
+				path="/"
+				element={<ApplyListPage />}
+			/>
+			<Route
+				path="/applyForm"
+				element={<ApplyFormPage />}
+			/>
+			<Route
+				path="/applyList"
+				element={<ApplyListPage />}
+			/>
+		</Routes>
 	);
 }
 
