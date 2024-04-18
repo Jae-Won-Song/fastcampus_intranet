@@ -13,7 +13,6 @@ import ToggleButton from "../components/ToggleButton";
 import ClockWhite from "../../public/icon_clock_border.svg";
 import ClockBlack from "../../public/icon_clock.svg";
 
-
 function MainPage() {
 	const date = new Date().toLocaleString("ko-KR", {
 		year: "numeric",
