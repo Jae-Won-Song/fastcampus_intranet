@@ -1,5 +1,3 @@
-import "../styles/components/Modal.scss";
-import "../styles/modules/_buttons.scss";
 import Button from "./Button";
 
 function Modal({ isOpen, onSubmit, onClose, children }) {

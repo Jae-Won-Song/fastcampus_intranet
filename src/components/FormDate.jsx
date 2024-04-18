@@ -1,6 +1,5 @@
 // FormDate.jsx
 import React, { useState } from "react";
-import "../styles/components/_formdate.scss";
 
 const FormDate = ({ onDateChange }) => {
 	const [startDate, setStartDate] = useState("");

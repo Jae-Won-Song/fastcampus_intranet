@@ -1,9 +1,3 @@
-@import "../mixins/text-style";
-@import "../constants/colors";
-@import "../constants/typography";
-@import "../mixins/flex";
-@import "../base/reset";
-@import "../base/fonts";
 
 .Button {
 	@include flex;

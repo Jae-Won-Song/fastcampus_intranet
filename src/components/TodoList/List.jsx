@@ -9,9 +9,9 @@ function List({ todos, onUpdate, onDelete, onDone }) {
 					<ListItem
 						key={todo.id}
 						{...todo}
-            onUpdate={onUpdate}
-            onDelete={onDelete}
-            onDone={onDone}
+						onUpdate={onUpdate}
+						onDelete={onDelete}
+						onDone={onDone}
 					/>
 				);
 			})}
