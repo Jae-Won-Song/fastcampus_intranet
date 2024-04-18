@@ -4,12 +4,8 @@ $flex-map: (
 	between: space-between,
 	around: space-around,
 	stretch: stretch,
-<<<<<<< HEAD
-	center: center
-=======
 	center: center,
 	baseline: baseline
->>>>>>> master
 );
 
 @function _get-flex-value($key) {
