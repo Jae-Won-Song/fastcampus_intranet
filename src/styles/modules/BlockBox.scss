@@ -1,31 +1,31 @@
-@import '../mixins/flex';
+@import "../mixins/flex";
 
 .BlockBox {
-  border-radius: 24px;
-  background-color: #fff;
-  display: flex;
-  margin: 0 20px 20px;
+	border-radius: 24px;
+	background-color: #fff;
+	display: flex;
+	margin: 0 20px 20px;
 
-  &.small {
-    width: 30%;
-    padding: 40px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    @include flex;
-    margin-left: 40px;
-  }
+	&.small {
+		width: 30%;
+		padding: 40px;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		@include flex;
+		margin-left: 40px;
+	}
 
-  &.medium {
-    width: 100%;
-    padding: 40px 40px 60px 40px;
-    flex-direction: column;
-    margin: 20px 20px 40px;
-  }
+	&.medium {
+		width: 100%;
+		padding: 40px 40px 60px 40px;
+		flex-direction: column;
+		margin: 20px 20px 40px;
+	}
 
-  &.large {
-    width: 70%;
-    padding: 10px;
-    margin-right: 40px;
-  }
+	&.large {
+		width: 70%;
+		padding: 10px;
+		margin-right: 40px;
+	}
 }
