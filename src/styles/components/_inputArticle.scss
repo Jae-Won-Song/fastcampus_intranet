@@ -1,0 +1,17 @@
+@import "../constants/colors";
+
+.input {
+	width: 100%;
+	height: 3.125rem;
+	padding: 0 1rem;
+	border: 1px solid #e2dede;
+	border-radius: 6px;
+	font-size: 1rem;
+	outline: none;
+	margin-bottom: 2.5rem;
+	color: $black;
+
+	&:focus {
+		border-color: black;
+	}
+}
