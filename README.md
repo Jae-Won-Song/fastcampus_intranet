@@ -1,5 +1,4 @@
 # Toy-project Team4
-
 ### 개발 완료 기능
 
 - 휴가, 조퇴, 외출 신청 component
