@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function SideBar() {
 	const [slidePosition, setSlidePosition] = useState(264); // 초기 슬라이드 위치
@@ -30,7 +29,7 @@ function SideBar() {
 					<div className="word">마이페이지</div>
 					<div
 						className="slide"
-						style={{ top: slidePosition + 'px' }}></div>
+						style={{ top: slidePosition + "px" }}></div>
 				</div>
 				<div>
 					<div

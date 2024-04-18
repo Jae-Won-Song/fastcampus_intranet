@@ -1,17 +1,14 @@
 .form {
 	.field {
 		margin-bottom: 1.875rem;
-
 		&:last-child {
 			margin-bottom: 0;
 		}
-
 		.label {
 			display: block;
 			margin-bottom: 0.625rem;
 			font-weight: 500;
 		}
-
 		.input {
 			@include text-style(16, $black, 500);
 			display: block;
@@ -21,76 +18,51 @@
 			border-radius: 6px;
 			border: 1px solid $border;
 			background-color: $white;
-
 			&::placeholder {
 				@include text-style(16, $gray, 500);
 			}
-
 			&:focus {
 				border-color: $darkgray;
 			}
 		}
-
 		&.error {
 			.input-wrap {
 				position: relative;
-
 				.input {
 					border-color: $error;
 				}
-
 				&::after {
-<<<<<<< HEAD
-					content: '';
-=======
 					content: "";
->>>>>>> 861ac078b3a764d067c97fdc5bc5d707c7aab77f
 					position: absolute;
 					right: 1rem;
 					top: 50%;
 					transform: translateY(-50%);
 					width: 1.25rem;
 					height: 1.25rem;
-<<<<<<< HEAD
-					background: url('/src/assets/images/icon_error.svg') no-repeat center /
-=======
 					background: url("/src/assets/images/icon_error.svg") no-repeat center /
->>>>>>> 861ac078b3a764d067c97fdc5bc5d707c7aab77f
 						contain;
 				}
 			}
-
 			.error-message {
 				@include text-style(14, $error, 400);
 				display: block;
 				margin-top: 0.4rem;
 			}
 		}
-
 		&.success {
 			.input-wrap {
 				position: relative;
-
 				&::after {
-<<<<<<< HEAD
-					content: '';
-=======
 					content: "";
->>>>>>> 861ac078b3a764d067c97fdc5bc5d707c7aab77f
 					position: absolute;
 					right: 1rem;
 					top: 50%;
 					transform: translateY(-50%);
 					width: 1.25rem;
 					height: 1.25rem;
-<<<<<<< HEAD
-					background: url('/src/assets/images/icon_success.svg') no-repeat
-=======
 					background: url("/src/assets/images/icon_success.svg") no-repeat
->>>>>>> 861ac078b3a764d067c97fdc5bc5d707c7aab77f
 						center / contain;
 				}
-
 				.input {
 					border-color: $success;
 				}

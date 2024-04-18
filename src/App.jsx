@@ -1,18 +1,17 @@
-
-import './App.scss';
-import SideBar from './components/SideBar';
-import Notice from './components/NoticePage';
-import NoticeToy from './components/NoticeToy';
-import NoticeSatisfaction from './components/NoticeSatisfaction';
-import NoticeBonus from './components/NoticeBonus';
-import NoticeEvent from './components/NoticeEvent';
-import { Routes, Route } from 'react-router-dom';
+import Notice from "./components/NoticePage";
+import NoticeToy from "./components/NoticeToy";
+import NoticeSatisfaction from "./components/NoticeSatisfaction";
+import NoticeBonus from "./components/NoticeBonus";
+import NoticeEvent from "./components/NoticeEvent";
+import { Routes, Route } from "react-router-dom";
 import MainPage from "./pages/MainPage";
 import LoginPage from "./pages/LoginPage";
 import JoinPage from "./pages/JoinPage";
 import ComponentsPage from "./pages/ComponentsPage";
 import ApplyListPage from "./pages/ApplyListPage";
 import ApplyFormPage from "./pages/ApplyFormPage";
+import SideBar from "./components/SideBar";
+import MyPage from "./pages/MyPage";
 
 function App() {
 	return (
@@ -42,7 +41,7 @@ function App() {
 					path="/NoticeEvent"
 					element={<NoticeEvent />}
 				/>
-	      <Route
+				<Route
 					path="/login"
 					element={<LoginPage />}
 				/>
@@ -50,29 +49,33 @@ function App() {
 					path="/join"
 					element={<JoinPage />}
 				/>
-					<Route
-						path="/main"
-						element={<MainPage />}
-					/>
-					<Route
-						path="/components"
-						element={<ComponentsPage />}
-					/>
-					<Route
-						path="/"
-						element={<ApplyListPage />}
-					/>
-					<Route
-						path="/applyForm"
-						element={<ApplyFormPage />}
-					/>
-					<Route
-						path="/applyList"
-						element={<ApplyListPage />}
-					/>
+				<Route
+					path="/main"
+					element={<MainPage />}
+				/>
+				<Route
+					path="/components"
+					element={<ComponentsPage />}
+				/>
+				<Route
+					path="/"
+					element={<ApplyListPage />}
+				/>
+				<Route
+					path="/applyForm"
+					element={<ApplyFormPage />}
+				/>
+				<Route
+					path="/applyList"
+					element={<ApplyListPage />}
+				/>
+				<Route
+					path="/mypage"
+					element={<MyPage />}
+				/>
 			</Routes>
 		</>
-	)
+	);
 }
 
 export default App;

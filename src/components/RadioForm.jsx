@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "../styles/components/_RadioForm.scss";
 
 const RadioForm = ({ onChange }) => {
 	const [, setType] = useState("");
