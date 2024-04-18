@@ -16,6 +16,10 @@ body {
 	font-size: 1rem;
 	color: $black;
 	line-height: 1.25;
+<<<<<<< HEAD
+	background-color: $background;
+=======
+>>>>>>> master
 }
 
 h1 {
@@ -39,6 +43,14 @@ textarea {
 		outline: none;
 		box-shadow: none;
 	}
+<<<<<<< HEAD
+}
+input::-webkit-inner-spin-button {
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+=======
+>>>>>>> master
 }
 
 a,
