@@ -6,6 +6,7 @@ import ComponentsPage from "./pages/ComponentsPage";
 import SideBar from "./components/SideBar";
 import ApplyListPage from "./pages/ApplyListPage";
 import ApplyFormPage from "./pages/ApplyFormPage";
+import MyPage from './pages/MyPage'
 
 function App() {
 	return (
