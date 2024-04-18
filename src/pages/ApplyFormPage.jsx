@@ -7,7 +7,6 @@ import RadioForm from "../components/RadioForm";
 import Article from "../components/Article";
 import FormDate from "../components/FormDate";
 
-
 const FormTitle = () => {
 	const navigate = useNavigate(); // useHistory 훅 사용
 
