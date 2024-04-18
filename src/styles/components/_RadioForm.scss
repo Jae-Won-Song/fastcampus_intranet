@@ -1,0 +1,54 @@
+@import "../mixins/flex";
+@import "../base/fonts";
+@import "../constants/colors";
+
+$radio-color: $primary;
+$radio-size: 14px;
+$radio-label-padding: 25px;
+
+.radio-wrapper {
+	@include flex(between, center);
+	width: 30vw;
+	margin-top: 15px;
+	margin-bottom: 30px;
+}
+
+.StyledRadio {
+	position: absolute;
+	opacity: 0;
+
+	+ label {
+		position: relative;
+		padding-left: $radio-label-padding;
+		cursor: pointer;
+
+		&:before {
+			content: "";
+			position: absolute;
+			left: -0.2px;
+			top: 48%;
+			transform: translateY(-50%);
+			width: $radio-size;
+			height: $radio-size;
+			border-radius: 50%;
+			// border: $radio-border;
+			background-color: $gray;
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			left: -0.2px;
+			top: 2.5px;
+			width: $radio-size;
+			height: $radio-size;
+			border-radius: 50%;
+			background-color: $radio-color;
+			display: none;
+		}
+	}
+
+	&:checked + label:after {
+		display: block;
+	}
+}
