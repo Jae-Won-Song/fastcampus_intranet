@@ -1,5 +1,8 @@
 .join {
 	padding: 2rem 2.5rem;
+	height: 100vh;
+	background-color: $white;
+	overflow-y: auto;
 
 	&__header {
 		margin-bottom: 2.4rem;
@@ -15,7 +18,7 @@
 
 		.img-wrap {
 			display: block;
-			width: 95px;
+			width: 6rem;
 			margin: 0 auto;
 		}
 	}
