@@ -3,9 +3,10 @@ module.exports = {
 		"react-app",
 		"eslint:recommended",
 		"plugin:react/recommended",
-		"plugin:prettier/recommended" // plugin:prettier/recommended 확장만 사용
+		"plugin:prettier/recommended",
+		"prettier"
 	],
-	plugins: ["react"], // prettier 플러그인 제거
+	plugins: ["react", "prettier"],
 	rules: {
 		"no-multiple-empty-lines": "error", // 여러 줄 공백 금지
 		eqeqeq: "error", // 일치 연산자 사용 필수
