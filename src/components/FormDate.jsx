@@ -1,26 +1,46 @@
-import React, { useEffect } from 'react';
-import '../styles/components/_formdate.scss'
+// FormDate.jsx
+import React, { useState } from "react";
+import "../styles/components/_formdate.scss";
 
-const FormDate = () => {
-  useEffect(() => {
-    const datePicker = document.querySelectorAll('input[type="date"]');
-    datePicker.forEach(input => {
-      input.style.color = 'black';
-    });
-  }, []);
+const FormDate = ({ onDateChange }) => {
+	const [startDate, setStartDate] = useState("");
+	const [endDate, setEndDate] = useState("");
 
-  return (
-    <div className='date__wrapper'>
-      <div>
-        <div className='date-title'>시작일</div>
-        <input type="date" className='input'/>
-      </div>
-      <div>
-        <div className='date-title'>종료일</div>
-        <input type="date" className='input'/>
-      </div>
-    </div>
-  )
-}
+	const handleChangeStartDate = e => {
+		const startDateValue = e.target.value;
+		setStartDate(startDateValue);
+		onDateChange("startDate", startDateValue); // 시작일 변경사항 전달
+	};
+
+	const handleChangeEndDate = e => {
+		const endDateValue = e.target.value;
+		setEndDate(endDateValue);
+		onDateChange("endDate", endDateValue); // 종료일 변경사항 전달
+	};
+
+	return (
+		<>
+			<div className="date-wrap">
+				<div className="date-title">시작일</div>
+				<div className="date-title">종료일</div>
+			</div>
+			<div className="date__wrapper">
+				<input
+					type="date"
+					className="input"
+					value={startDate}
+					onChange={handleChangeStartDate}
+				/>{" "}
+				<div>~</div>
+				<input
+					type="date"
+					className="input"
+					value={endDate}
+					onChange={handleChangeEndDate}
+				/>
+			</div>
+		</>
+	);
+};
 
 export default FormDate;

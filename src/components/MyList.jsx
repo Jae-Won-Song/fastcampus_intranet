@@ -1,18 +1,27 @@
-import Badge from './Badge'
+import Badge from "./Badge";
 
-import '../styles/components/_myList.scss'
+import "../styles/components/_myList.scss";
 
-const MyList = () => {
-  return (
-    <div className='my__list'> 
-      <div className='top-info'>
-      <p className='__title'>외출 신청 <Badge/></p>
-      <p>2024.04.15~2024.04.17</p>
-      </div>
-      <p className='__article'>병원 진료로 인해 외출 신청합니다.</p>
+const MyList = ({ data }) => {
+	if (!data) {
+		return null; // 데이터가 없을 때 렌더링 X
+	}
 
-    </div>  
-  )
-}
+	const { title, type, reason, startDate, endDate } = data;
 
-export default MyList
+	return (
+		<div className="my__list">
+			<div className="top-info">
+				<p className="__title">
+					{title} <Badge type={type} />{" "}
+				</p>
+				<p>
+					{startDate}~{endDate}
+				</p>
+			</div>
+			<p className="__article">{reason}</p>
+		</div>
+	);
+};
+
+export default MyList;
