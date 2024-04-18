@@ -1,7 +1,7 @@
 
 import './App.scss';
 import SideBar from './components/SideBar';
-import Notice from './components/Notice';
+import Notice from './components/NoticePage';
 import NoticeToy from './components/NoticeToy';
 import NoticeSatisfaction from './components/NoticeSatisfaction';
 import NoticeBonus from './components/NoticeBonus';
