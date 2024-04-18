@@ -1,23 +1,3 @@
-<<<<<<< HEAD
-import Button from "./Button";
-import { auth } from "../firebase/config";
-import { useNavigate } from "react-router-dom";
-
-function SideBar() {
-	const navigate = useNavigate();
-	const handleLogout = () => {
-		auth.signOut();
-		navigate("/login");
-	};
-	return (
-		<>
-			<div className="nav">
-				<Button
-					type="button"
-					onClick={handleLogout}>
-					로그아웃
-				</Button>
-=======
 import "../styles/components/_sidebar.scss";
 function SideBar() {
 	return (
@@ -66,7 +46,6 @@ function SideBar() {
 					<div className="word">자료실</div>
 				</div>
 				<div className="nav-logout-btn">로그아웃</div>
->>>>>>> master
 			</div>
 		</>
 	);
