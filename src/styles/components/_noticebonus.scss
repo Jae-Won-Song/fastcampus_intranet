@@ -1,0 +1,30 @@
+.notice-bonus {
+	padding: 2.5rem 2.5rem 0.05rem 15rem;
+}
+
+.notice-bonus-area {
+	background-color: $white;
+	border-radius: 1.5rem;
+	padding: 2.5rem;
+	margin-top: 3.75rem;
+}
+
+.title {
+	@include text-style(36, $black, 700);
+	display: block;
+	margin-bottom: 1rem;
+	margin-top: 2.5rem;
+	text-align: center;
+}
+
+.line {
+	width: 1561px;
+	border-bottom: 1px solid $border;
+	margin-bottom: 1rem;
+}
+
+.content {
+	display: block;
+	@include text-style(18, $black, 400);
+	line-height: 4rem;
+}

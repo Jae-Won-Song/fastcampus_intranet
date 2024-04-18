@@ -6,7 +6,7 @@ import BlockBox from "../components/BlockBox";
 import SideBar from "../components/SideBar";
 import CheckInOutRecord from "../components/CheckInOutRecord";
 import TodoList from "../components/TodoList/TodoList";
-import Notice from "../components/Notice";
+import Notice from "../components/NoticePage";
 import CurrentTime from "../components/CurrentTime";
 import ToggleButton from "../components/ToggleButton";
 
