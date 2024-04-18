@@ -1,12 +1,11 @@
 {
-  "parser": "javascript",
-  "tabWidth" : 2,
-  "semi": true,
-  "singleQuote": true,
-  "singleAttributePerLine": true,
-  "bracketSameLine": true,
-  "endOfLine": "lf",
-  "trailingComma": "none",
-  "arrowParens": "avoid",
-  "useTabs": true
+	"tabWidth": 2,
+	"semi": true,
+	"singleQuote": false,
+	"singleAttributePerLine": true,
+	"bracketSameLine": true,
+	"endOfLine": "lf",
+	"trailingComma": "none",
+	"arrowParens": "avoid",
+	"useTabs": true
 }
