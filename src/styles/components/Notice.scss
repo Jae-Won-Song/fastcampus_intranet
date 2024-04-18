@@ -1,0 +1,18 @@
+.notice-grid {
+	width: 100%;
+	height: 20%;
+	margin-top: 20px;
+	border-bottom: 1px solid #e2dede;
+	display: grid;
+	align-items: center;
+	grid-template-columns: 1.3fr 8.2fr 0.5fr;
+}
+
+.notice-grid .date {
+	font-size: 0.875rem;
+	color: #a8a8a8;
+}
+
+.notice-grid .title {
+	font-size: 1.25rem;
+}

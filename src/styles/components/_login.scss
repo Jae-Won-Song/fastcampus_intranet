@@ -1,6 +1,13 @@
 .login {
 	@include flex(center, between);
 	flex-basis: 0;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+	background-color: $white;
+=======
+>>>>>>> master
+>>>>>>> 861ac078b3a764d067c97fdc5bc5d707c7aab77f
 	overflow: hidden;
 
 	&__intro {
@@ -9,7 +16,11 @@
 		width: 100%;
 		height: 100vh;
 		padding-bottom: 10rem;
+<<<<<<< HEAD
 		background: url('/src/assets/images/bg_login.jpg') no-repeat center / cover;
+=======
+		background: url("/src/assets/images/bg_login.jpg") no-repeat center / cover;
+>>>>>>> 861ac078b3a764d067c97fdc5bc5d707c7aab77f
 
 		.intro {
 			&-title {
@@ -19,7 +30,11 @@
 				z-index: 1;
 
 				&::after {
+<<<<<<< HEAD
 					content: '';
+=======
+					content: "";
+>>>>>>> 861ac078b3a764d067c97fdc5bc5d707c7aab77f
 					position: absolute;
 					left: 0;
 					bottom: 0;

@@ -1,19 +1,19 @@
 module.exports = {
 	extends: [
-		'react-app',
-		'eslint:recommended',
-		'plugin:react/recommended',
-		'plugin:prettier/recommended',
-		'prettier'
+		"react-app",
+		"eslint:recommended",
+		"plugin:react/recommended",
+		"plugin:prettier/recommended",
+		"prettier"
 	],
-	plugins: ['react', 'prettier'],
+	plugins: ["react", "prettier"],
 	rules: {
-		'no-multiple-empty-lines': 'error', // 여러 줄 공백 금지
-		eqeqeq: 'error', // 일치 연산자 사용 필수
-		'dot-notation': 'error', // 가능하다면 dot notation 사용
-		'no-unused-vars': 'error', // 사용하지 않는 변수 금지
-		'react/react-in-jsx-scope': 'off', // script 규칙 비활성화
-		'react/prop-types': 'off', // PropTypes 비활성화
-		'prettier/prettier': 'error'
+		"no-multiple-empty-lines": "error", // 여러 줄 공백 금지
+		eqeqeq: "error", // 일치 연산자 사용 필수
+		"dot-notation": "error", // 가능하다면 dot notation 사용
+		"no-unused-vars": "error", // 사용하지 않는 변수 금지
+		"react/react-in-jsx-scope": "off", // script 규칙 비활성화
+		"react/prop-types": "off", // PropTypes 비활성화
+		"prettier/prettier": "error"
 	}
 };

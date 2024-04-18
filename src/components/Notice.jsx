@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Link } from 'react-router-dom';
 
 function notices() {
@@ -51,3 +52,22 @@ function notices() {
 }
 
 export default notices;
+=======
+import "../styles/components/Notice.scss";
+import ArrowRight from "../../public/icon_arrow_right.svg";
+
+function Notice(props) {
+	return (
+		<div className="notice-grid">
+			<div className="date">{props.date}</div>
+			<div className="title">{props.title}</div>
+			<img
+				src={ArrowRight}
+				alt="ArrowRight"
+			/>
+		</div>
+	);
+}
+
+export default Notice;
+>>>>>>> 861ac078b3a764d067c97fdc5bc5d707c7aab77f

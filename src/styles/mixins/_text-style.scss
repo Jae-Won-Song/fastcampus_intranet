@@ -39,11 +39,11 @@
 		font-size: $font-size-88;
 	}
 
-	@if (type-of($color) == 'color') {
+	@if (type-of($color) == "color") {
 		color: $color;
 	}
 
-	@if (type-of($weight) == 'number') {
+	@if (type-of($weight) == "number") {
 		font-weight: $weight;
 	}
 }
