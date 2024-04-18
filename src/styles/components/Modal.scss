@@ -1,0 +1,44 @@
+@import "../mixins/text-style";
+@import "../constants/colors";
+@import "../constants/typography";
+@import "../mixins/flex";
+@import "../base/reset";
+@import "../base/fonts";
+
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #0000008f;
+	@include flex;
+
+	&__wrapper {
+		width: 25%;
+		height: 28%;
+		background-color: $white;
+		padding: 0 20px;
+		border-radius: 24px;
+		@include column-flex;
+		position: relative;
+
+		&_mark {
+			width: 5%;
+			height: 7%;
+			position: absolute;
+			top: 30px;
+			right: 30px;
+		}
+
+		&_buttons {
+			width: 40%;
+			padding-top: 10px;
+			@include flex(between, center);
+		}
+	}
+}
+
+p {
+	@include text-style(28, $black, 500);
+}

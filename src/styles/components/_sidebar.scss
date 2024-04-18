@@ -1,0 +1,48 @@
+@import "../constants/colors";
+@import "../mixins/flex";
+@import "../mixins/text-style";
+@import "../constants/typography";
+
+body {
+	max-width: 1920px;
+	max-height: 1024px;
+	background-color: $background;
+}
+
+.nav {
+	@include column-flex(between, center);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 12.5rem;
+	height: 100vh;
+	border: 1px solid $border;
+	border-radius: 0px 24px 24px 0px;
+	background-color: $white;
+}
+
+.nav-logo {
+	width: 5.9375rem;
+	height: 5.125rem;
+	margin-top: 61px;
+	margin-bottom: 60px;
+}
+
+.nav-icon {
+	@include flex;
+}
+
+.word {
+	@include text-style(14, $darkgray, 600);
+	padding-top: 3px;
+}
+
+.nav-logout-btn {
+	@include flex;
+	@include text-style(14, $white, 400);
+	background-color: $primary;
+	border-radius: 6px;
+	padding: 8px 20px;
+	margin-bottom: 36px;
+	margin-top: 96px;
+}
