@@ -1,27 +1,50 @@
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import Button from "../components/Button";
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
-import app from "../firebase/config";
-import { useForm } from "react-hook-form";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../firebase/config";
+import { FirebaseError } from "firebase/app";
 
 function JoinPage() {
-	const {
-		register,
-		handleSubmit,
-		watch,
-		formState: { errors }
-	} = useForm();
+	const navigate = useNavigate();
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const [name, setName] = useState("");
+	const [tel, setTel] = useState("");
+	const [error, setError] = useState("");
 
-	const auth = getAuth(app);
-	const onSubmit = async data => {
+	const handleChange = e => {
+		const {
+			target: { name, value }
+		} = e;
+		if (name === "email") {
+			setEmail(value);
+		} else if (name === "password") {
+			setPassword(value);
+		} else if (name === "name") {
+			setName(value);
+		} else if (name === "tel") {
+			setTel(value);
+		}
+	};
+
+	const handleSubmit = async e => {
+		e.preventDefault();
+		if (email === "" || password === "" || name === "" || tel === "") return;
 		try {
-			const createdUser = await createUserWithEmailAndPassword(
+			const credentials = await createUserWithEmailAndPassword(
 				auth,
-				data.email,
-				data.password
+				email,
+				password
 			);
-			console.log(createdUser);
-		} catch (error) {
-			console.error(error);
+			await updateProfile(credentials.user, {
+				displayName: name
+			});
+			navigate("/main");
+		} catch (e) {
+			if (e instanceof FirebaseError) {
+				setError(e.message);
+			}
 		}
 	};
 
@@ -43,7 +66,7 @@ function JoinPage() {
 				</header>
 				<form
 					className="form"
-					onSubmit={handleSubmit(onSubmit)}>
+					onSubmit={handleSubmit}>
 					<div className="field">
 						<label
 							htmlFor="email"
@@ -57,12 +80,10 @@ function JoinPage() {
 								id="email"
 								placeholder="fastcampus@email.com"
 								className="input"
-								{...register("email", {
-									required: true,
-									pattern: /^\S+@\S+$/i
-								})}
+								required
+								value={email}
+								onChange={handleChange}
 							/>
-							{errors.email && <p>이메일을 입력해주세요.</p>}
 						</div>
 					</div>
 					<div className="field">
@@ -74,26 +95,16 @@ function JoinPage() {
 						<div className="input-wrap">
 							<input
 								type="password"
-								maxLength="15"
 								name="password"
 								id="password"
 								placeholder="비밀번호"
 								className="input"
-								{...register("password", {
-									required: true,
-									minLength: 6,
-									maxLength: 20
-								})}
+								minLength="6"
+								maxLength="20"
+								required
+								value={password}
+								onChange={handleChange}
 							/>
-							{errors.password && errors.password.type === "required" && (
-								<p>비밀번호를 입력해주세요.</p>
-							)}
-							{errors.password && errors.password.type === "minLength" && (
-								<p>비밀번호는 최소 6자 이상입니다.</p>
-							)}
-							{errors.password && errors.password.type === "maxLength" && (
-								<p>비밀번호는 최대 20자 이하입니다.</p>
-							)}
 						</div>
 					</div>
 					<div className="field">
@@ -105,15 +116,15 @@ function JoinPage() {
 						<div className="input-wrap">
 							<input
 								type="password"
-								name="password"
-								id="password"
+								name="passwordCheck"
+								id="passwordCheck"
 								placeholder="비밀번호"
 								className="input"
-								{...register("password", {
-									required: true,
-									minLength: 6,
-									maxLength: 20
-								})}
+								minLength="6"
+								maxLength="20"
+								required
+								value={password}
+								onChange={handleChange}
 							/>
 						</div>
 					</div>
@@ -130,9 +141,10 @@ function JoinPage() {
 								id="name"
 								placeholder="이름을 입력하세요"
 								className="input"
-								{...register("name", {
-									maxLength: 10
-								})}
+								required
+								maxLength="10"
+								value={name}
+								onChange={handleChange}
 							/>
 						</div>
 					</div>
@@ -149,22 +161,21 @@ function JoinPage() {
 								id="tel"
 								placeholder="숫자만 입력하세요(&lsquo;-&rsquo;제외)"
 								className="input"
-								{...register("tel", {
-									maxLength: 11
-								})}
+								required
+								maxLength="11"
+								value={tel}
+								onChange={handleChange}
 							/>
-							{errors.tel === "maxLength" && (
-								<p>비밀번호는 최대 20자 이하입니다.</p>
-							)}
 						</div>
 					</div>
 					<Button
 						type="submit"
 						size="entire"
-						onClick={onSubmit}>
+						onClick={handleSubmit}>
 						회원가입
 					</Button>
 				</form>
+				{error !== "" ? <p className="error-message">{error}</p> : null}
 			</div>
 		</div>
 	);

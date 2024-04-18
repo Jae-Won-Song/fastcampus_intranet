@@ -1,17 +1,20 @@
-import { Link } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import Button from "./Button";
-import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function LoginForm() {
-	const [loginEmail, setLoginEmail] = useState("");
-	const [loginPassword, setLoginPassword] = useState("");
-	const [user, setUser] = useState({});
-
-	// const handleLogin = aync () => {
-	//   try {
-	//     const user
-	//   }
-	// }
+	const handleSubmit = async e => {
+		e.preventDefault();
+		if (email === "" || password === "") return;
+		try {
+			await signInWithEmailAndPassword(auth, email, password);
+			navigate("/main");
+		} catch (e) {
+			if (e instanceof FirebaseError) {
+				setError(e.message);
+			}
+		}
+	};
 
 	return (
 		<div className="login__form">
@@ -21,16 +24,19 @@ function LoginForm() {
 					alt="fastcampus"
 				/>
 			</h1>
-			<form className="form">
+			<form
+				className="form"
+				onSubmit={handleSubmit}>
 				<div className="field-wrap">
 					<div className="field">
 						<div className="input-wrap">
 							<input
 								type="text"
-								name="login"
-								id="login"
+								name="email"
+								id="email"
 								placeholder="이메일(아이디)"
 								className="input"
+								value={email}
 							/>
 						</div>
 					</div>
@@ -43,6 +49,7 @@ function LoginForm() {
 								id="password"
 								placeholder="비밀번호"
 								className="input"
+								value={password}
 							/>
 						</div>
 					</div>
@@ -52,7 +59,12 @@ function LoginForm() {
 					href="./">
 					비밀번호를 잊으셨나요?
 				</a>
-				<Button size="entire">로그인</Button>
+				<Button
+					type="submit"
+					size="entire"
+					onSubmit={onSubmit}>
+					로그인
+				</Button>
 				<div className="border"></div>
 				<Link
 					to="/join"
