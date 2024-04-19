@@ -27,8 +27,9 @@ function SideBar() {
 				</div>
 				<div>
 					<div
+						to="src/components/Notice.jsx"
 						className="nav-icon"
-						onClick={() => handleIconClick(268)}>
+						onClick={() => handleIconClick(260)}>
 						<img
 							src="src/assets/images/icon_profile.svg"
 							alt="profile"
@@ -42,7 +43,7 @@ function SideBar() {
 				<div>
 					<div
 						className="nav-icon"
-						onClick={() => handleIconClick(408)}>
+						onClick={() => handleIconClick(395)}>
 						<img
 							src="src/assets/images/icon_edit.svg"
 							alt="vacation"
@@ -53,20 +54,18 @@ function SideBar() {
 				<div>
 					<div
 						className="nav-icon"
-						onClick={() => handleIconClick(548)}>
-						<Link to="/NoticePage">
-							<img
-								src="src/assets/images/icon_bell.svg"
-								alt="announcement"
-							/>
-						</Link>
+						onClick={() => handleIconClick(535)}>
+						<img
+							src="src/assets/images/icon_bell.svg"
+							alt="announcement"
+						/>
 					</div>
 					<div className="word">공지사항</div>
 				</div>
 				<div>
 					<div
 						className="nav-icon"
-						onClick={() => handleIconClick(688)}>
+						onClick={() => handleIconClick(670)}>
 						<Link to="/Reference">
 							<img
 								src="src/assets/images/icon_folder.svg"
