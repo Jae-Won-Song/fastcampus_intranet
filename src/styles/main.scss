@@ -1,29 +1,25 @@
 @import "./constants/colors";
 @import "./constants/typography";
-
 @import "./base/fonts";
 @import "./base/reset";
-
 @import "./mixins/flex";
 @import "./mixins/text-style";
-
 @import "./modules/buttons";
 @import "./modules/form";
-
-@import './components/components';
-@import './components/login';
-@import './components/join';
-@import './components/sidebar';
-@import './components/notice';
-@import './components/noticebonus';
-@import './components/noticeevent';
-@import './components/noticesaticfaction';
-@import './components/noticetoy';
-@import "./components/nav";
+@import "./components/components";
+@import "./components/login";
+@import "./components/join";
+@import "./components/sidebar";
+@import "./components/noticepage";
+@import "./components/noticebonus";
+@import "./components/noticeevent";
+@import "./components/noticesaticfaction";
+@import "./components/noticetoy";
+@import "./components/reference";
 @import "./components/main";
-@import './components/dropdown';
-@import './components/apply';
+@import "./components/dropdown";
+@import "./components/apply";
 @import "./components/inputArticle";
 @import "./components/FormTitle";
 @import "./components/RadioForm";
-@import './components/button'
+@import "./components/button";

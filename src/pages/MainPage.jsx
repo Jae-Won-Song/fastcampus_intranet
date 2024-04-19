@@ -1,9 +1,7 @@
 import "../styles/main.scss";
-import "../index.css";
 import "../styles/components/MainPage.scss";
 
 import BlockBox from "../components/BlockBox";
-import SideBar from "../components/SideBar";
 import CheckInOutRecord from "../components/CheckInOutRecord";
 import TodoList from "../components/TodoList/TodoList";
 import Notice from "../components/NoticePage";
@@ -12,7 +10,6 @@ import ToggleButton from "../components/ToggleButton";
 
 import ClockWhite from "../../public/icon_clock_border.svg";
 import ClockBlack from "../../public/icon_clock.svg";
-
 
 function MainPage() {
 	const date = new Date().toLocaleString("ko-KR", {
@@ -25,9 +22,6 @@ function MainPage() {
 		<>
 			<div className="app">
 				{/* 사이드바 */}
-				<div className="side-bar">
-					<SideBar></SideBar>
-				</div>
 
 				<div className="boxes">
 					<div className="my-page">

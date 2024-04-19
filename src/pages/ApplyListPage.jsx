@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getDatabase, ref, onValue, off } from "firebase/database";
 import MyList from "../components/MyList";
-import SideBar from "../components/SideBar";
 import { Link } from "react-router-dom";
-
-import "../styles/components/_button.scss";
-import "../styles/components/_applylist.scss";
 
 const ApplyListPage = () => {
 	const [dataList, setDataList] = useState([]);
@@ -33,7 +29,6 @@ const ApplyListPage = () => {
 
 	return (
 		<div className="list-wrapper">
-			<SideBar />
 			<div className="list-title">휴가 / 조퇴 / 외출 신청내역</div>
 			<div className="nav-top">
 				<Link to="applyForm">
