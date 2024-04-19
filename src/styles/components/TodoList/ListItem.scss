@@ -2,23 +2,23 @@
 @import "../../constants/colors";
 
 .ListItem {
-	@include flex(start, center);
-	gap: 20px;
-	padding: 10px;
-	margin: 5px 0;
-	border: 1px solid $border;
-	border-radius: 6px;
+  @include flex(start, center);
+  gap: 20px;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid $border;
+  border-radius: 6px;
 
-	input {
-		width: 5%;
-		accent-color: $primary;
-	}
+  input {
+    width: 5%;
+    accent-color: $primary;
+  }
 
-	&__input {
-		flex: 1;
-	}
+  &__input {
+    flex: 1;
+  }
 
-	&__content {
-		flex: 1;
-	}
+  &__content {
+    flex: 1;
+  }
 }

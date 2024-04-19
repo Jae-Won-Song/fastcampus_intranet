@@ -1,30 +1,30 @@
 .date-wrap {
-	@include flex;
-	align-items: baseline;
+  @include flex;
+  align-items: baseline;
 }
 
 .date-title {
-	// @include flex(between, center);
-	width: calc(100vw / 2);
+  @include flex(between, center);
+  width: calc(100vw / 2);
 }
 
 .date__wrapper {
-	@include flex(between, baseline);
-	color: $black;
+  @include flex(between, baseline);
+  color: $black;
 
-	div {
-		font-size: 18px;
-		margin-left: 10px;
-		margin-right: 10px;
-		color: $gray;
-	}
+  div {
+    font-size: 18px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: $gray;
+  }
 
-	.date {
-		// @include flex(around, center);
-		color: $black;
-		border: 1px solid $gray;
-	}
-	.date-test {
-		@include flex;
-	}
+  .date {
+    // @include flex(around, center);
+    color: $black;
+    border: 1px solid $gray;
+  }
+  .date-test {
+    @include flex;
+  }
 }
