@@ -8,8 +8,12 @@ import CurrentTime from "../components/CurrentTime";
 import ToggleButton from "../components/ToggleButton";
 import ClockWhite from "../../public/icon_clock_border.svg";
 import ClockBlack from "../../public/icon_clock.svg";
+import { Link } from "react-router-dom";
+import { auth } from "../firebase/config";
 
 function MainPage() {
+	const user = auth.currentUser;
+
 	const date = new Date().toLocaleString("ko-KR", {
 		year: "numeric",
 		month: "2-digit",
@@ -35,7 +39,7 @@ function MainPage() {
 									src="../../public/img_user.png"
 									alt="img_user"
 								/>
-								<span>박패캠</span>
+								<span>{user?.displayName}님</span>
 								<ToggleButton record="입실하기"></ToggleButton>
 							</div>
 							<div className="record">
