@@ -29,7 +29,7 @@ function SideBar() {
           <div
             to="src/components/Notice.jsx"
             className="nav-icon"
-            onClick={() => handleIconClick(260)}
+            onClick={() => handleIconClick(264)}
           >
             <img src="src/assets/images/icon_profile.svg" alt="profile" />
           </div>
@@ -37,19 +37,19 @@ function SideBar() {
           <div className="slide" style={{ top: slidePosition + "px" }}></div>
         </div>
         <div>
-          <div className="nav-icon" onClick={() => handleIconClick(395)}>
+          <div className="nav-icon" onClick={() => handleIconClick(404)}>
             <img src="src/assets/images/icon_edit.svg" alt="vacation" />
           </div>
           <div className="word">휴가관리</div>
         </div>
         <div>
-          <div className="nav-icon" onClick={() => handleIconClick(535)}>
+          <div className="nav-icon" onClick={() => handleIconClick(544)}>
             <img src="src/assets/images/icon_bell.svg" alt="announcement" />
           </div>
           <div className="word">공지사항</div>
         </div>
         <div>
-          <div className="nav-icon" onClick={() => handleIconClick(670)}>
+          <div className="nav-icon" onClick={() => handleIconClick(684)}>
             <Link to="/Reference">
               <img src="src/assets/images/icon_folder.svg" alt="reference" />
             </Link>
