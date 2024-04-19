@@ -38,23 +38,21 @@ function SideBar() {
         </div>
         <div>
           <div className="nav-icon" onClick={() => handleIconClick(404)}>
-            <Link to="/apply-list">
-              <img src="src/assets/images/icon_edit.svg" alt="vacation" />
-            </Link>
+            <img src="src/assets/images/icon_edit.svg" alt="vacation" />
           </div>
           <div className="word">휴가관리</div>
         </div>
         <div>
           <div className="nav-icon" onClick={() => handleIconClick(544)}>
-            <Link to="/Notice">
-              <img src="src/assets/images/icon_bell.svg" alt="announcement" />
-            </Link>
+            <img src="src/assets/images/icon_bell.svg" alt="announcement" />
           </div>
           <div className="word">공지사항</div>
         </div>
         <div>
           <div className="nav-icon" onClick={() => handleIconClick(684)}>
-            <img src="src/assets/images/icon_folder.svg" alt="reference" />
+            <Link to="/Reference">
+              <img src="src/assets/images/icon_folder.svg" alt="reference" />
+            </Link>
           </div>
           <div className="word">자료실</div>
         </div>
