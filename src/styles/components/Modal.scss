@@ -36,9 +36,9 @@
       padding-top: 10px;
       @include flex(between, center);
     }
-  }
-}
 
-p {
-  @include text-style(28, $black, 500);
+    &_p {
+      @include text-style(28, $black, 500);
+    }
+  }
 }

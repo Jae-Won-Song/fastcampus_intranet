@@ -8,8 +8,9 @@ import CurrentTime from "../components/CurrentTime";
 import ToggleButton from "../components/ToggleButton";
 import ClockWhite from "../../public/icon_clock_border.svg";
 import ClockBlack from "../../public/icon_clock.svg";
-import { Link } from "react-router-dom";
 import { auth } from "../firebase/config";
+import RecordInTime from "../components/RecordInTime";
+import RecordOutTime from "../components/RecordOutTime";
 
 function MainPage() {
   const user = auth.currentUser;
@@ -45,14 +46,14 @@ function MainPage() {
                     <img className="clock" src={ClockWhite} alt="ClockWhite" />
                     <span>입실 시간</span>
                   </div>
-                  <div className="record__time">10:00</div>
+                  <RecordInTime />
                 </CheckInOutRecord>
                 <CheckInOutRecord position="bottom">
                   <div className="record__info">
                     <img className="clock" src={ClockBlack} alt="ClockBlack" />
                     <span>퇴실 시간</span>
                   </div>
-                  <div className="record__time">19:00</div>
+                  <RecordOutTime />
                 </CheckInOutRecord>
               </div>
             </BlockBox>
