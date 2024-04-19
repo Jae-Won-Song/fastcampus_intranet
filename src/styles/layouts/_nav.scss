@@ -1,0 +1,24 @@
+.nav {
+	&__user {
+		display: block;
+		margin-bottom: 1.25rem;
+		text-align: right;
+
+		.user-profile {
+			@include inline-flex(end);
+			gap: 0.625rem;
+
+			.img-wrap {
+				width: 3.125rem;
+				height: 3.125rem;
+				border-radius: 50%;
+				overflow: hidden;
+
+				img {
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+	}
+}
