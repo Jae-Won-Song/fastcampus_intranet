@@ -7,6 +7,7 @@
   height: 100vh;
   border-radius: 0px 24px 24px 0px;
   background: $white;
+
   .nav-logo {
     width: 5.9rem;
     height: 5.1rem;
@@ -23,7 +24,7 @@
   }
   .slide {
     position: absolute;
-    width: 7px;
+    width: 6px;
     height: 5rem;
     background-color: $primary;
     left: 195px;
