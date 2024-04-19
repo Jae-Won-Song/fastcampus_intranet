@@ -1,6 +1,4 @@
 import "./App.scss";
-import SideBar from "./components/SideBar";
-import Notice from "./components/Notice";
 import NoticeToy from "./components/NoticeToy";
 import NoticeSatisfaction from "./components/NoticeSatisfaction";
 import NoticeBonus from "./components/NoticeBonus";
@@ -27,7 +25,7 @@ function App() {
 					/>
 					<Route
 						path="/notice"
-						element={<Notice />}
+						element={<NoticePage />}
 					/>
 					<Route
 						path="/notice-toy"
