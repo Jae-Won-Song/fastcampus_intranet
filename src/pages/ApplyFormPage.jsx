@@ -57,7 +57,6 @@ const FormTitle = () => {
 
 	return (
 		<>
-			<SideBar />
 			<div className="wrapper">
 				<div className="form">
 					<div className="__cat">휴가 / 조퇴 / 외출 신청</div>

@@ -53,6 +53,10 @@
 					&:last-child {
 						margin-bottom: 0.875rem;
 					}
+
+					.input {
+						margin-bottom: 1.5rem;
+					}
 				}
 			}
 		}
@@ -69,6 +73,16 @@
 			height: 1px;
 			background-color: $border;
 			margin: 1.25rem 0;
+		}
+
+		.join-info {
+			margin-top: 1rem;
+			text-align: center;
+			.link {
+				@include text-style(16, $primary, 600);
+				margin-left: 0.5rem;
+				text-decoration: underline;
+			}
 		}
 	}
 }
