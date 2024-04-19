@@ -29,6 +29,7 @@
       .input-wrap {
         position: relative;
         .input {
+          margin-bottom: 0;
           border-color: $error;
         }
         &::after {
@@ -64,6 +65,7 @@
             center / contain;
         }
         .input {
+          margin-bottom: 0;
           border-color: $success;
         }
       }
