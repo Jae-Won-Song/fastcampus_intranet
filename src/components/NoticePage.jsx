@@ -18,30 +18,36 @@ function notices() {
             <span className="date">2024.04.05</span>
           </div>
           <div className="notices">
-            <span>이정환 강사님 현직자 특강 만족도 조사 안내</span>
-            <img
-              className="arrow-right"
-              src="src/assets/images/icon_chevron_right.svg"
-              alt="fastcampus"
-            />
+            <Link to="/NoticeSatisfaction">
+              <span>이정환 강사님 현직자 특강 만족도 조사 안내</span>
+              <img
+                className="arrow-right"
+                src="src/assets/images/icon_chevron_right.svg"
+                alt="fastcampus"
+              />
+            </Link>
             <span className="date">2024.04.04</span>
           </div>
           <div className="notices">
-            <span>훈련장려금 신청 지연 안내</span>
-            <img
-              className="arrow-right"
-              src="src/assets/images/icon_chevron_right.svg"
-              alt="fastcampus"
-            />
+            <Link to="/NoticeBonus">
+              <span>훈련장려금 신청 지연 안내</span>
+              <img
+                className="arrow-right"
+                src="src/assets/images/icon_chevron_right.svg"
+                alt="fastcampus"
+              />
+            </Link>
             <span className="date">2024.04.02</span>
           </div>
           <div className="notices">
-            <span>그룹스터디 회고 이벤트 결과 발표</span>
-            <img
-              className="arrow-right"
-              src="src/assets/images/icon_chevron_right.svg"
-              alt="fastcampus"
-            />
+            <Link to="/NoticeEvent">
+              <span>그룹스터디 회고 이벤트 결과 발표</span>
+              <img
+                className="arrow-right"
+                src="src/assets/images/icon_chevron_right.svg"
+                alt="fastcampus"
+              />
+            </Link>
             <span className="date">2024.04.02</span>
           </div>
         </div>
