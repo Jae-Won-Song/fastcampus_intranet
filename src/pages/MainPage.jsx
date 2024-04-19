@@ -15,17 +15,11 @@ function MainPage() {
 		month: "2-digit",
 		day: "2-digit"
 	});
+
 	return (
 		<>
 			<div className="app">
 				<div className="boxes">
-					<div className="my-page">
-						fastcampus님
-						<img
-							src="../../public/icon_user.png"
-							alt="icon_user"
-						/>
-					</div>
 					<div className="boxes__top">
 						{/* 시간 박스 */}
 						<BlockBox size="small">
