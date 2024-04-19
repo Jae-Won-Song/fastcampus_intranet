@@ -5,33 +5,8 @@
 @import "../base/reset";
 @import "../base/fonts";
 
-:root {
-	background-color: #f7f7f7;
-	font-family: "Pretendard";
-}
-
-html {
-	font-size: 16px;
-	height: 100vh;
-}
-
-body {
-	margin: 0;
-}
-
-img {
-	cursor: pointer;
-}
-
-.app {
-	width: 100%;
-	position: relative;
-	display: flex;
-}
-
 .my-page {
 	width: 11%;
-	height: 10%;
 	margin-left: auto;
 	@include flex(between, center);
 	padding-right: 40px;
