@@ -1,4 +1,5 @@
 import Button from "./Button";
+import '../styles/components/Modal.scss';
 
 function Modal({ isOpen, onSubmit, onClose, children }) {
   if (!isOpen) return null;

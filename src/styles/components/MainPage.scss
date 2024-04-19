@@ -6,10 +6,10 @@
 @import "../base/fonts";
 
 .my-page {
-  width: 11%;
-  margin-left: auto;
-  @include flex(between, center);
-  padding-right: 40px;
+	width: 13%;
+	margin-left: auto;
+	@include flex(between, center);
+	padding-right: 40px;
 }
 
 .boxes {
@@ -24,11 +24,11 @@
       @include text-style(42, $black, 500);
     }
 
-    &_time {
-      width: 100%;
-      height: 50%;
-      padding: 55px;
-      @include flex(between, center);
+		&_time {
+			width: 100%;
+			height: 50%;
+			padding: 30px;
+			@include flex(between, center);
 
       .ampm {
         @include text-style(42, $black, 500);
