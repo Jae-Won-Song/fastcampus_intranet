@@ -5,59 +5,58 @@ import { Link } from "react-router-dom";
 import Dropdown from "../components/Dropdown";
 
 const ApplyListPage = () => {
-	const [dataList, setDataList] = useState([]);
-	const [selectedOption, setSelectedOption] = useState(null);
+  const [dataList, setDataList] = useState([]);
+  const [selectedOption, setSelectedOption] = useState(null);
 
-	useEffect(() => {
-		const database = getDatabase();
-		const formsRef = ref(database, "forms");
+  useEffect(() => {
+    const database = getDatabase();
+    const formsRef = ref(database, "forms");
 
-		const fetchData = () => {
-			onValue(formsRef, snapshot => {
-				const formData = snapshot.val();
-				if (formData) {
-					const dataArray = Object.values(formData);
-					setDataList(dataArray);
-				}
-			});
-		};
+    const fetchData = () => {
+      onValue(formsRef, (snapshot) => {
+        const formData = snapshot.val();
+        if (formData) {
+          const dataArray = Object.values(formData);
+          setDataList(dataArray);
+        }
+      });
+    };
 
-		fetchData();
+    fetchData();
 
-		return () => {
-			off(formsRef);
-		};
-	}, []);
+    return () => {
+      off(formsRef);
+    };
+  }, []);
 
-	const handleOptionChange = option => {
-		setSelectedOption(option);
-	};
+  const handleOptionChange = (option) => {
+    setSelectedOption(option);
+  };
 
-	const filteredData = () => {
-		if (!selectedOption || selectedOption === "전체") {
-			return dataList;
-		} else {
-			return dataList.filter(data => data.type === selectedOption);
-		}
-	};
+  const filteredData = () => {
+    if (!selectedOption || selectedOption === "전체") {
+      return dataList;
+    } else {
+      return dataList.filter((data) => data.type === selectedOption);
+    }
+  };
 
-	return (
-		<div className="list-wrapper">
-			<div className="list-title">휴가 / 조퇴 / 외출 신청내역</div>
-			<div className="nav-top">
-				<Dropdown onSelectOption={handleOptionChange} />
-				<Link to="/apply-form">
-					<button className="apply-btn">신청하기</button>
-				</Link>
-			</div>
-			{filteredData().map((data, index) => (
-				<MyList
-					key={index}
-					data={data}
-				/>
-			))}
-		</div>
-	);
+  return (
+    <div className="list-wrapper">
+      <div className="list-title">휴가 / 조퇴 / 외출 신청내역</div>
+      <div className="nav-top">
+        <Dropdown onSelectOption={handleOptionChange} />
+        <Link to="/apply-form">
+          <button className="apply-btn">신청하기</button>
+        </Link>
+      </div>
+      {filteredData()
+        .reverse()
+        .map((data, index) => (
+          <MyList key={index} data={data} />
+        ))}
+    </div>
+  );
 };
 
 export default ApplyListPage;
