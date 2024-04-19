@@ -1,12 +1,10 @@
 import "./App.scss";
-import SideBar from "./components/SideBar";
-import Notice from "./components/Notice";
 import NoticeToy from "./components/NoticeToy";
 import NoticeSatisfaction from "./components/NoticeSatisfaction";
 import NoticeBonus from "./components/NoticeBonus";
 import NoticeEvent from "./components/NoticeEvent";
 import { Routes, Route } from "react-router-dom";
-import NoticePage from "./components/NoticePage"; // 변경된 부분
+import NoticePage from "./components/NoticePage"; 
 import LayoutPage from "./pages/LayoutPage";
 import MainPage from "./pages/MainPage";
 import LoginPage from "./pages/LoginPage";
@@ -27,7 +25,7 @@ function App() {
 					/>
 					<Route
 						path="/notice"
-						element={<Notice />}
+						element={<NoticePage />}
 					/>
 					<Route
 						path="/notice-toy"
