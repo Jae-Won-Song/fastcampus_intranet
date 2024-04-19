@@ -5,37 +5,38 @@ import { useState, useEffect } from "react";
 import { addDoc, collection, doc, updateDoc, deleteDoc, getDocs, QuerySnapshot } from "firebase/firestore";
 import { firestoreDb } from "../../firebase/config";
 
-
 function TodoList() {
-	const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([]);
 
-	useEffect(() => { 
-		getDocs(collection(firestoreDb, 'todolist')).then((querySnapshot) => {
-			const firestoreTodoItemList = [];
-			querySnapshot.forEach((doc) => {
-				firestoreTodoItemList.push({
-					id: doc.id,
-					content: doc.data().content,
-					isDone: doc.data().isDone,
-				})
-			});
-			setTodos(firestoreTodoItemList);
-		});
-	}, []);
+  useEffect(() => {
+    getDocs(collection(firestoreDb, "todolist")).then((querySnapshot) => {
+      const firestoreTodoItemList = [];
+      querySnapshot.forEach((doc) => {
+        firestoreTodoItemList.push({
+          id: doc.id,
+          content: doc.data().content,
+          isDone: doc.data().isDone,
+        });
+      });
+      setTodos(firestoreTodoItemList);
+    });
+  }, []);
 
-	const onCreate = async (content) => {
+  const onCreate = async (content) => {
+    const docRef = await addDoc(collection(firestoreDb, "todolist"), {
+      content: content,
+      isDone: false,
+    });
 
-		const docRef = await addDoc(collection(firestoreDb, 'todolist'), {
-			content: content,
-			isDone: false,
-		});
-
-		setTodos([...todos, {
-			id: docRef.id,
-			content: content,
-			isDone: false
-		}]);
-	};
+    setTodos([
+      ...todos,
+      {
+        id: docRef.id,
+        content: content,
+        isDone: false,
+      },
+    ]);
+  };
 
   const onUpdate = (targetId, newContent) => {
     setTodos(
@@ -45,29 +46,29 @@ function TodoList() {
     );
   };
 
-	const onDelete = async (targetId) => {
-		const docRef = doc(firestoreDb, 'todolist', targetId);
-		await deleteDoc(docRef)
+  const onDelete = async (targetId) => {
+    const docRef = doc(firestoreDb, "todolist", targetId);
+    await deleteDoc(docRef);
 
-		setTodos(todos.filter(todo => todo.id !== targetId));
-	};
+    setTodos(todos.filter((todo) => todo.id !== targetId));
+  };
 
-	const onDone = async (targetId) => {
-		const docRef = doc(firestoreDb, 'todolist', targetId);
+  const onDone = async (targetId) => {
+    const docRef = doc(firestoreDb, "todolist", targetId);
 
-		const targetTodo = todos.find(todo => todo.id === targetId);
-		if (targetTodo) {
-			await updateDoc(docRef, {
-				isDone: !targetTodo.isDone
-			});
-		}
+    const targetTodo = todos.find((todo) => todo.id === targetId);
+    if (targetTodo) {
+      await updateDoc(docRef, {
+        isDone: !targetTodo.isDone,
+      });
+    }
 
-		setTodos(
-			todos.map(todo =>
-				todo.id === targetId ? { ...todo, isDone: !todo.isDone } : todo
-			)
-		);
-	};
+    setTodos(
+      todos.map((todo) =>
+        todo.id === targetId ? { ...todo, isDone: !todo.isDone } : todo,
+      ),
+    );
+  };
 
   return (
     <div>
