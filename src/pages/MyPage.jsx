@@ -1,41 +1,61 @@
 import React from "react";
 import Button from "../components/Button";
-import "./MyPage.scss";
+import Modal from 'react-modal';
 
 const MyPage = () => {
-	const modal = document.querySelector(".confirm-modal");
+	// const modal = document.querySelector(".confirm-modal");
 
 	const handleClick = () => {
-		modal.style.display = "block";
+		// modal.style.display = "block";
 	};
 
 	const handleClickOff = () => {
-		modal.style.display = "none";
+		// modal.style.display = "none";
 	};
+	const customStyles = {
+		content: {
+			width: '35rem',
+			height: "20rem",
+			top: '50%',
+			left: '50%',
+			right: 'auto',
+			bottom: 'auto',
+			marginRight: '-50%',
+			transform: 'translate(-50%, -50%)',
+		},
+	};
+
+  let subtitle;
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    subtitle.style.color = '#f00';
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
 
 	return (
 		<div>
 			<div className="main-wrapper">
-				<div className="top-bar">
-					<div className="badge-wrapper">
-						<span>OOO님</span>
-						<img
-							src="src/assets/images/Group 454.svg"
-							alt="이미지"
-						/>
-					</div>
-				</div>
 				<div className="main-content">
 					<div className="left-page">
 						<div className="left-page__image">
 							<div className="image-wrapper">
 								<div>
 									<img
-										src="src/assets/images/Group 454.svg"
+										src="src/assets/images/icon_user.svg"
 										alt="이미지"
 									/>
 									<br />
-									<button>이미지 수정</button>
+									<Button color="grayBorder">이미지 수정</Button>
 								</div>
 							</div>
 						</div>
@@ -81,7 +101,7 @@ const MyPage = () => {
 							<div className="modi-btn-wrapper">
 								<Button
 									className="profile-modi-btn"
-									onClick={handleClick}>
+									onClick={openModal}>
 									프로필 수정
 								</Button>
 							</div>
@@ -193,6 +213,26 @@ const MyPage = () => {
 					</div>
 				</div>
 			</div>
+
+      <Modal
+        isOpen={modalIsOpen}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        style={customStyles}
+      >
+				<h2>프로필을 수정하시겠습니까?</h2>
+        <Button onClick={closeModal}>네</Button>
+				<Button onClick={closeModal}>아니오</Button>
+
+        <form>
+          <input />
+          <button>tab navigation</button>
+          <button>stays</button>
+          <button>inside</button>
+          <button>the modal</button>
+        </form>
+      </Modal>
+			
 		</div>
 	);
 };
