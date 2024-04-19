@@ -3,7 +3,6 @@ import { getDatabase, ref, onValue, off } from "firebase/database";
 import MyList from "../components/MyList";
 import { Link } from "react-router-dom";
 
-
 const ApplyListPage = () => {
 	const [dataList, setDataList] = useState([]);
 
