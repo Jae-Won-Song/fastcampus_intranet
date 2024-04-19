@@ -40,7 +40,7 @@ function JoinPage() {
         email,
         password,
         userName,
-        tel
+        tel,
       );
 
       set(ref(db, `users/${credentials.user.uid}`), {
