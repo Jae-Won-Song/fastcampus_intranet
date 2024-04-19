@@ -19,7 +19,7 @@ function App() {
 			<Routes>
 				<Route element={<LayoutPage />}>
 					<Route
-						path="/"
+						path="/main"
 						element={<MainPage />}
 					/>
 					<Route

@@ -11,6 +11,7 @@
 		}
 		.title {
 			@include text-style(36, $black, 800);
+			margin: 0;
 		}
 		.img-wrap {
 			display: block;

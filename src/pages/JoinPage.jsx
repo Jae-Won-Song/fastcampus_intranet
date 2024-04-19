@@ -1,15 +1,16 @@
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import Button from "../components/Button";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { auth } from "../firebase/config";
+// import { useNavigate } from "react-router-dom";
+import { auth, db } from "../firebase/config";
+import { ref, set } from "firebase/database";
 import { FirebaseError } from "firebase/app";
 
 function JoinPage() {
-	const navigate = useNavigate();
+	// const navigate = useNavigate();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const [name, setName] = useState("");
+	const [userName, setUserName] = useState("");
 	const [tel, setTel] = useState("");
 	const [error, setError] = useState("");
 
@@ -21,8 +22,8 @@ function JoinPage() {
 			setEmail(value);
 		} else if (name === "password") {
 			setPassword(value);
-		} else if (name === "name") {
-			setName(value);
+		} else if (name === "userName") {
+			setUserName(value);
 		} else if (name === "tel") {
 			setTel(value);
 		}
@@ -30,20 +31,33 @@ function JoinPage() {
 
 	const handleSubmit = async e => {
 		e.preventDefault();
-		if (email === "" || password === "" || name === "" || tel === "") return;
+		if (!email || !password || !userName || !tel) {
+			alert("입력해주세요.");
+		}
 		try {
 			const credentials = await createUserWithEmailAndPassword(
 				auth,
 				email,
-				password
+				password,
+				userName,
+				tel
 			);
-			await updateProfile(credentials.user, {
-				displayName: name
+
+			set(ref(db, `users/${credentials.user.uid}`), {
+				name: credentials.user.displayName,
+				image: credentials.user.photoURL
 			});
-			navigate("/main");
-		} catch (e) {
-			if (e instanceof FirebaseError) {
-				setError(e.message);
+
+			await updateProfile(auth.currentUser, {
+				displayName: userName,
+				photoURL: "/src/assets/images/icon_user.svg",
+				phoneNumber: tel
+			});
+			console.log(auth.currentUser);
+			// navigate("/main");
+		} catch (error) {
+			if (error instanceof FirebaseError) {
+				setError(error.message);
 			}
 		}
 	};
@@ -130,20 +144,20 @@ function JoinPage() {
 					</div>
 					<div className="field">
 						<label
-							htmlFor="name"
+							htmlFor="userName"
 							className="label">
 							이름
 						</label>
 						<div className="input-wrap">
 							<input
 								type="text"
-								name="name"
-								id="name"
+								name="userName"
+								id="userName"
 								placeholder="이름을 입력하세요"
 								className="input"
 								required
 								maxLength="10"
-								value={name}
+								value={userName}
 								onChange={handleChange}
 							/>
 						</div>
