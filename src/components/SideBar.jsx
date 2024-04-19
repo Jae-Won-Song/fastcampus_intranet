@@ -1,12 +1,21 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Button from "../components/Button";
+import { auth } from "../firebase/config";
 
 function SideBar() {
+	const navigate = useNavigate();
 	const [slidePosition, setSlidePosition] = useState(264); // 초기 슬라이드 위치
 
 	const handleIconClick = topPosition => {
 		setSlidePosition(topPosition); // 클릭된 아이콘의 top 위치로 슬라이드 위치 변경
 	};
+
+	const handleLogout = () => {
+		auth.signOut();
+		navigate("/login");
+	};
+
 	return (
 		<>
 			<div className="nav">
@@ -66,7 +75,11 @@ function SideBar() {
 					</div>
 					<div className="word">자료실</div>
 				</div>
-				<div className="nav-logout-btn">로그아웃</div>
+				<Button
+					type="button"
+					onClick={handleLogout}>
+					로그아웃
+				</Button>
 			</div>
 		</>
 	);

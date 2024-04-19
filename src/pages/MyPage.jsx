@@ -16,15 +16,6 @@ const MyPage = () => {
 	return (
 		<div>
 			<div className="main-wrapper">
-				<div className="top-bar">
-					<div className="badge-wrapper">
-						<span>OOO님</span>
-						<img
-							src="src/assets/images/Group 454.svg"
-							alt="이미지"
-						/>
-					</div>
-				</div>
 				<div className="main-content">
 					<div className="left-page">
 						<div className="left-page__image">
@@ -35,7 +26,7 @@ const MyPage = () => {
 										alt="이미지"
 									/>
 									<br />
-									<button>이미지 수정</button>
+									<Button color="grayBorder">이미지 수정</Button>
 								</div>
 							</div>
 						</div>

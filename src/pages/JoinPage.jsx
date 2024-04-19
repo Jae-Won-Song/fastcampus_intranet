@@ -172,7 +172,7 @@ function JoinPage() {
 						type="submit"
 						size="entire"
 						onClick={handleSubmit}>
-						회원가입
+						완료
 					</Button>
 				</form>
 				{error !== "" ? <p className="error-message">{error}</p> : null}
