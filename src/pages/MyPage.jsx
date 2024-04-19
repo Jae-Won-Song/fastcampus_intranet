@@ -1,46 +1,43 @@
 import React from "react";
 import Button from "../components/Button";
-import Modal from 'react-modal';
+import Modal from "react-modal";
 
 const MyPage = () => {
-	// const modal = document.querySelector(".confirm-modal");
 
-	const handleClick = () => {
-		// modal.style.display = "block";
-	};
-
-	const handleClickOff = () => {
-		// modal.style.display = "none";
-	};
 	const customStyles = {
 		content: {
-			width: '35rem',
+			width: "35rem",
 			height: "20rem",
-			top: '50%',
-			left: '50%',
-			right: 'auto',
-			bottom: 'auto',
-			marginRight: '-50%',
-			transform: 'translate(-50%, -50%)',
-		},
+			top: "50%",
+			left: "50%",
+			right: "auto",
+			bottom: "auto",
+			marginRight: "-50%",
+			transform: "translate(-50%, -50%)"
+		}
 	};
 
-  let subtitle;
-  const [modalIsOpen, setIsOpen] = React.useState(false);
+	let subtitle;
+	const [modalIsOpen, setIsOpen] = React.useState(false);
 
-  function openModal() {
-    setIsOpen(true);
-  }
+	function openModal() {
+		setIsOpen(true);
+	}
 
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = '#f00';
-  }
+	function afterOpenModal() {
+		// references are now sync'd and can be accessed.
+		subtitle.style.color = "#f00";
+	}
 
-  function closeModal() {
-    setIsOpen(false);
-  }
+	function closeModal() {
+		setIsOpen(false);
+	}
 
+  const fileInput = React.useRef(null);
+  
+  const handleButtonClick = e => {
+    fileInput.current.click();
+  };
 
 	return (
 		<div>
@@ -55,7 +52,10 @@ const MyPage = () => {
 										alt="이미지"
 									/>
 									<br />
-									<Button color="grayBorder">이미지 수정</Button>
+
+									<Button onClick={handleButtonClick} color="grayBorder">파일 업로드</Button>
+									<input type="file" ref={fileInput} style={{ display: "none" }} />
+
 								</div>
 							</div>
 						</div>
@@ -196,43 +196,23 @@ const MyPage = () => {
 					</div>
 				</div>
 			</div>
-			<div className="confirm-modal">
-				<div className="modal__body">
-					<div className="confirm-text">프로필을 수정하시겠습니까?</div>
-					<div className="modal__btn-wrapper">
-						<Button
-							className="confirm-btn"
-							onClick={handleClickOff}>
-							확인
-						</Button>
-						<Button
-							className="confirm-btn"
-							onClick={handleClickOff}>
-							취소
-						</Button>
+
+
+			<Modal
+				isOpen={modalIsOpen}
+				onAfterOpen={afterOpenModal}
+				onRequestClose={closeModal}
+				style={customStyles}>
+					<div className="confirm-modal">
+						<div className="modal__body">
+							<div className="confirm-text">프로필을 수정하시겠습니까?</div>
+							<div className="modal__btn-wrapper">
+								<Button onClick={closeModal}>수정</Button>
+								<Button onClick={closeModal}>취소</Button>
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
-
-      <Modal
-        isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        style={customStyles}
-      >
-				<h2>프로필을 수정하시겠습니까?</h2>
-        <Button onClick={closeModal}>네</Button>
-				<Button onClick={closeModal}>아니오</Button>
-
-        <form>
-          <input />
-          <button>tab navigation</button>
-          <button>stays</button>
-          <button>inside</button>
-          <button>the modal</button>
-        </form>
-      </Modal>
-			
+			</Modal>
 		</div>
 	);
 };
