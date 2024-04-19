@@ -29,7 +29,6 @@ const ApplyListPage = () => {
 
 	return (
 		<div className="list-wrapper">
-			<SideBar />
 			<div className="list-title">휴가 / 조퇴 / 외출 신청내역</div>
 			<div className="nav-top">
 				<Link to="applyForm">
