@@ -1,4 +1,3 @@
-import "./App.scss";
 import NoticeToy from "./components/NoticeToy";
 import NoticeSatisfaction from "./components/NoticeSatisfaction";
 import NoticeBonus from "./components/NoticeBonus";
@@ -22,10 +21,10 @@ function App() {
         <Route element={<LayoutPage />}>
           <Route path="/main" element={<MainPage />} />
           <Route path="/notice" element={<NoticePage />} />
-          <Route path="/notice-toy" element={<NoticeToy />} />
-          <Route path="/notice-satisfaction" element={<NoticeSatisfaction />} />
-          <Route path="/notice-bonus" element={<NoticeBonus />} />
-          <Route path="/notice-event" element={<NoticeEvent />} />
+          <Route path="/NoticeToy" element={<NoticeToy />} />
+          <Route path="/NoticeSatisfaction" element={<NoticeSatisfaction />} />
+          <Route path="/NoticeBonus" element={<NoticeBonus />} />
+          <Route path="/NoticeEvent" element={<NoticeEvent />} />
           <Route path="/apply-form" element={<ApplyFormPage />} />
           <Route path="/apply-list" element={<ApplyListPage />} />
           <Route path="/mypage" element={<MyPage />} />

@@ -76,7 +76,7 @@ const FormTitle = () => {
         </div>
         <FormDate onDateChange={handleDateChange} />
         <div className="form-btn">
-          <Link to="/">
+          <Link to="/main">
             <button className="apply-btn" onClick={handleSubmit}>
               제출하기
             </button>
