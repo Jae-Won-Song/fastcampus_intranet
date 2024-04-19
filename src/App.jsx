@@ -1,3 +1,4 @@
+
 import { Routes, Route } from "react-router-dom";
 import NoticePage from "./components/NoticePage";
 import NoticeToy from "./components/NoticeToy";
@@ -16,23 +17,10 @@ import Reference from "./components/Reference";
 import MyPage from "./pages/MyPage";
 
 function App() {
-  return (
-    <>
-      <SideBar />
-      <Routes>
-        <Route element={<LayoutPage />}>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/notice" element={<NoticePage />} />
-          <Route path="/notice-toy" element={<NoticeToy />} />
-          <Route path="/notice-satisfaction" element={<NoticeSatisfaction />} />
-          <Route path="/notice-bonus" element={<NoticeBonus />} />
-          <Route path="/notice-event" element={<NoticeEvent />} />
-          <Route path="/apply-form" element={<ApplyFormPage />} />
-          <Route path="/apply-list" element={<ApplyListPage />} />
-          <Route path="/mypage" element={<MyPage />} />
-          <Route path="/components" element={<ComponentsPage />} />
-        </Route>
-
+	return (
+		<>
+			<Routes>
+				<Route element={<LayoutPage />}>
         <Route path="" element={<SideBar />} />
         <Route path="NoticePage" element={<NoticePage />} />
         <Route path="/NoticeToy" element={<NoticeToy />} />
