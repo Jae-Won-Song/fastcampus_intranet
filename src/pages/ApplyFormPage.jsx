@@ -3,6 +3,10 @@ import { getDatabase, ref, push } from "firebase/database";
 import firebaseApp from "../firebase/config";
 import { Link, useNavigate } from "react-router-dom";
 
+import RadioForm from "../components/RadioForm";
+import Article from "../components/Article";
+import FormDate from "../components/FormDate";
+
 const FormTitle = () => {
 	const navigate = useNavigate(); // useHistory 훅 사용
 

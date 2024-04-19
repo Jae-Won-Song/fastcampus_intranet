@@ -1,13 +1,11 @@
 import "../styles/main.scss";
 import "../styles/components/MainPage.scss";
-
 import BlockBox from "../components/BlockBox";
 import CheckInOutRecord from "../components/CheckInOutRecord";
 import TodoList from "../components/TodoList/TodoList";
-import Notice from "../components/NoticePage";
+import Notice from "../components/Notice";
 import CurrentTime from "../components/CurrentTime";
 import ToggleButton from "../components/ToggleButton";
-
 import ClockWhite from "../../public/icon_clock_border.svg";
 import ClockBlack from "../../public/icon_clock.svg";
 
@@ -17,12 +15,9 @@ function MainPage() {
 		month: "2-digit",
 		day: "2-digit"
 	});
-
 	return (
 		<>
 			<div className="app">
-				{/* 사이드바 */}
-
 				<div className="boxes">
 					<div className="my-page">
 						fastcampus님
@@ -31,7 +26,6 @@ function MainPage() {
 							alt="icon_user"
 						/>
 					</div>
-
 					<div className="boxes__top">
 						{/* 시간 박스 */}
 						<BlockBox size="small">
@@ -76,7 +70,6 @@ function MainPage() {
 							</div>
 						</BlockBox>
 					</div>
-
 					<div className="boxes__bottom">
 						{/* 공지사항 박스 */}
 						<BlockBox size="medium">
@@ -98,7 +91,6 @@ function MainPage() {
 								title="그룹스터디 회고 이벤트 결과 발표"
 							/>
 						</BlockBox>
-
 						{/* 투두리스트 박스 */}
 						<BlockBox size="medium">
 							<TodoList />
@@ -109,5 +101,4 @@ function MainPage() {
 		</>
 	);
 }
-
 export default MainPage;

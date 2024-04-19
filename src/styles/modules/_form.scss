@@ -1,17 +1,14 @@
 .form {
 	.field {
 		margin-bottom: 1.875rem;
-
 		&:last-child {
 			margin-bottom: 0;
 		}
-
 		.label {
 			display: block;
 			margin-bottom: 0.625rem;
 			font-weight: 500;
 		}
-
 		.input {
 			@include text-style(16, $black, 500);
 			display: block;
@@ -21,24 +18,19 @@
 			border-radius: 6px;
 			border: 1px solid $border;
 			background-color: $white;
-
 			&::placeholder {
 				@include text-style(16, $gray, 500);
 			}
-
 			&:focus {
 				border-color: $darkgray;
 			}
 		}
-
 		&.error {
 			.input-wrap {
 				position: relative;
-
 				.input {
 					border-color: $error;
 				}
-
 				&::after {
 					content: "";
 					position: absolute;
@@ -51,18 +43,15 @@
 						contain;
 				}
 			}
-
 			.error-message {
 				@include text-style(14, $error, 400);
 				display: block;
 				margin-top: 0.4rem;
 			}
 		}
-
 		&.success {
 			.input-wrap {
 				position: relative;
-
 				&::after {
 					content: "";
 					position: absolute;
@@ -74,7 +63,6 @@
 					background: url("/src/assets/images/icon_success.svg") no-repeat
 						center / contain;
 				}
-
 				.input {
 					border-color: $success;
 				}
