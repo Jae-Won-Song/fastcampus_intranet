@@ -1,8 +1,19 @@
 import React from "react";
 import Button from "../components/Button";
 import Modal from "react-modal";
+import { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { auth } from "../firebase/config";
 
 const MyPage = () => {
+
+	const [user, setUser] = useState(null);
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setUser(user);
+    });
+    return () => unsubscribe();
+  }, []);
 
 	const customStyles = {
 		content: {
@@ -39,6 +50,17 @@ const MyPage = () => {
     fileInput.current.click();
   };
 
+  const [imgFile, setImgFile] = useState("");
+  // 이미지 업로드 input의 onChange
+  const saveImgFile = () => {
+    const file = fileInput.current.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      setImgFile(reader.result);
+    };
+  };
+	
 	return (
 		<div>
 			<div className="main-wrapper">
@@ -48,14 +70,12 @@ const MyPage = () => {
 							<div className="image-wrapper">
 								<div>
 									<img
-										src="src/assets/images/icon_user.svg"
-										alt="이미지"
+									src={imgFile ? imgFile :"src/assets/images/icon_user.svg"}
+									alt="프로필 이미지"
 									/>
 									<br />
-
 									<Button onClick={handleButtonClick} color="grayBorder">파일 업로드</Button>
-									<input type="file" ref={fileInput} style={{ display: "none" }} />
-
+									<input type="file" onChange={saveImgFile} ref={fileInput} style={{ display: "none" }} />
 								</div>
 							</div>
 						</div>
@@ -63,12 +83,16 @@ const MyPage = () => {
 							<div className="data-wrapper">
 								<div className="email-content">
 									이메일(아이디)
+
+ 									{/* <h1>User 정보</h1>
+     							<pre>{JSON.stringify(user, null, 2)}</pre> */}
+
 									<br />
 									<input
 										type="text"
 										name="email"
 										id="email"
-										placeholder="이메일을 입력하세요"
+										placeholder={user?.email}
 										className="input"
 									/>
 								</div>
@@ -79,7 +103,7 @@ const MyPage = () => {
 										type="text"
 										name="name"
 										id="name"
-										placeholder="이름을 입력하세요"
+										placeholder={user?.displayName}
 										className="input"
 									/>
 								</div>
@@ -90,7 +114,7 @@ const MyPage = () => {
 										type="text"
 										name="phone-num"
 										id="phone-num"
-										placeholder="전화번호를 입력하세요"
+										placeholder={user?.phoneNumber}
 										className="input"
 									/>
 								</div>
@@ -156,7 +180,11 @@ const MyPage = () => {
 									</div>
 									<div className="status--btn">
 										<span>신청 완료</span>
-										<Button>휴가 신청하기</Button>
+										<Button>
+											<Link to="/apply-list">
+												휴가 신청하기
+											</Link>
+										</Button>
 									</div>
 								</div>
 							</div>
