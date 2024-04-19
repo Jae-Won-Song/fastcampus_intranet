@@ -1,25 +1,37 @@
 .main-wrapper {
-	width: 1720px;
-	height: 100%;
+  width: 1720px;
+  height: 100%;
 }
 .top-bar {
-	width: 1720px;
-	height: 120px;
-	background-color: $background;
-	position: relative;
+  width: 1720px;
+  height: 120px;
+  background-color: $background;
+  position: relative;
 }
 .badge-wrapper {
+<<<<<<< HEAD:src/styles/components/_mypage.scss
 	width: 11.25rem;
 	right: 0;
 	top: 1.875rem;
 	position: absolute;
 	@include flex;
+=======
+  // width: 180px;
+  // right: 0;
+  // top: 30px;
+  width: 11.25rem;
+  right: 0;
+  top: 1.875rem;
+  position: absolute;
+  @include flex;
+>>>>>>> 4b4992384b4872c4520ccecd1837fdb1c99e76e5:src/pages/MyPage.scss
 }
 .badge-wrapper img {
-	width: 50px;
-	margin: 0 30px;
+  width: 50px;
+  margin: 0 30px;
 }
 .main-content {
+<<<<<<< HEAD:src/styles/components/_mypage.scss
 	width: 107.5rem;
 	height: 56.5rem;
 	display: flex;
@@ -30,30 +42,64 @@
 	height: 54.625rem;
 	margin: 0 auto;
 	background-color: $white;
+=======
+  // width: 1720px;
+  // height: 904px;
+  width: 107.5rem;
+  height: 56.5rem;
+  display: flex;
+  background-color: $background;
+}
+.left-page {
+  // width: 800px;
+  // height: 874px;
+  width: 50rem;
+  height: 54.625rem;
+  margin: 0 auto;
+  background-color: $white;
+>>>>>>> 4b4992384b4872c4520ccecd1837fdb1c99e76e5:src/pages/MyPage.scss
 }
 .image-wrapper {
-	width: 44.43rem;
-	height: 17rem;
-	padding: 60px 0 0;
-	margin: 0 auto;
-	@include flex;
+  width: 44.43rem;
+  height: 17rem;
+  padding: 60px 0 0;
+  margin: 0 auto;
+  @include flex;
 }
 .image-wrapper img {
+<<<<<<< HEAD:src/styles/components/_mypage.scss
 	margin: 10px 0;
 }
 .data-wrapper {
 	width: 44.43rem;
 	height: 20.75rem;
 	margin: 20px auto 90px;
+=======
+  width: 130px;
+  margin: 10px 0;
+  color: $border;
+}
+.image-wrapper button {
+  position: relative;
+  left: 9px;
+}
+.data-wrapper {
+  // width: 711px;
+  // height: 332px;
+  width: 44.43rem;
+  height: 20.75rem;
+  margin: 20px auto 90px;
+>>>>>>> 4b4992384b4872c4520ccecd1837fdb1c99e76e5:src/pages/MyPage.scss
 }
 .data-wrapper .input {
-	width: 95%;
-	height: 3.125rem;
-	padding: 0 1rem;
-	border-style: solid;
-	border-width: 1px;
+  width: 95%;
+  height: 3.125rem;
+  padding: 0 1rem;
+  border-style: solid;
+  border-width: 1px;
 }
 .data-wrapper .email-content {
+<<<<<<< HEAD:src/styles/components/_mypage.scss
 	padding: 0.8rem 0;
 	line-height: 2.5rem;
 }
@@ -64,13 +110,29 @@
 .data-wrapper .phone-num-content {
 	padding: 0.8rem 0;
 	line-height: 2.5rem;
+=======
+  // padding: 24px 0;
+  padding: 0.8rem 0;
+  line-height: 2.5rem;
+}
+.data-wrapper .name-content {
+  // padding: 24px 0;
+  padding: 0.8rem 0;
+  line-height: 2.5rem;
+}
+.data-wrapper .phone-num-content {
+  // padding: 24px 0;
+  padding: 0.8rem 0;
+  line-height: 2.5rem;
+>>>>>>> 4b4992384b4872c4520ccecd1837fdb1c99e76e5:src/pages/MyPage.scss
 }
 .modi-btn-wrapper {
-	width: 44.43rem;
-	height: 5rem;
-	margin: 130px auto;
-	@include flex;
+  width: 44.43rem;
+  height: 5rem;
+  margin: 130px auto;
+  @include flex;
 }
+<<<<<<< HEAD:src/styles/components/_mypage.scss
 .modi-btn-wrapper Button {
 	@include flex;
 	@include text-style(18, $white, 600);
@@ -90,26 +152,50 @@
 	height: 38.75rem;
 	margin: 0 auto;
 	padding: 25px 0;
+=======
+.modi-btn {
+  background-color: $primary;
+  @include text-style(18);
+  color: $white;
+}
+
+.right-page {
+  // width: 800px;
+  // height: 874px;
+  width: 50rem;
+  height: 54.625rem;
+  background-color: $white;
+  margin: 0 auto;
+}
+.right-page-top__data {
+  // width: 711px;
+  // height: 620px;
+  width: 44.43rem;
+  height: 38.75rem;
+  margin: 0 auto;
+  padding: 25px 0;
+>>>>>>> 4b4992384b4872c4520ccecd1837fdb1c99e76e5:src/pages/MyPage.scss
 }
 .right-page-top__data img {
-	width: 22px;
-	margin: 0 10px 0 0;
+  width: 22px;
+  margin: 0 10px 0 0;
 }
 .status-data-wrapper {
-	padding: 0 0 5px;
-	margin: 70px 0;
-	border-style: solid;
-	border-width: 0 0 1px;
+  padding: 0 0 5px;
+  margin: 70px 0;
+  border-style: solid;
+  border-width: 0 0 1px;
 }
 .text-data {
-	height: 35px;
+  height: 35px;
 }
 .status--btn {
-	display: flex;
+  display: flex;
 }
 .status--btn span {
-	margin: 15px 0 0 0;
+  margin: 15px 0 0 0;
 }
+<<<<<<< HEAD:src/styles/components/_mypage.scss
 .status--btn Button {
 	@include flex;
 	@include text-style(18, $white, 600);
@@ -126,22 +212,45 @@
 	width: 44.43rem;
 	height: 15.875rem;
 	margin: 0 auto;
+=======
+.vacation-status button {
+  position: relative;
+  right: -31.25rem;
+}
+.right-page-bottom__data {
+  // width: 711px;
+  // height: 254px;
+  width: 44.43rem;
+  height: 15.875rem;
+  margin: 0 auto;
+>>>>>>> 4b4992384b4872c4520ccecd1837fdb1c99e76e5:src/pages/MyPage.scss
 }
 .right-page-bottom__data img {
-	width: 22px;
-	margin: 0 10px 0 0;
+  width: 22px;
+  margin: 0 10px 0 0;
 }
 .status-num {
+<<<<<<< HEAD:src/styles/components/_mypage.scss
 	width: 31.25rem;
 	height: 5.625rem;
 	margin: 20px auto;
 	@include flex;
 	justify-content: space-between;
+=======
+  // width: 500px;
+  // height: 90px;
+  width: 31.25rem;
+  height: 5.625rem;
+  margin: 20px auto;
+  @include flex;
+  justify-content: space-between;
+>>>>>>> 4b4992384b4872c4520ccecd1837fdb1c99e76e5:src/pages/MyPage.scss
 }
 .num-wrapper span {
-	@include flex;
+  @include flex;
 }
 .circle {
+<<<<<<< HEAD:src/styles/components/_mypage.scss
 	width: 3.75rem;
 	height: 3.75rem;
 	border: 1.875rem solid $border;
@@ -152,9 +261,44 @@
 .confirm-modal {
 	width: 100%;
 	height: 100%;
+=======
+  // width: 60px;
+  // height: 60px;
+  // border: 30px solid $border;
+  width: 3.75rem;
+  height: 3.75rem;
+  border: 1.875rem solid $border;
+  border-radius: 50%;
+  @include flex;
+}
+
+.confirm-modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.modal__body {
+  width: 30%;
+  height: 30%;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  @include flex;
+  flex-direction: column;
+  border-radius: 8px;
+  z-index: 99;
+  background-color: aliceblue;
+>>>>>>> 4b4992384b4872c4520ccecd1837fdb1c99e76e5:src/pages/MyPage.scss
 }
 
 .confirm-text {
+<<<<<<< HEAD:src/styles/components/_mypage.scss
 	width: 100%;
 	height: 200px;
 	@include flex;
@@ -173,4 +317,11 @@
 	background-color: $primary;
 	border-radius: 6px;
 	padding: 10px 30px;
+=======
+  padding: 50px;
+}
+.modal__btn-wrapper {
+  @include flex;
+  justify-content: space-between;
+>>>>>>> 4b4992384b4872c4520ccecd1837fdb1c99e76e5:src/pages/MyPage.scss
 }
