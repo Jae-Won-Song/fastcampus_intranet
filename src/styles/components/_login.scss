@@ -1,10 +1,7 @@
 .login {
 	@include flex(center, between);
 	flex-basis: 0;
-<<<<<<< HEAD
 	background-color: $white;
-=======
->>>>>>> master
 	overflow: hidden;
 
 	&__intro {

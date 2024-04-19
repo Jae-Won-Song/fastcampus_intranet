@@ -6,14 +6,9 @@ import { Link, useNavigate } from "react-router-dom";
 import RadioForm from "../components/RadioForm";
 import Article from "../components/Article";
 import FormDate from "../components/FormDate";
-import SideBar from "../components/SideBar";
-
-import "../styles/components/_apply.scss";
-import "../styles/components/_article.scss";
-import "../styles/components/_button.scss";
 
 const FormTitle = () => {
-	const navigate = useNavigate(); // useHistory 훅 사용
+	const navigate = useNavigate();
 
 	const [formData, setFormData] = useState({
 		title: "",
@@ -31,8 +26,7 @@ const FormTitle = () => {
 			.then(() => {
 				console.log("폼 제출 완료");
 				alert("제출이 완료되었습니다.");
-				// 제출 후 ApplyList 페이지로 이동
-				navigate("/ApplyListPage");
+				navigate("/");
 			})
 			.catch(error => {
 				console.error("Error saving data: ", error);
@@ -62,7 +56,6 @@ const FormTitle = () => {
 
 	return (
 		<>
-			<SideBar />
 			<div className="wrapper">
 				<div className="form">
 					<div className="__cat">휴가 / 조퇴 / 외출 신청</div>
@@ -83,7 +76,7 @@ const FormTitle = () => {
 				</div>
 				<FormDate onDateChange={handleDateChange} />
 				<div className="form-btn">
-					<Link to="/ApplyListPage">
+					<Link to="/">
 						<button
 							className="apply-btn"
 							onClick={handleSubmit}>

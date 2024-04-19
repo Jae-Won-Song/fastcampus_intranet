@@ -1,7 +1,7 @@
-import { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import arrowDown from "../assets/images/icon_chevron_down.svg";
 
-export default function Dropdown() {
+const Dropdown = ({ onSelectOption }) => {
 	const textOptions = ["전체", "휴가", "조퇴", "외출"];
 
 	const [isOpen, setIsOpen] = useState(false);
@@ -14,8 +14,22 @@ export default function Dropdown() {
 
 	const handleOptionClick = option => {
 		setSelectedOption(option);
+		onSelectOption(option);
 		setIsOpen(false);
 	};
+
+	const handleClickOutside = event => {
+		if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+			setIsOpen(false);
+		}
+	};
+
+	useEffect(() => {
+		document.addEventListener("click", handleClickOutside);
+		return () => {
+			document.removeEventListener("click", handleClickOutside);
+		};
+	}, []);
 
 	return (
 		<div
@@ -44,4 +58,6 @@ export default function Dropdown() {
 			)}
 		</div>
 	);
-}
+};
+
+export default Dropdown;

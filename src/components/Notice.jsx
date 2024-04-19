@@ -1,6 +1,5 @@
 import "../styles/components/Notice.scss";
 import ArrowRight from "../../public/icon_arrow_right.svg";
-
 function Notice(props) {
 	return (
 		<div className="notice-grid">
@@ -13,5 +12,4 @@ function Notice(props) {
 		</div>
 	);
 }
-
 export default Notice;

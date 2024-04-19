@@ -1,10 +1,8 @@
 import Badge from "./Badge";
 
-import "../styles/components/_myList.scss";
-
 const MyList = ({ data }) => {
 	if (!data) {
-		return null; // 데이터가 없을 때 렌더링 X
+		return null;
 	}
 
 	const { title, type, reason, startDate, endDate } = data;

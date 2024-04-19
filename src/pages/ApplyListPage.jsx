@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { getDatabase, ref, onValue, off } from "firebase/database";
 import MyList from "../components/MyList";
-import SideBar from "../components/SideBar";
 import { Link } from "react-router-dom";
-
-import "../styles/components/_button.scss";
-import "../styles/components/_applylist.scss";
+import Dropdown from "../components/Dropdown";
 
 const ApplyListPage = () => {
 	const [dataList, setDataList] = useState([]);
+	const [selectedOption, setSelectedOption] = useState(null);
 
 	useEffect(() => {
 		const database = getDatabase();
@@ -31,16 +29,28 @@ const ApplyListPage = () => {
 		};
 	}, []);
 
+	const handleOptionChange = option => {
+		setSelectedOption(option);
+	};
+
+	const filteredData = () => {
+		if (!selectedOption || selectedOption === "전체") {
+			return dataList;
+		} else {
+			return dataList.filter(data => data.type === selectedOption);
+		}
+	};
+
 	return (
 		<div className="list-wrapper">
-			<SideBar />
 			<div className="list-title">휴가 / 조퇴 / 외출 신청내역</div>
 			<div className="nav-top">
-				<Link to="applyForm">
+				<Dropdown onSelectOption={handleOptionChange} />
+				<Link to="/apply-form">
 					<button className="apply-btn">신청하기</button>
 				</Link>
 			</div>
-			{dataList.map((data, index) => (
+			{filteredData().map((data, index) => (
 				<MyList
 					key={index}
 					data={data}

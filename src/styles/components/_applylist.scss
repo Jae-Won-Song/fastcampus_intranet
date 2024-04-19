@@ -1,9 +1,3 @@
-// @import '../mixins/flex';
-@import "../main.scss";
-@import "../constants/colors";
-@import "../components/button";
-@import "../constants/typography";
-
 .list-wrapper {
 	margin-top: 8rem;
 	margin-left: 15rem;
@@ -17,7 +11,7 @@
 		font-weight: bold;
 	}
 	.nav-top {
-		@include flex(end, center);
+		@include flex(between, center);
 		margin-top: 1rem;
 	}
 	.dropdownWrapper {

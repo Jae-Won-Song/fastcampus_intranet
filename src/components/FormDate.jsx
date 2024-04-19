@@ -1,6 +1,4 @@
-// FormDate.jsx
 import React, { useState } from "react";
-import "../styles/components/_formdate.scss";
 
 const FormDate = ({ onDateChange }) => {
 	const [startDate, setStartDate] = useState("");
@@ -9,13 +7,13 @@ const FormDate = ({ onDateChange }) => {
 	const handleChangeStartDate = e => {
 		const startDateValue = e.target.value;
 		setStartDate(startDateValue);
-		onDateChange("startDate", startDateValue); // 시작일 변경사항 전달
+		onDateChange("startDate", startDateValue);
 	};
 
 	const handleChangeEndDate = e => {
 		const endDateValue = e.target.value;
 		setEndDate(endDateValue);
-		onDateChange("endDate", endDateValue); // 종료일 변경사항 전달
+		onDateChange("endDate", endDateValue);
 	};
 
 	return (
