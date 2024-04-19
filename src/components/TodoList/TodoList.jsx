@@ -1,34 +1,41 @@
 import Editor from "./Editor";
 import List from "./List";
 import "../../styles/components/TodoList/TodoList.scss";
-import { useState, useRef } from "react";
+import { useState, useEffect } from "react";
+import { addDoc, collection, doc, updateDoc, deleteDoc, getDocs, QuerySnapshot } from "firebase/firestore";
+import { firestoreDb } from "../../firebase/config";
 
-const mockData = [
-  {
-    id: 0,
-    isDone: false,
-    content: "test 1",
-  },
-  {
-    id: 1,
-    isDone: false,
-    content: "test 2",
-  },
-];
 
 function TodoList() {
-  const [todos, setTodos] = useState(mockData);
-  const idRef = useRef(3);
+	const [todos, setTodos] = useState([]);
 
-  const onCreate = (content) => {
-    const newTodo = {
-      id: idRef.current++,
-      isDone: false,
-      content: content,
-    };
+	useEffect(() => { 
+		getDocs(collection(firestoreDb, 'todolist')).then((querySnapshot) => {
+			const firestoreTodoItemList = [];
+			querySnapshot.forEach((doc) => {
+				firestoreTodoItemList.push({
+					id: doc.id,
+					content: doc.data().content,
+					isDone: doc.data().isDone,
+				})
+			});
+			setTodos(firestoreTodoItemList);
+		});
+	}, []);
 
-    setTodos([newTodo, ...todos]);
-  };
+	const onCreate = async (content) => {
+
+		const docRef = await addDoc(collection(firestoreDb, 'todolist'), {
+			content: content,
+			isDone: false,
+		});
+
+		setTodos([...todos, {
+			id: docRef.id,
+			content: content,
+			isDone: false
+		}]);
+	};
 
   const onUpdate = (targetId, newContent) => {
     setTodos(
@@ -38,17 +45,29 @@ function TodoList() {
     );
   };
 
-  const onDelete = (targetId) => {
-    setTodos(todos.filter((todo) => todo.id !== targetId));
-  };
+	const onDelete = async (targetId) => {
+		const docRef = doc(firestoreDb, 'todolist', targetId);
+		await deleteDoc(docRef)
 
-  const onDone = (targetId) => {
-    setTodos(
-      todos.map((todo) =>
-        todo.id === targetId ? { ...todo, isDone: !todo.isDone } : todo,
-      ),
-    );
-  };
+		setTodos(todos.filter(todo => todo.id !== targetId));
+	};
+
+	const onDone = async (targetId) => {
+		const docRef = doc(firestoreDb, 'todolist', targetId);
+
+		const targetTodo = todos.find(todo => todo.id === targetId);
+		if (targetTodo) {
+			await updateDoc(docRef, {
+				isDone: !targetTodo.isDone
+			});
+		}
+
+		setTodos(
+			todos.map(todo =>
+				todo.id === targetId ? { ...todo, isDone: !todo.isDone } : todo
+			)
+		);
+	};
 
   return (
     <div>
