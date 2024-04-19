@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getDatabase, ref, onValue, off } from "firebase/database";
 import MyList from "../components/MyList";
-import SideBar from "../components/SideBar";
 import { Link } from "react-router-dom";
-
-import "../styles/components/_button.scss";
-import "../styles/components/_applylist.scss";
 
 const ApplyListPage = () => {
 	const [dataList, setDataList] = useState([]);

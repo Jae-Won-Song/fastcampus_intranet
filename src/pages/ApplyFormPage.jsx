@@ -6,11 +6,6 @@ import { Link, useNavigate } from "react-router-dom";
 import RadioForm from "../components/RadioForm";
 import Article from "../components/Article";
 import FormDate from "../components/FormDate";
-import SideBar from "../components/SideBar";
-
-import "../styles/components/_apply.scss";
-import "../styles/components/_article.scss";
-import "../styles/components/_button.scss";
 
 const FormTitle = () => {
 	const navigate = useNavigate(); // useHistory 훅 사용

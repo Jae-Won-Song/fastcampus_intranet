@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import Button from "../components/Button";
 
 function SideBar() {
 	const [slidePosition, setSlidePosition] = useState(264); // 초기 슬라이드 위치
@@ -30,7 +30,7 @@ function SideBar() {
 					<div className="word">마이페이지</div>
 					<div
 						className="slide"
-						style={{ top: slidePosition + 'px' }}></div>
+						style={{ top: slidePosition + "px" }}></div>
 				</div>
 				<div>
 					<div
@@ -67,7 +67,7 @@ function SideBar() {
 					</div>
 					<div className="word">자료실</div>
 				</div>
-				<div className="nav-logout-btn">로그아웃</div>
+				<Button type="button">로그아웃</Button>
 			</div>
 		</>
 	);

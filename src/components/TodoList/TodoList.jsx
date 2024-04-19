@@ -30,35 +30,35 @@ function TodoList() {
 		setTodos([newTodo, ...todos]);
 	};
 
-  const onUpdate = (targetId, newContent) => {
-    setTodos(
-      todos.map((todo) =>
-        todo.id === targetId
-          ? { ...todo, content: newContent }
-          : todo
-        )
-    )
-  }
+	const onUpdate = (targetId, newContent) => {
+		setTodos(
+			todos.map(todo =>
+				todo.id === targetId ? { ...todo, content: newContent } : todo
+			)
+		);
+	};
 
-  const onDelete = (targetId) => {
-    setTodos(todos.filter((todo) => todo.id !== targetId))
-  }
+	const onDelete = targetId => {
+		setTodos(todos.filter(todo => todo.id !== targetId));
+	};
 
-  const onDone = (targetId) => {
-    setTodos(
-      todos.map((todo) =>
-        todo.id === targetId
-          ? { ...todo, isDone: !todo.isDone }
-          : todo
-      )
-    )
-  }
-
+	const onDone = targetId => {
+		setTodos(
+			todos.map(todo =>
+				todo.id === targetId ? { ...todo, isDone: !todo.isDone } : todo
+			)
+		);
+	};
 
 	return (
 		<div>
 			<Editor onCreate={onCreate} />
-			<List todos={todos} onUpdate={onUpdate} onDelete={onDelete} onDone={onDone}/>
+			<List
+				todos={todos}
+				onUpdate={onUpdate}
+				onDelete={onDelete}
+				onDone={onDone}
+			/>
 		</div>
 	);
 }
