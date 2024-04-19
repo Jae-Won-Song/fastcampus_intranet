@@ -1,33 +1,4 @@
 .join {
-<<<<<<< HEAD
-	padding: 2rem 2.5rem;
-	height: 100vh;
-	background-color: $white;
-	overflow-y: auto;
-	&__header {
-		margin-bottom: 2.4rem;
-		text-align: center;
-		.logo {
-			margin-bottom: 1.1rem;
-		}
-		.title {
-			@include text-style(36, $black, 800);
-			margin: 0;
-		}
-		.img-wrap {
-			display: block;
-			width: 6rem;
-			margin: 0 auto;
-		}
-	}
-	.form {
-		max-width: 400px;
-		margin: 0 auto;
-		.Button {
-			margin-top: 3.5rem;
-		}
-	}
-=======
   padding: 2rem 2.5rem;
   height: 100vh;
   background-color: $white;
@@ -40,6 +11,7 @@
     }
     .title {
       @include text-style(36, $black, 800);
+      margin: 0;
     }
     .img-wrap {
       display: block;
@@ -54,5 +26,4 @@
       margin-top: 3.5rem;
     }
   }
->>>>>>> 0445d231fc7bcb68c570197087e49d4c1af43ed7
 }
