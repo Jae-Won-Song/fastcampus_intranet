@@ -1,65 +1,65 @@
 .reference {
-	padding: 2.5rem 2.5rem 0.05rem 15rem;
+  padding: 2.5rem 2.5rem 0.05rem 15rem;
 }
 
 .reference-area {
-	border-radius: 1.5rem;
-	gap: 2.5rem;
-	padding: 2.5rem;
-	margin-top: 3.75rem;
-	padding-bottom: 0.01rem;
-	height: 850px;
+  border-radius: 1.5rem;
+  gap: 2.5rem;
+  padding: 2.5rem;
+  margin-top: 3.75rem;
+  padding-bottom: 0.01rem;
+  height: 850px;
 }
 
 .title {
-	@include text-style(36, $black, 700);
-	display: block;
-	margin-bottom: 2.5rem;
+  @include text-style(36, $black, 700);
+  display: block;
+  margin-bottom: 2.5rem;
 }
 
 .references {
-	position: relative;
-	border: 1px solid $gray;
-	border-radius: 0.875rem;
-	padding: 2rem 2.5rem;
-	margin-bottom: 2.5rem;
-	cursor: pointer;
+  position: relative;
+  border: 1px solid $gray;
+  border-radius: 0.875rem;
+  padding: 2rem 2.5rem;
+  margin-bottom: 2.5rem;
+  cursor: pointer;
 }
 
 /* 스와이퍼 컨테이너의 스타일 */
 .swiper {
-	height: 34.4rem;
-	width: 90%;
+  height: 34.4rem;
+  width: 90%;
 }
 
 /* 스와이퍼 슬라이드의 스타일 */
 .swiper-slide {
-	background: $white;
-	border-radius: 1.5rem;
+  background: $white;
+  border-radius: 1.5rem;
 }
 
 .swiper-button-prev,
 .swiper-button-next {
-	color: red !important;
+  color: red !important;
 }
 
 .reference-image {
-	height: 20.5rem;
-	object-fit: cover;
-	border-radius: 1.5rem 1.5rem 0 0;
+  height: 20.5rem;
+  object-fit: cover;
+  border-radius: 1.5rem 1.5rem 0 0;
 }
 
 .content-area {
-	padding: 1.6rem;
-	font-style: $font-pretendard;
+  padding: 1.6rem;
+  font-style: $font-pretendard;
 }
 
 .content {
-	@include text-style(20, $black, 700);
+  @include text-style(20, $black, 700);
 }
 
 .subject {
-	position: absolute;
-	@include text-style(20, $primary, 700);
-	bottom: 1.5rem;
+  position: absolute;
+  @include text-style(20, $primary, 700);
+  bottom: 1.5rem;
 }

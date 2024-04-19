@@ -1,61 +1,6 @@
 import { Link } from "react-router-dom";
 
 function notices() {
-<<<<<<< HEAD
-	return (
-		<>
-			<div className="notice">
-				<div className="notice-area">
-					<span className="title">공지사항</span>
-					<div className="notices">
-						<Link to="/NoticeToy">
-							<span>토이프로젝트 I 안내</span>
-							<img
-								className="arrow-right"
-								src="src/assets/images/icon_chevron_right.svg"
-								alt="fastcampus"
-							/>
-						</Link>
-						<span className="date">2024.04.05</span>
-					</div>
-					<div className="notices">
-						<Link to="/NoticeSatisfaction">
-							<span>이정환 강사님 현직자 특강 만족도 조사 안내</span>
-							<img
-								className="arrow-right"
-								src="src/assets/images/icon_chevron_right.svg"
-								alt="fastcampus"
-							/>
-						</Link>
-						<span className="date">2024.04.04</span>
-					</div>
-					<div className="notices">
-						<Link to="/NoticeBonus">
-							<span>훈련장려금 신청 지연 안내</span>
-							<img
-								className="arrow-right"
-								src="src/assets/images/icon_chevron_right.svg"
-								alt="fastcampus"
-							/>
-						</Link>
-						<span className="date">2024.04.02</span>
-					</div>
-					<div className="notices">
-						<Link to="/NoticeEvent">
-							<span>그룹스터디 회고 이벤트 결과 발표</span>
-							<img
-								className="arrow-right"
-								src="src/assets/images/icon_chevron_right.svg"
-								alt="fastcampus"
-							/>
-						</Link>
-						<span className="date">2024.04.02</span>
-					</div>
-				</div>
-			</div>
-		</>
-	);
-=======
   return (
     <>
       <div className="notice">
@@ -73,37 +18,42 @@ function notices() {
             <span className="date">2024.04.05</span>
           </div>
           <div className="notices">
-            <span>이정환 강사님 현직자 특강 만족도 조사 안내</span>
-            <img
-              className="arrow-right"
-              src="src/assets/images/icon_chevron_right.svg"
-              alt="fastcampus"
-            />
+            <Link to="/NoticeSatisfaction">
+              <span>이정환 강사님 현직자 특강 만족도 조사 안내</span>
+              <img
+                className="arrow-right"
+                src="src/assets/images/icon_chevron_right.svg"
+                alt="fastcampus"
+              />
+            </Link>
             <span className="date">2024.04.04</span>
           </div>
           <div className="notices">
-            <span>훈련장려금 신청 지연 안내</span>
-            <img
-              className="arrow-right"
-              src="src/assets/images/icon_chevron_right.svg"
-              alt="fastcampus"
-            />
+            <Link to="/NoticeBonus">
+              <span>훈련장려금 신청 지연 안내</span>
+              <img
+                className="arrow-right"
+                src="src/assets/images/icon_chevron_right.svg"
+                alt="fastcampus"
+              />
+            </Link>
             <span className="date">2024.04.02</span>
           </div>
           <div className="notices">
-            <span>그룹스터디 회고 이벤트 결과 발표</span>
-            <img
-              className="arrow-right"
-              src="src/assets/images/icon_chevron_right.svg"
-              alt="fastcampus"
-            />
+            <Link to="/NoticeEvent">
+              <span>그룹스터디 회고 이벤트 결과 발표</span>
+              <img
+                className="arrow-right"
+                src="src/assets/images/icon_chevron_right.svg"
+                alt="fastcampus"
+              />
+            </Link>
             <span className="date">2024.04.02</span>
           </div>
         </div>
       </div>
     </>
   );
->>>>>>> 0445d231fc7bcb68c570197087e49d4c1af43ed7
 }
 
 export default notices;
