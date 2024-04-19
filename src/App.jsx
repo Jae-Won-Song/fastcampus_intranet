@@ -3,7 +3,7 @@ import NoticeSatisfaction from "./components/NoticeSatisfaction";
 import NoticeBonus from "./components/NoticeBonus";
 import NoticeEvent from "./components/NoticeEvent";
 import { Routes, Route } from "react-router-dom";
-import NoticePage from "./components/NoticePage"; // 변경된 부분
+import NoticePage from "./components/NoticePage";
 import Reference from "./components/Reference";
 import LayoutPage from "./pages/LayoutPage";
 import MainPage from "./pages/MainPage";
@@ -18,13 +18,16 @@ function App() {
   return (
     <>
       <Routes>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/join" element={<JoinPage />} />
+
         <Route element={<LayoutPage />}>
           <Route path="/main" element={<MainPage />} />
           <Route path="/notice" element={<NoticePage />} />
-          <Route path="/NoticeToy" element={<NoticeToy />} />
-          <Route path="/NoticeSatisfaction" element={<NoticeSatisfaction />} />
-          <Route path="/NoticeBonus" element={<NoticeBonus />} />
-          <Route path="/NoticeEvent" element={<NoticeEvent />} />
+          <Route path="/notice-toy" element={<NoticeToy />} />
+          <Route path="/notice-satisfaction" element={<NoticeSatisfaction />} />
+          <Route path="/notice-bonus" element={<NoticeBonus />} />
+          <Route path="/notice-event" element={<NoticeEvent />} />
           <Route path="/apply-form" element={<ApplyFormPage />} />
           <Route path="/apply-list" element={<ApplyListPage />} />
           <Route path="/mypage" element={<MyPage />} />
@@ -32,9 +35,6 @@ function App() {
           <Route path="/reference" element={<Reference />} />
           <Route path="/components" element={<ComponentsPage />} />
         </Route>
-
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/join" element={<JoinPage />} />
       </Routes>
     </>
   );
