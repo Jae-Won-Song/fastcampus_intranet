@@ -1,47 +1,45 @@
 .list-wrapper {
-	margin-top: 8rem;
-	margin-left: 15rem;
-	background-color: $white;
-	border-radius: 1.5rem;
-	padding: 2.75rem;
-	color: $black;
-	.list-title {
-		@include flex(start, center);
-		font-size: 2.5rem;
-		font-weight: bold;
-	}
-	.nav-top {
-		@include flex(end, center);
-		margin-top: 1rem;
-	}
-	.dropdownWrapper {
-		width: 9rem;
-		height: 2rem;
-		border: 1px solid #e2dede;
-		border-radius: 6px;
-	}
-	.dropdownBox {
-		@include flex(between, center);
-		height: 2rem;
-		padding: 0 1rem;
-	}
-	.selectWrapper {
-		width: 9rem;
-		text-indent: 15px;
-		line-height: 26px;
-		margin-top: 10px;
-		border: 1px solid #e2dede;
-		background-color: $white;
-		border-radius: 6px;
-		text-align: left;
-		position: absolute;
-	}
-	.selectOptions {
-		&:hover {
-			background-color: $background;
-			width: 100%;
-			border-radius: 6px;
-			font-weight: bold;
-		}
-	}
+  background-color: $white;
+  border-radius: 1.5rem;
+  padding: 2.75rem;
+  color: $black;
+  .list-title {
+    @include flex(start, center);
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  .nav-top {
+    @include flex(between, center);
+    margin-top: 1rem;
+  }
+  .dropdownWrapper {
+    width: 9rem;
+    height: 2rem;
+    border: 1px solid #e2dede;
+    border-radius: 6px;
+  }
+  .dropdownBox {
+    @include flex(between, center);
+    height: 2rem;
+    padding: 0 1rem;
+  }
+  .selectWrapper {
+    width: 9rem;
+    text-indent: 15px;
+    line-height: 26px;
+    margin-top: 10px;
+    border: 1px solid #e2dede;
+    background-color: $white;
+    border-radius: 6px;
+    text-align: left;
+    position: absolute;
+  }
+  .selectOptions {
+    &:hover {
+      background-color: $background;
+      width: 100%;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+  }
 }

@@ -37,13 +37,13 @@ function TodoList() {
 		}]);
 	};
 
-	const onUpdate = (targetId, newContent) => {
-		setTodos(
-			todos.map(todo =>
-				todo.id === targetId ? { ...todo, content: newContent } : todo
-			)
-		);
-	};
+  const onUpdate = (targetId, newContent) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === targetId ? { ...todo, content: newContent } : todo,
+      ),
+    );
+  };
 
 	const onDelete = async (targetId) => {
 		const docRef = doc(firestoreDb, 'todolist', targetId);
@@ -69,17 +69,17 @@ function TodoList() {
 		);
 	};
 
-	return (
-		<div>
-			<Editor onCreate={onCreate} />
-			<List
-				todos={todos}
-				onUpdate={onUpdate}
-				onDelete={onDelete}
-				onDone={onDone}
-			/>
-		</div>
-	);
+  return (
+    <div>
+      <Editor onCreate={onCreate} />
+      <List
+        todos={todos}
+        onUpdate={onUpdate}
+        onDelete={onDelete}
+        onDone={onDone}
+      />
+    </div>
+  );
 }
 
 export default TodoList;
