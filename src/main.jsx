@@ -5,7 +5,7 @@ import App from "./App.jsx";
 import "./styles/main.scss";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter basename={process.env.PUBLIC_URL}>
+  <BrowserRouter>
     <App />
   </BrowserRouter>,
 );
