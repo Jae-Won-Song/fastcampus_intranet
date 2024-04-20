@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { FirebaseError } from "firebase/app";
 import { auth } from "../firebase/config";
+import logoFastCampusColumn from "../assets/images/logo_fastcampus_column.svg";
 
 function LoginForm() {
   const navigate = useNavigate();
@@ -36,10 +37,7 @@ function LoginForm() {
   return (
     <div className="login__form">
       <h1 className="logo">
-        <img
-          src="src/assets/images/logo_fastcampus_column.svg"
-          alt="fastcampus"
-        />
+        <img src={logoFastCampusColumn} alt="fastcampus" />
       </h1>
       <form className="form" onSubmit={handleSubmit}>
         <div className="field-wrap">

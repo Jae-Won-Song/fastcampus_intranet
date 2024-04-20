@@ -6,8 +6,7 @@ import { Link } from "react-router-dom";
 import { auth } from "../firebase/config";
 
 const MyPage = () => {
-
-	const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null);
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setUser(user);
@@ -15,37 +14,37 @@ const MyPage = () => {
     return () => unsubscribe();
   }, []);
 
-	const customStyles = {
-		content: {
-			width: "35rem",
-			height: "20rem",
-			top: "50%",
-			left: "50%",
-			right: "auto",
-			bottom: "auto",
-			marginRight: "-50%",
-			transform: "translate(-50%, -50%)"
-		}
-	};
+  const customStyles = {
+    content: {
+      width: "35rem",
+      height: "20rem",
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+    },
+  };
 
-	let subtitle;
-	const [modalIsOpen, setIsOpen] = React.useState(false);
+  let subtitle;
+  const [modalIsOpen, setIsOpen] = React.useState(false);
 
-	function openModal() {
-		setIsOpen(true);
-	}
+  function openModal() {
+    setIsOpen(true);
+  }
 
 	function afterOpenModal() {
 		subtitle.style.color = "#f00";
 	}
 
-	function closeModal() {
-		setIsOpen(false);
-	}
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   const fileInput = React.useRef(null);
-  
-  const handleButtonClick = e => {
+
+  const handleButtonClick = (e) => {
     fileInput.current.click();
   };
 
