@@ -1,9 +1,9 @@
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import Button from "../components/Button";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { auth, db } from "../firebase/config";
-import { ref, set } from "firebase/database";
+import { ref, set, get, child } from "firebase/database";
 import { FirebaseError } from "firebase/app";
 import logoFastCampusColumn from "../assets/images/logo_fastcampus_column.svg";
 
@@ -36,10 +36,28 @@ function JoinPage() {
     return () => unsubscribe();
   }, [userName, phone]);
 
-  const validateEmail = (value) => {
+  const duplicateEmail = async (email) => {
+    try {
+      const snapshot = await get(child(ref(db), "users"));
+      if (snapshot.exists()) {
+        const users = snapshot.val();
+        const userArray = Object.values(users);
+        return userArray.some((user) => user.email === email);
+      } else {
+        return false;
+      }
+    } catch (error) {
+      console.error("중복 이메일 확인 중 오류 발생:", error);
+      return true;
+    }
+  };
+
+  const validateEmail = async (value) => {
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!emailRegex.test(value)) {
       setEmailError("올바른 이메일 형식이 아닙니다.");
+    } else if (await duplicateEmail(value)) {
+      setEmailError("이미 사용된 이메일(아이디)입니다.");
     } else {
       setEmailError("");
     }
@@ -86,12 +104,15 @@ function JoinPage() {
       const credentials = await createUserWithEmailAndPassword(
         auth,
         email,
-        password,
-        userName,
-        phone
+        password
       );
       await updateProfile(credentials.user, {
         displayName: userName,
+      });
+      await set(ref(db, `users/${credentials.user.uid}`), {
+        email: email,
+        userName: userName,
+        phone: phone,
       });
       navigate("/main");
     } catch (error) {
