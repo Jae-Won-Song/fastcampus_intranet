@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Button from "../components/Button";
 import Modal from "react-modal";
-import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { auth } from "../firebase/config";
+import RecordInTime from "../components/RecordInTime";
+import RecordOutTime from "../components/RecordOutTime";
+import icon_user from "../assets/images/icon_user.svg";
 
 const MyPage = () => {
+
   const [user, setUser] = useState(null);
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -15,14 +18,25 @@ const MyPage = () => {
   }, []);
 
   const customStyles = {
+		overlay: {
+			backgroundColor: " #0000008f",
+			width: "100%",
+			height: "100vh",
+			zIndex: "10",
+			position: "fixed",
+			top: "0",
+			left: "0",
+		},
     content: {
-      width: "35rem",
-      height: "20rem",
+      width: "25%",
+      height: "28%",
       top: "50%",
       left: "50%",
       right: "auto",
       bottom: "auto",
       marginRight: "-50%",
+			borderRadius: "24px",
+			backgroundColor: "white",
       transform: "translate(-50%, -50%)",
     },
   };
@@ -42,15 +56,43 @@ const MyPage = () => {
     setIsOpen(false);
   }
 
-  const fileInput = React.useRef(null);
+	// 
+	
+    const [name, setName] = useState(user?.displayName || ''); // 초기값은 user.displayName이거나 빈 문자열
+    const [email, setEmail] = useState(user?.email || ''); // 초기값은 user.email이거나 빈 문자열
+		const [phoneNum, setPhoneNum] = useState(user?.phoneNumber || ''); // 초기값은 user.email이거나 빈 문자열
+
+    const handleEmailChange = (event) => {
+			setEmail(event.target.value);
+    };
+
+    const handleNameChange = (event) => {
+			setName(event.target.value);
+    };
+
+    const handlePhoneNumChange = (event) => {
+			setPhoneNum(event.target.value);
+    };		
+    const modiConfirmModal = () => {
+        // 이메일 상태 가져오기
+        console.log("현재 이메일 값:", email);
+				
+        // 이름 상태 가져오기
+        console.log("현재 이름 값:", name);
+
+				console.log("현재 전화번호 값:", phoneNum);
+				setIsOpen(false);
+    };
+
+  const fileInput = useRef(null);
 
   const handleButtonClick = (e) => {
     fileInput.current.click();
   };
 
   const [imgFile, setImgFile] = useState("");
-  // 이미지 업로드 input의 onChange
-  const saveImgFile = () => {
+
+	const saveImgFile = () => {
     const file = fileInput.current.files[0];
     const reader = new FileReader();
     reader.readAsDataURL(file);
@@ -68,11 +110,11 @@ const MyPage = () => {
 							<div className="image-wrapper">
 								<div>
 									<img
-									src={imgFile ? imgFile :"src/assets/images/icon_user.svg"}
+									src={imgFile ? imgFile :icon_user}
 									alt="프로필 이미지"
 									/>
 									<br />
-									<Button onClick={handleButtonClick} color="grayBorder">이미지 업로드</Button>
+									<Button onClick={handleButtonClick} color="grayBorder">파일 업로드</Button>
 									<input type="file" onChange={saveImgFile} ref={fileInput} style={{ display: "none" }} />
 								</div>
 							</div>
@@ -92,6 +134,7 @@ const MyPage = () => {
 										id="email"
 										placeholder={user?.email}
 										className="input"
+										onChange={handleEmailChange}
 									/>
 								</div>
 								<div className="name-content">
@@ -103,6 +146,7 @@ const MyPage = () => {
 										id="name"
 										placeholder={user?.displayName}
 										className="input"
+										onChange={handleNameChange}
 									/>
 								</div>
 								<div className="phone-num-content">
@@ -114,6 +158,7 @@ const MyPage = () => {
 										id="phone-num"
 										placeholder={user?.phoneNumber}
 										className="input"
+										onChange={handlePhoneNumChange}
 									/>
 								</div>
 							</div>
@@ -152,7 +197,7 @@ const MyPage = () => {
 										/>{" "}
 										오늘 입실 시간
 									</div>
-									10:00
+									<RecordInTime></RecordInTime>
 								</div>
 							</div>
 							<div className="status-data-wrapper">
@@ -164,7 +209,7 @@ const MyPage = () => {
 										/>{" "}
 										오늘 퇴실 시간
 									</div>
-									19:00
+									<RecordOutTime></RecordOutTime>
 								</div>
 							</div>
 							<div className="status-data-wrapper">
@@ -231,8 +276,8 @@ const MyPage = () => {
 						<div className="modal__body">
 							<div className="confirm-text">프로필을 수정하시겠습니까?</div>
 							<div className="modal__btn-wrapper">
-								<Button onClick={closeModal}>수정</Button>
-								<Button onClick={closeModal}>취소</Button>
+								<Button onClick={modiConfirmModal}>수정</Button>
+								<Button color="black" onClick={closeModal}>취소</Button>
 							</div>
 						</div>
 					</div>
