@@ -6,6 +6,9 @@ import { auth } from "../firebase/config";
 import RecordInTime from "../components/RecordInTime";
 import RecordOutTime from "../components/RecordOutTime";
 import icon_user from "../assets/images/icon_user.svg";
+import { getDatabase, ref, get, onValue, off } from "firebase/database";
+
+
 
 const MyPage = () => {
 
@@ -17,72 +20,72 @@ const MyPage = () => {
     return () => unsubscribe();
   }, []);
 
+
+	
+
   const customStyles = {
-		overlay: {
-			backgroundColor: " #0000008f",
-			width: "100%",
-			height: "100vh",
-			zIndex: "10",
-			position: "fixed",
-			top: "0",
-			left: "0",
-		},
-    content: {
-      width: "25%",
-      height: "28%",
+		content: {
+      width: "35rem",
+      height: "20rem",
+      padding: "2.5rem",
       top: "50%",
       left: "50%",
       right: "auto",
       bottom: "auto",
+      border: "none",
+      borderRadius: "1.5rem",
       marginRight: "-50%",
-			borderRadius: "24px",
-			backgroundColor: "white",
+			backgroudcolor: "white",
       transform: "translate(-50%, -50%)",
     },
   };
 
-  let subtitle;
-  const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [modalIsOpen, setIsOpen] = useState(false);
 
   function openModal() {
     setIsOpen(true);
   }
-
-	function afterOpenModal() {
-		subtitle.style.color = "#f00";
-	}
-
   function closeModal() {
     setIsOpen(false);
   }
 
-	// 
+	const [name, setName] = useState('');
+	const [email, setEmail] = useState('');
+	const [phoneNum, setPhoneNum] = useState('');
+	const [photoUrl, setPhotoUl] = useState('');
+
+	const handleEmailChange = (event) => {
+		setEmail(event.target.value);
+	};
+
+	const handleNameChange = (event) => {
+		setName(event.target.value);
+	};
+
+	const handlePhoneNumChange = (event) => {
+		setPhoneNum(event.target.value);
+	};
 	
-    const [name, setName] = useState(user?.displayName || ''); // 초기값은 user.displayName이거나 빈 문자열
-    const [email, setEmail] = useState(user?.email || ''); // 초기값은 user.email이거나 빈 문자열
-		const [phoneNum, setPhoneNum] = useState(user?.phoneNumber || ''); // 초기값은 user.email이거나 빈 문자열
+	const modiConfirmModal = () => {
 
-    const handleEmailChange = (event) => {
-			setEmail(event.target.value);
-    };
+		// 이메일 입력 필드의 값 또는 placeholder 값 가져오기
+		const photoUrlValue = photoUrl || user?.photoURL || '';
+		console.log(photoUrlValue);
 
-    const handleNameChange = (event) => {
-			setName(event.target.value);
-    };
+		// 이메일 입력 필드의 값 또는 placeholder 값 가져오기
+		const emailValue = email || user?.email || '';
+		console.log(emailValue);
 
-    const handlePhoneNumChange = (event) => {
-			setPhoneNum(event.target.value);
-    };		
-    const modiConfirmModal = () => {
-        // 이메일 상태 가져오기
-        console.log("현재 이메일 값:", email);
-				
-        // 이름 상태 가져오기
-        console.log("현재 이름 값:", name);
+		// 이름 입력 필드의 값 또는 placeholder 값 가져오기
+		const nameValue = name || user?.displayName || '';
+		console.log(nameValue);
 
-				console.log("현재 전화번호 값:", phoneNum);
-				setIsOpen(false);
-    };
+		// 전화번호 입력 필드의 값 또는 placeholder 값 가져오기
+		const phoneNumValue = phoneNum || user?.phoneNumber || '';
+		console.log(phoneNumValue);
+
+		setIsOpen(false);
+	};
 
   const fileInput = useRef(null);
 
@@ -92,15 +95,157 @@ const MyPage = () => {
 
   const [imgFile, setImgFile] = useState("");
 
-	const saveImgFile = () => {
+	const saveImgFile = (event) => {
     const file = fileInput.current.files[0];
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onloadend = () => {
       setImgFile(reader.result);
     };
+		setPhotoUl(event.target.value);
   };
+
+
+
+
+
+
+
+
+	// // Firebase 데이터베이스에서 users 항목의 데이터를 가져오는 함수
+	// const fetchUsersData = () => {
+	// 	// 데이터베이스에 대한 참조를 가져옵니다.
+	// 	const database = getDatabase();
+		
+	// 	// 'users' 경로에 대한 참조를 생성합니다.
+	// 	const usersRef = ref(database, 'users');
+
+	// 	// 'users' 경로에 대한 데이터 변경 이벤트를 등록하고 데이터를 가져옵니다.
+	// 	onValue(usersRef, (snapshot) => {
+	// 		const userData = snapshot.val();
+	// 		if (userData) {
+	// 			// userData 객체에는 'users' 항목의 데이터가 포함됩니다.
+	// 			console.log(userData);
+
+	// 			// // userData 객체의 첫 번째 키를 가져옵니다.
+	// 			// const firstUserKey = Object.keys(userData)[1];
+	// 			// // 첫 번째 사용자 데이터를 가져옵니다.
+	// 			// const firstUserData = userData[firstUserKey];
+	// 			// console.log(firstUserData.email, firstUserData.userName, firstUserData.phone, user.uid);
+	// 		}
+	// 	});
+	// };
+
+	// // 함수를 호출하여 users 항목의 데이터를 가져옵니다.
+	// fetchUsersData();	
+
+
+
+
 	
+
+
+
+
+
+
+
+	// // Firebase 데이터베이스에서 특정 키를 사용하여 users 항목의 데이터를 가져오는 함수
+	// const fetchUserDataByKey = (userKey) => {
+	// 	// 데이터베이스에 대한 참조를 가져옵니다.
+	// 	const database = getDatabase();
+
+	// 	// 'users' 경로와 특정 키를 결합하여 참조를 생성합니다.
+	// 	const userRef = ref(database, `users/${userKey}`);
+
+	// 	// 해당 참조에 대한 데이터 변경 이벤트를 등록하고 데이터를 가져옵니다.
+	// 	onValue(userRef, (snapshot) => {
+	// 		const userData = snapshot.val();
+	// 		if (userData) {
+	// 			// userData는 userKey에 해당하는 사용자의 데이터입니다.
+	// 			console.log(userData);
+	// 		} else {
+	// 			console.log('No data available');
+	// 		}
+	// 	}, {
+	// 		onlyOnce: true  // 이벤트를 단 한 번만 수행하고 리스너를 자동 해제합니다.
+	// 	});
+	// };
+
+	// // 함수를 호출하여 'user123'이라는 키의 데이터를 가져옵니다.
+	// fetchUserDataByKey(user.uid);
+
+
+
+	
+
+	// // Firebase 데이터베이스에서 특정 키를 사용하여 users 항목의 데이터를 가져오는 함수
+	// const fetchUserDataByKey = async (userKey) => {
+	// 	// 데이터베이스에 대한 참조를 가져옵니다.
+	// 	const database = getDatabase();
+
+	// 	// 'users' 경로와 특정 키를 결합하여 참조를 생성합니다.
+	// 	const userRef = ref(database, `users/${userKey}`);
+
+	// 	try {
+	// 		// 해당 참조에 대한 데이터를 비동기적으로 가져옵니다.
+	// 		const snapshot = await get(userRef);
+	// 		const userData = snapshot.val();
+	// 		if (userData) {
+	// 			// userData는 userKey에 해당하는 사용자의 데이터입니다.
+	// 			console.log(userData);
+	// 		} else {
+	// 			console.log('No data available');
+	// 		}
+	// 	} catch (error) {
+	// 		console.error('Error fetching user data:', error);
+	// 	}
+	// };
+
+	// // 함수를 호출하여 'user123'이라는 키의 데이터를 가져옵니다.
+	// fetchUserDataByKey(user.uid);
+
+
+
+
+// Firebase 데이터베이스에서 특정 키를 사용하여 users 항목의 데이터를 가져오는 함수
+const fetchUserDataByKey = async (userKey) => {
+  const database = getDatabase();
+  const userRef = ref(database, `users/${userKey}`);
+
+  try {
+    const snapshot = await get(userRef);
+    const userData = snapshot.val();
+    if (userData) {
+      console.log(userData);
+      return userData;  // 성공적으로 데이터를 가져온 경우, userData 반환
+    } else {
+      console.log('No data available');
+      return null;  // 데이터가 없는 경우, null 반환
+    }
+  } catch (error) {
+    console.error('Error fetching user data:', error);
+    return null;  // 오류가 발생한 경우, null 반환
+  }
+};
+
+// 함수 사용 예제
+fetchUserDataByKey()
+  .then(userData => {
+    if (userData) {
+      console.log('User data fetched successfully:', userData);
+    } else {
+      console.log('No user data found.');
+    }
+  })
+  .catch(error => {
+    console.error('Failed to fetch user data:', error);
+  });
+
+
+
+
+
 	return (
 		<div>
 			<div className="main-wrapper">
@@ -123,8 +268,8 @@ const MyPage = () => {
 							<div className="data-wrapper">
 								<div className="email-content">
 									이메일(아이디)
-
- 									{/* <h1>User 정보</h1>
+{/* 
+ 									<h1>User 정보</h1>
      							<pre>{JSON.stringify(user, null, 2)}</pre> */}
 
 									<br />
@@ -269,7 +414,6 @@ const MyPage = () => {
 			</div>
 			<Modal
 				isOpen={modalIsOpen}
-				onAfterOpen={afterOpenModal}
 				onRequestClose={closeModal}
 				style={customStyles}>
 					<div className="confirm-modal">
