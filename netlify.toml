@@ -4,4 +4,4 @@
 
 [context.production.environment]
   TOML_ENV_VAR = "From netlify.toml"
-  VITE_APP_TOML_ENV_VAR = "From netlify.toml (VITE_APP_)"
+  VITE_TOML_ENV_VAR = "From netlify.toml (VITE_)"
