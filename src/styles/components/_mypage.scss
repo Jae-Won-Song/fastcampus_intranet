@@ -9,27 +9,28 @@
   position: relative;
 }
 .badge-wrapper {
-	width: 11.25rem;
-	right: 0;
-	top: 1.875rem;
-	position: absolute;
-	@include flex;
+  width: 11.25rem;
+  right: 0;
+  top: 1.875rem;
+  position: absolute;
+  @include flex;
 }
 .badge-wrapper img {
   width: 50px;
   margin: 0 30px;
 }
 .main-content {
-	width: 107.5rem;
-	height: 56.5rem;
-	display: flex;
-	background-color: $background;
+  width: 107.5rem;
+  height: 56.5rem;
+  display: flex;
+  background-color: $background;
 }
 .left-page {
-	width: 50rem;
-	height: 54.625rem;
-	margin: 0 auto;
-	background-color: $white;
+  width: 50rem;
+  height: 54.625rem;
+  margin: 0 auto;
+  background-color: $white;
+	border-radius: 24px;
 }
 .image-wrapper {
   width: 44.43rem;
@@ -39,12 +40,14 @@
   @include flex;
 }
 .image-wrapper img {
-	margin: 10px 0;
+	width: 130px;
+	height: 130px;
+  margin: 10px 0;
 }
 .data-wrapper {
-	width: 44.43rem;
-	height: 20.75rem;
-	margin: 20px auto 90px;
+  width: 44.43rem;
+  height: 20.75rem;
+  margin: 20px auto 90px;
 }
 .data-wrapper .input {
   width: 95%;
@@ -54,16 +57,16 @@
   border-width: 1px;
 }
 .data-wrapper .email-content {
-	padding: 0.8rem 0;
-	line-height: 2.5rem;
+  padding: 0.8rem 0;
+  line-height: 2.5rem;
 }
 .data-wrapper .name-content {
-	padding: 0.8rem 0;
-	line-height: 2.5rem;
+  padding: 0.8rem 0;
+  line-height: 2.5rem;
 }
 .data-wrapper .phone-num-content {
-	padding: 0.8rem 0;
-	line-height: 2.5rem;
+  padding: 0.8rem 0;
+  line-height: 2.5rem;
 }
 .modi-btn-wrapper {
   width: 44.43rem;
@@ -72,24 +75,25 @@
   @include flex;
 }
 .modi-btn-wrapper Button {
-	@include flex;
-	@include text-style(18, $white, 600);
-	background-color: $primary;
-	border-radius: 6px;
-	padding: 10px 30px;
+  @include flex;
+  @include text-style(18, $white, 600);
+  background-color: $primary;
+  border-radius: 6px;
+  padding: 10px 30px;
 }
 
 .right-page {
-	width: 50rem;
-	height: 54.625rem;
-	background-color: $white;
-	margin: 0 auto;
+  width: 50rem;
+  height: 54.625rem;
+  background-color: $white;
+  margin: 0 auto;
+	border-radius: 24px;
 }
 .right-page-top__data {
-	width: 44.43rem;
-	height: 38.75rem;
-	margin: 0 auto;
-	padding: 25px 0;
+  width: 44.43rem;
+  height: 38.75rem;
+  margin: 0 auto;
+  padding: 25px 0;
 }
 .right-page-top__data img {
   width: 22px;
@@ -111,66 +115,66 @@
   margin: 15px 0 0 0;
 }
 .status--btn Button {
-	@include flex;
-	@include text-style(18, $white, 600);
-	background-color: $primary;
-	border-radius: 6px;
-	padding: 10px 30px;
+  @include flex;
+  @include text-style(18, $white, 600);
+  background-color: $primary;
+  border-radius: 6px;
+  padding: 10px 30px;
 }
 .vacation-status Button {
-	position: relative;
-	right: -28rem;
-	top: -0.3rem;
+  position: relative;
+  right: -28rem;
+  top: -0.3rem;
 }
 .right-page-bottom__data {
-	width: 44.43rem;
-	height: 15.875rem;
-	margin: 0 auto;
+  width: 44.43rem;
+  height: 15.875rem;
+  margin: 0 auto;
 }
 .right-page-bottom__data img {
   width: 22px;
   margin: 0 10px 0 0;
 }
 .status-num {
-	width: 31.25rem;
-	height: 5.625rem;
-	margin: 20px auto;
-	@include flex;
-	justify-content: space-between;
+  width: 31.25rem;
+  height: 5.625rem;
+  margin: 20px auto;
+  @include flex;
+  justify-content: space-between;
 }
 .num-wrapper span {
   @include flex;
 }
 .circle {
-	width: 3.75rem;
-	height: 3.75rem;
-	border: 1.875rem solid $border;
-	border-radius: 50%;
-	@include flex;
+  width: 3.75rem;
+  height: 3.75rem;
+  border: 1.875rem solid $border;
+  border-radius: 50%;
+  @include flex;
 }
 
 .confirm-modal {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .confirm-text {
-	width: 100%;
-	height: 200px;
-	@include flex;
-	@include text-style(18, $black, 600);
-	font-size: 20px;
+  width: 100%;
+  height: 200px;
+  @include flex;
+  @include text-style(18, $black, 600);
+  font-size: 20px;
 }
 .modal__btn-wrapper {
-	width: 60%;
-	margin: 0 auto;
-	@include flex;
-	justify-content: space-around;
+  width: 60%;
+  margin: 0 auto;
+  @include flex;
+  justify-content: space-around;
 }
 .modal__btn-wrapper Button {
-	@include flex;
-	@include text-style(18, $white, 600);
-	background-color: $primary;
-	border-radius: 6px;
-	padding: 10px 30px;
+  @include flex;
+  @include text-style(18, $white, 600);
+  background-color: $primary;
+  border-radius: 6px;
+  padding: 10px 30px;
 }

@@ -2,39 +2,38 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import { auth } from "../firebase/config";
-
 function SideBar() {
   const navigate = useNavigate();
-  const [slidePosition, setSlidePosition] = useState(264); // 초기 슬라이드 위치
-
+  const [slidePosition, setSlidePosition] = useState(60); // 초기 슬라이드 위치
+  const [isSlideVisible, setIsSlideVisible] = useState(false); // 초기에는 슬라이드를 보이지 않도록 설정
   const handleIconClick = (topPosition) => {
-    setSlidePosition(topPosition); // 클릭된 아이콘의 top 위치로 슬라이드 위치 변경
+    setSlidePosition(topPosition);
+    setIsSlideVisible(true);
   };
-
+  const handleLogoClick = () => {
+    setIsSlideVisible(false);
+  };
   const handleLogout = () => {
     auth.signOut();
     navigate("/login");
   };
-
   return (
     <>
       <div className="nav">
-        <div className="nav-logo">
+        <div className="nav-logo" onClick={handleLogoClick}>
           <img
             src="src/assets/images/logo_fastcampus_column.png"
             alt="fastcampusLogo"
           />
+          {isSlideVisible && (
+            <div className="slide" style={{ top: slidePosition + "px" }}></div>
+          )}
         </div>
         <div>
-          <div
-            to="src/components/Notice.jsx"
-            className="nav-icon"
-            onClick={() => handleIconClick(264)}
-          >
+          <div className="nav-icon" onClick={() => handleIconClick(264)}>
             <img src="src/assets/images/icon_profile.svg" alt="profile" />
           </div>
           <div className="word">마이페이지</div>
-          <div className="slide" style={{ top: slidePosition + "px" }}></div>
         </div>
         <div>
           <div className="nav-icon" onClick={() => handleIconClick(404)}>
@@ -63,5 +62,4 @@ function SideBar() {
     </>
   );
 }
-
 export default SideBar;
