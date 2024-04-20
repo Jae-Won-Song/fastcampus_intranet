@@ -1,6 +1,7 @@
 {
   "name": "vite-project",
   "private": true,
+  "homepage": "https://github.com/Jae-Won-Song/toy-prj",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
