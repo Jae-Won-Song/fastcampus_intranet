@@ -36,7 +36,6 @@ const MyPage = () => {
 	}
 
 	function afterOpenModal() {
-		// references are now sync'd and can be accessed.
 		subtitle.style.color = "#f00";
 	}
 
@@ -224,8 +223,6 @@ const MyPage = () => {
 					</div>
 				</div>
 			</div>
-
-
 			<Modal
 				isOpen={modalIsOpen}
 				onAfterOpen={afterOpenModal}
