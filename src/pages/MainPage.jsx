@@ -11,9 +11,16 @@ import ClockBlack from "../../public/icon_clock.svg";
 import { auth } from "../firebase/config";
 import RecordInTime from "../components/RecordInTime";
 import RecordOutTime from "../components/RecordOutTime";
+import { useState, useEffect } from "react";
 
 function MainPage() {
-  const user = auth.currentUser;
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setUser(user);
+    });
+    return () => unsubscribe();
+  }, []);
 
   const date = new Date().toLocaleString("ko-KR", {
     year: "numeric",
