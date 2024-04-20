@@ -36,29 +36,37 @@ function SideBar() {
   return (
     <div className="nav">
       <div className="nav-logo" onClick={handleLogoClick}>
-        <img
-          src="src/assets/images/logo_fastcampus_column.png"
-          alt="fastcampusLogo"
-        />
+        <Link to="/main">
+          <img
+            src="src/assets/images/logo_fastcampus_column.png"
+            alt="fastcampusLogo"
+          />
+        </Link>
         {activeIconIndex !== null && (
           <div className="slide" style={{ top: slideOffset + "px" }}></div>
         )}
       </div>
       <div>
         <div className="nav-icon" onClick={() => handleIconClick(0)}>
-          <img src="src/assets/images/icon_profile.svg" alt="profile" />
+          <Link to="/mypage">
+            <img src="src/assets/images/icon_profile.svg" alt="profile" />
+          </Link>
         </div>
         <div className="word">마이페이지</div>
       </div>
       <div>
         <div className="nav-icon" onClick={() => handleIconClick(1)}>
-          <img src="src/assets/images/icon_edit.svg" alt="vacation" />
+          <Link to="/apply-list">
+            <img src="src/assets/images/icon_edit.svg" alt="vacation" />
+          </Link>
         </div>
         <div className="word">휴가관리</div>
       </div>
       <div>
         <div className="nav-icon" onClick={() => handleIconClick(2)}>
-          <img src="src/assets/images/icon_bell.svg" alt="announcement" />
+          <Link to="/notice">
+            <img src="src/assets/images/icon_bell.svg" alt="announcement" />
+          </Link>
         </div>
         <div className="word">공지사항</div>
       </div>
