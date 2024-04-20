@@ -26,6 +26,7 @@
     @include text-style(16, $darkgray);
     background-color: $white;
     border: 1px solid $darkgray;
+    margin: auto;
 
     &:hover {
       background-color: $white-hover;
