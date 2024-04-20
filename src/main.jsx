@@ -7,5 +7,5 @@ import "./styles/main.scss";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <App />
-  </BrowserRouter>
+  </BrowserRouter>,
 );
