@@ -1,32 +1,37 @@
 import React, { useState, useEffect } from "react";
 import { getDatabase, ref, onValue, off } from "firebase/database";
 import MyList from "../components/MyList";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Dropdown from "../components/Dropdown";
 
 const ApplyListPage = () => {
   const [dataList, setDataList] = useState([]);
   const [selectedOption, setSelectedOption] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const database = getDatabase();
-    const formsRef = ref(database, "forms");
+    const fetchData = async () => {
+      const database = getDatabase();
+      const formsRef = ref(database, "forms");
 
-    const fetchData = () => {
-      onValue(formsRef, (snapshot) => {
-        const formData = snapshot.val();
-        if (formData) {
-          const dataArray = Object.values(formData);
-          setDataList(dataArray);
-        }
-      });
+      try {
+        const snapshot = await onValue(formsRef, (snapshot) => {
+          const formData = snapshot.val();
+          if (formData) {
+            const dataArray = Object.values(formData);
+            setDataList(dataArray);
+          }
+        });
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+
+      return () => {
+        off(formsRef);
+      };
     };
 
     fetchData();
-
-    return () => {
-      off(formsRef);
-    };
   }, []);
 
   const handleOptionChange = (option) => {
@@ -41,14 +46,18 @@ const ApplyListPage = () => {
     }
   };
 
+  const handleApplyButtonClick = () => {
+    navigate("/apply-form");
+  };
+
   return (
     <div className="list-wrapper">
       <div className="list-title">휴가 / 조퇴 / 외출 신청내역</div>
       <div className="nav-top">
         <Dropdown onSelectOption={handleOptionChange} />
-        <Link to="/apply-form">
-          <button className="apply-btn">신청하기</button>
-        </Link>
+        <button className="apply-btn" onClick={handleApplyButtonClick}>
+          신청하기
+        </button>
       </div>
       {filteredData()
         .reverse()
