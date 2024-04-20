@@ -9,17 +9,21 @@ const ApplyListPage = () => {
   const [selectedOption, setSelectedOption] = useState(null);
 
   useEffect(() => {
-    const database = getDatabase();
-    const formsRef = ref(database, "forms");
+    const fetchData = async () => {
+      const database = getDatabase();
+      const formsRef = ref(database, "forms");
 
-    const fetchData = () => {
-      onValue(formsRef, (snapshot) => {
-        const formData = snapshot.val();
-        if (formData) {
-          const dataArray = Object.values(formData);
-          setDataList(dataArray);
-        }
-      });
+      try {
+        const snapshot = await onValue(formsRef, (snapshot) => {
+          const formData = snapshot.val();
+          if (formData) {
+            const dataArray = Object.values(formData);
+            setDataList(dataArray);
+          }
+        });
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
     };
 
     fetchData();
