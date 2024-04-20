@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { getDatabase, ref, push } from "firebase/database";
 import firebaseApp from "../firebase/config";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import RadioForm from "../components/RadioForm";
 import Article from "../components/Article";
@@ -17,16 +17,23 @@ const FormTitle = () => {
     startDate: "",
     endDate: "",
   });
+  const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!formData.title || !formData.type || !formData.reason || !formData.startDate || !formData.endDate) {
+      setError("입력 필드를 모두 작성해주세요.");
+      return;
+    }
+
     const database = getDatabase(firebaseApp);
     const formRef = ref(database, "forms");
     push(formRef, formData)
       .then(() => {
         console.log("폼 제출 완료");
         alert("제출이 완료되었습니다.");
-        navigate("/");
+        navigate("/apply-list"); 
       })
       .catch((error) => {
         console.error("Error saving data: ", error);
@@ -38,6 +45,7 @@ const FormTitle = () => {
       ...formData,
       [name]: value,
     });
+    setError(""); 
   };
 
   const handleRadioChange = (selectedType) => {
@@ -45,6 +53,7 @@ const FormTitle = () => {
       ...formData,
       type: selectedType,
     });
+    setError(""); 
   };
 
   const handleDateChange = (name, value) => {
@@ -52,6 +61,7 @@ const FormTitle = () => {
       ...formData,
       [name]: value,
     });
+    setError(""); 
   };
 
   return (
@@ -75,12 +85,11 @@ const FormTitle = () => {
           <Article onChange={handleChange} />
         </div>
         <FormDate onDateChange={handleDateChange} />
+        {error && <div className="error-msg">{error}</div>}
         <div className="form-btn">
-          <Link to="/main">
-            <button className="apply-btn" onClick={handleSubmit}>
-              제출하기
-            </button>
-          </Link>
+          <button className="apply-btn" onClick={handleSubmit}>
+            제출하기
+          </button>
         </div>
       </div>
     </>
