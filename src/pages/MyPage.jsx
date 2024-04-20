@@ -72,7 +72,7 @@ const MyPage = () => {
 									alt="프로필 이미지"
 									/>
 									<br />
-									<Button onClick={handleButtonClick} color="grayBorder">파일 업로드</Button>
+									<Button onClick={handleButtonClick} color="grayBorder">이미지 업로드</Button>
 									<input type="file" onChange={saveImgFile} ref={fileInput} style={{ display: "none" }} />
 								</div>
 							</div>

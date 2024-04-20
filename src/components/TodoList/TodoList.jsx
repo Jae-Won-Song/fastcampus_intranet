@@ -2,15 +2,7 @@ import Editor from "./Editor";
 import List from "./List";
 import "../../styles/components/TodoList/TodoList.scss";
 import { useState, useEffect } from "react";
-import {
-  addDoc,
-  collection,
-  doc,
-  updateDoc,
-  deleteDoc,
-  getDocs,
-  QuerySnapshot,
-} from "firebase/firestore";
+import { addDoc, collection, doc, updateDoc, deleteDoc, getDocs, QuerySnapshot } from "firebase/firestore";
 import { firestoreDb } from "../../firebase/config";
 
 function TodoList() {
