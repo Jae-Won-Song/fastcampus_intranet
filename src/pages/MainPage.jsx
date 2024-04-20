@@ -8,11 +8,17 @@ import CurrentTime from "../components/CurrentTime";
 import ToggleButton from "../components/ToggleButton";
 import ClockWhite from "../../public/icon_clock_border.svg";
 import ClockBlack from "../../public/icon_clock.svg";
-import { Link } from "react-router-dom";
 import { auth } from "../firebase/config";
+import { useState, useEffect } from "react";
 
 function MainPage() {
-  const user = auth.currentUser;
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setUser(user);
+    });
+    return () => unsubscribe();
+  }, []);
 
   const date = new Date().toLocaleString("ko-KR", {
     year: "numeric",
