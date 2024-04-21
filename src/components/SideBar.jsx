@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import { auth } from "../firebase/config";
+import Logo from '../assets/images/logo_fastcampus_column.svg'
+
 function SideBar() {
   const navigate = useNavigate();
   const [activeIconIndex, setActiveIconIndex] = useState(null);
@@ -38,7 +40,7 @@ function SideBar() {
       <div className="nav-logo" onClick={handleLogoClick}>
         <Link to="/main">
           <img
-            src="src/assets/images/logo_fastcampus_column.png"
+            src={Logo}
             alt="fastcampusLogo"
           />
         </Link>
