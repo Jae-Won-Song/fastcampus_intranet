@@ -4,6 +4,7 @@ import Modal from "react-modal";
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { auth } from "../firebase/config";
+import UserIcon from '../assets/images/icon_user.svg'
 
 const MyPage = () => {
   const [user, setUser] = useState(null);
@@ -68,7 +69,7 @@ const MyPage = () => {
 							<div className="image-wrapper">
 								<div>
 									<img
-									src={imgFile ? imgFile :"src/assets/images/icon_user.svg"}
+									src={imgFile ? imgFile :UserIcon}
 									alt="프로필 이미지"
 									/>
 									<br />
