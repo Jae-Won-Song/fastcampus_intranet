@@ -3,6 +3,10 @@ import { Link, useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import { auth } from "../firebase/config";
 import Logo from '../assets/images/logo_fastcampus_column.svg'
+import Profile from '../assets/images/icon_profile.svg'
+import Edit from '../assets/images/icon_edit.svg'
+import Bell from '../assets/images/icon_bell.svg'
+import Folder from '../assets/images/icon_folder.svg'
 
 function SideBar() {
   const navigate = useNavigate();
@@ -51,7 +55,7 @@ function SideBar() {
       <div>
         <div className="nav-icon" onClick={() => handleIconClick(0)}>
           <Link to="/mypage">
-            <img src="src/assets/images/icon_profile.svg" alt="profile" />
+            <img src={Profile}alt="profile" />
           </Link>
         </div>
         <div className="word">마이페이지</div>
@@ -59,7 +63,7 @@ function SideBar() {
       <div>
         <div className="nav-icon" onClick={() => handleIconClick(1)}>
           <Link to="/apply-list">
-            <img src="src/assets/images/icon_edit.svg" alt="vacation" />
+            <img src={Edit} alt="vacation" />
           </Link>
         </div>
         <div className="word">휴가관리</div>
@@ -67,7 +71,7 @@ function SideBar() {
       <div>
         <div className="nav-icon" onClick={() => handleIconClick(2)}>
           <Link to="/notice">
-            <img src="src/assets/images/icon_bell.svg" alt="announcement" />
+            <img src={Bell} alt="announcement" />
           </Link>
         </div>
         <div className="word">공지사항</div>
@@ -75,7 +79,7 @@ function SideBar() {
       <div>
         <div className="nav-icon" onClick={() => handleIconClick(3)}>
           <Link to="/Reference">
-            <img src="src/assets/images/icon_folder.svg" alt="reference" />
+            <img src={Folder} alt="reference" />
           </Link>
         </div>
         <div className="word">자료실</div>
