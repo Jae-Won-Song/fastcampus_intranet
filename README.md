@@ -37,7 +37,7 @@ PW : 123456
 <br>
 <br>
 
-## 🔨 기술 스택
+## 🔨 사용한 기술 스택
 |            | Stack                                                                                                                                                                                                                                                                                                                      |
 | :--------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |    개발 환경    | <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white"> <img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=node.js&logoColor=white"> <img src="https://img.shields.io/badge/vite-646CFF?style=for-the-badge&logo=vite&logoColor=white">     
