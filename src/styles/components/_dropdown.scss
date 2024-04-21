@@ -1,0 +1,46 @@
+.DropdownWrapper {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 300px;
+}
+
+.DropdownBox {
+  width: 240px;
+  padding: 14px 10px;
+  margin: 0 auto;
+  border: 1px solid $gray;
+  border-radius: 5px;
+  background: $white;
+  line-height: 15px;
+  cursor: pointer;
+  position: relative;
+
+  .Arrow {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: $white; // 화살표 색상
+  }
+}
+
+.SelectWrapper {
+  width: 240px;
+  margin: 0 auto;
+  border: 1px solid $gray;
+  border-radius: 5px;
+  background: $white;
+  box-shadow:
+    0 1px 1px 0 $gray,
+    0 1px 5px 0 $gray;
+
+  .SelectOptions {
+    padding: 10px;
+    cursor: pointer;
+
+    &:hover {
+      background: $white;
+    }
+  }
+}

@@ -1,0 +1,165 @@
+.main-content {
+  @include flex;
+  gap: 2.5rem;
+  background-color: $background;
+  > div {
+    min-height: 52rem;
+    flex-basis: 0;
+    flex-grow: 1;
+    padding: 2.5rem;
+  }
+}
+.left-page {
+  @include column-flex(between, center);
+  margin: 0 auto;
+  background-color: $white;
+  border-radius: 1.5rem;
+
+  &__data {
+    width: 100%;
+  }
+}
+.image-wrapper {
+  height: 17rem;
+  margin: 0 auto;
+  @include flex;
+}
+.image-wrapper img {
+  width: 8.125rem;
+  height: 8.125rem;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.data-wrapper .input {
+  width: 100%;
+  height: 3.125rem;
+  padding: 0 1rem;
+  margin-bottom: 0;
+  border: 1px solid $border;
+}
+.data-wrapper .email-content {
+  padding: 0.8rem 0;
+  line-height: 2.5rem;
+}
+.data-wrapper .name-content {
+  padding: 0.8rem 0;
+  line-height: 2.5rem;
+}
+.data-wrapper .phone-num-content {
+  padding: 0.8rem 0;
+  line-height: 2.5rem;
+}
+.modi-btn-wrapper {
+  @include flex;
+  margin-top: 5rem;
+}
+.modi-btn-wrapper Button {
+  @include text-style(16);
+  padding: 0.625rem 1.875rem;
+}
+
+.right-page {
+  @include column-flex;
+  background-color: $white;
+  margin: 0 auto;
+  border-radius: 1.5rem;
+}
+.right-page-top__data {
+  width: 100%;
+}
+.right-page-top__data img {
+  width: 1.375rem;
+  margin-right: 1rem;
+}
+.status-data-wrapper {
+  @include text-style(18, $black, 600);
+  padding-left: 0.5rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid $border;
+}
+.attendance-status {
+  @include text-style(16, $black, 500);
+
+  img {
+    position: relative;
+    top: -3px;
+    vertical-align: middle;
+  }
+}
+.text-data {
+  @include flex(start, center);
+  @include text-style(16, $black, 500);
+  margin-bottom: 1rem;
+}
+.status--btn {
+  display: flex;
+}
+.status--btn span {
+  margin-top: 1rem;
+}
+.status--btn Button {
+  @include text-style(16);
+}
+.vacation-status {
+  .status--btn {
+    @include flex(between, center);
+  }
+  Button {
+    position: relative;
+    top: -15px;
+  }
+}
+.right-page-bottom__data {
+  width: 100%;
+}
+.right-page-bottom__data img {
+  width: 1.375rem;
+  margin-right: 0.625rem;
+}
+.status-num {
+  @include flex;
+  gap: 3.5rem;
+  margin-top: 2rem;
+}
+.num-wrapper span {
+  @include flex;
+  @include text-style(16);
+  margin-bottom: 0.5rem;
+}
+.circle {
+  @include flex;
+  @include text-style(22, $darkgray, 800);
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 50%;
+  background-color: $border;
+}
+
+.confirm-modal {
+  width: 100%;
+  height: 100%;
+}
+.confirm-text {
+  @include text-style(24, $black, 600);
+}
+.modal__body {
+  @include column-flex(between, center);
+  padding-top: 5rem;
+  height: 100%;
+}
+.modal__btn-wrapper {
+  @include flex;
+  gap: 1.25rem;
+}
+.modal__btn-wrapper Button {
+  @include flex;
+  @include text-style(18, $white, 600);
+  background-color: $primary;
+  border-radius: 6px;
+  padding: 0.625rem 1.875rem;
+}
+
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}

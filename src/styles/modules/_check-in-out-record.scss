@@ -1,0 +1,11 @@
+.CheckInOutRecord {
+  @include column-flex;
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 0.875rem;
+  background-color: $background;
+
+  &.top {
+    margin-bottom: 2.5rem;
+  }
+}

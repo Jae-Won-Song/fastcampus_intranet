@@ -1,0 +1,48 @@
+$radio-color: $primary;
+$radio-size: 14px;
+$radio-label-padding: 25px;
+
+.radio-wrapper {
+  @include flex(between, center);
+  width: 30vw;
+  margin: 1rem 0 3rem;
+}
+
+.StyledRadio {
+  position: absolute;
+  opacity: 0;
+
+  + label {
+    @include text-style(18);
+    position: relative;
+    padding-left: 1.75rem;
+    cursor: pointer;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: $radio-size;
+      height: $radio-size;
+      border-radius: 50%;
+      border: 3px solid $gray;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: $radio-size;
+      height: $radio-size;
+      border-radius: 50%;
+      border: 3px solid $radio-color;
+      display: none;
+    }
+  }
+
+  &:checked + label:after {
+    display: block;
+  }
+}

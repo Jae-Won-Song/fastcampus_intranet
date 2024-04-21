@@ -1,0 +1,59 @@
+.reference-area {
+  border-radius: 1.5rem;
+  gap: 2.5rem;
+
+  .title {
+    @include text-style(36, $black, 700);
+    display: block;
+  }
+  .references {
+    border: 1px solid $gray;
+    border-radius: 0.875rem;
+    padding: 2rem 2.5rem;
+    margin-bottom: 2.5rem;
+    cursor: pointer;
+  }
+
+  .reference-image {
+    height: 20.5rem;
+    object-fit: cover;
+    border-radius: 1.5rem 1.5rem 0 0;
+  }
+  .content-area {
+    position: relative;
+    height: 12rem;
+    padding: 1.8rem;
+  }
+  .content {
+    @include text-style(20, $black, 700);
+  }
+  .subject {
+    @include text-style(20, $primary, 700);
+    position: absolute;
+    left: 1.5rem;
+    bottom: 1.9rem;
+  }
+}
+
+/* 스와이퍼 컨테이너의 스타일 */
+.swiper {
+  padding: 5rem 3.125rem 3.125rem;
+}
+
+/* 스와이퍼 슬라이드의 스타일 */
+.swiper-slide {
+  background: $white;
+  border-radius: 1.5rem;
+  position: relative;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  color: $primary;
+
+  &::after {
+    font-size: 3.375rem;
+  }
+}
+.swiper-pagination-bullet-active {
+  background-color: $primary;
+}

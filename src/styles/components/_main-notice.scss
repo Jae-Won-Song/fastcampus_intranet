@@ -1,0 +1,16 @@
+.notice-grid {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1.3fr 8.2fr 0.4fr;
+  margin-bottom: 0.75rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid $border;
+
+  &__date {
+    @include text-style(14, $gray);
+  }
+
+  &__title {
+    @include text-style(18, $black, 500);
+  }
+}

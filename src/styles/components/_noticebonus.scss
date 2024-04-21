@@ -1,0 +1,24 @@
+.notice-bonus {
+  background-color: $white;
+  border-radius: 1.5rem;
+  min-height: 49rem;
+  padding: 2.5rem;
+
+  .title {
+    @include text-style(28, $black, 700);
+    display: block;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .line {
+    border-bottom: 1px solid $border;
+    margin-bottom: 1rem;
+  }
+
+  .content {
+    @include text-style(18, $black, 400);
+    display: block;
+    line-height: 4rem;
+  }
+}

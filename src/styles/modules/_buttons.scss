@@ -1,0 +1,43 @@
+.Button {
+  @include flex;
+  @include text-style(14, $white, 500);
+  padding: 0.5rem 1.25rem;
+  line-height: 1.6;
+  background-color: $primary;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $primary-hover;
+  }
+
+  &.large {
+    @include text-style(16);
+    padding: 0.625rem 1.875rem;
+  }
+
+  &.entire {
+    @include text-style(16);
+    width: 100%;
+    padding: 0.625rem 1.875rem;
+  }
+
+  &.grayBorder {
+    @include text-style(16, $darkgray);
+    background-color: $white;
+    border: 1px solid $border;
+    margin: 0 auto;
+
+    &:hover {
+      background-color: $white-hover;
+    }
+  }
+
+  &.black {
+    background-color: $black;
+
+    &:hover {
+      background-color: $black-hover;
+    }
+  }
+}

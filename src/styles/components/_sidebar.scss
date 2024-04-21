@@ -1,0 +1,40 @@
+.nav {
+  @include column-flex(between, center);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12.5rem;
+  height: 100vh;
+  border-radius: 0px 24px 24px 0px;
+  background: $white;
+
+  .nav-logo {
+    width: 5.9rem;
+    height: 5.1rem;
+    margin-top: 3.8rem;
+    margin-bottom: 3.75rem;
+    cursor: pointer;
+  }
+  .nav-icon {
+    @include flex;
+    cursor: pointer;
+  }
+  .word {
+    @include text-style(14, $darkgray, 600);
+    padding-top: 0.5rem;
+  }
+  .slide {
+    position: absolute;
+    width: 6px;
+    height: 5rem;
+    background-color: $primary;
+    left: 195px;
+    top: 268px;
+    border-radius: 10px;
+    transition: top 0.3s ease;
+  }
+  Button {
+    margin-bottom: 2.25rem;
+    margin-top: 6rem;
+  }
+}

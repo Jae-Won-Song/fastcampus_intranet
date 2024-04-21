@@ -1,0 +1,22 @@
+.my__list {
+  @include column-flex(around, start);
+  height: 7.7rem;
+  border: 1px solid #e2dede;
+  margin-top: 2rem;
+  padding: 1.2rem 1.4rem;
+  border-radius: 0.875rem;
+  line-height: 2rem;
+  .top-info {
+    @include flex(between, center);
+    width: 100%;
+  }
+  .__title {
+    @include flex;
+    @include text-style(20);
+    text-align: center;
+    font-weight: bold;
+  }
+  .__article {
+    text-align: left;
+  }
+}

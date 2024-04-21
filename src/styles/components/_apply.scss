@@ -1,0 +1,29 @@
+.wrapper {
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  color: $black;
+  background-color: $white;
+
+  .form {
+    .__cat {
+      @include text-style(28);
+      margin-bottom: 3rem;
+      font-weight: bold;
+    }
+    .title {
+      @include text-style(18, $black, 500);
+      @include flex(start);
+      margin: 0.875rem 0;
+    }
+
+    .input {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .error-msg {
+    @include text-style(18, $primary, 500);
+    margin: 1rem 0 2rem;
+    text-align: center;
+  }
+}

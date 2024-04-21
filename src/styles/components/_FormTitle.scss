@@ -1,0 +1,30 @@
+$form-title-font-size: 24px;
+$form-title-color: #333;
+
+$form-input-width: 100%;
+$form-input-padding: 10px;
+$form-input-border: 1px solid #ccc;
+$form-input-border-radius: 5px;
+$form-input-font-size: 16px;
+$form-input-outline: none;
+$form-input-focus-color: black;
+
+.FormTitle {
+  h1 {
+    font-size: $form-title-font-size;
+    color: $form-title-color;
+  }
+
+  input[type="text"] {
+    width: $form-input-width;
+    padding: $form-input-padding;
+    border: $form-input-border;
+    border-radius: $form-input-border-radius;
+    font-size: $form-input-font-size;
+    outline: $form-input-outline;
+
+    &:focus {
+      border-color: $form-input-focus-color;
+    }
+  }
+}
