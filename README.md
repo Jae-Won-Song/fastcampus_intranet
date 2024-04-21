@@ -4,7 +4,7 @@
 
 <div align=center>
   <a href="https://master--fastcampus-intrenet.netlify.app" target="_blank">
-    <img src="https://img.shields.io/badge/배포 링크-ed234b?style=for-the-badge&logoColor=white" alt="example"/>
+    <img src="https://img.shields.io/badge/Try It!-ed234b?style=for-the-badge&logoColor=white" alt="example"/>
   </a>
 </div>
 
