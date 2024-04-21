@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import RightArrow from'../assets/images/icon_chevron_right.svg'
 
 function notices() {
   return (
@@ -11,7 +12,7 @@ function notices() {
               <span>토이프로젝트 I 안내</span>
               <img
                 className="arrow-right"
-                src="src/assets/images/icon_chevron_right.svg"
+                src={RightArrow}
                 alt="fastcampus"
               />
             </Link>
@@ -22,7 +23,7 @@ function notices() {
               <span>이정환 강사님 현직자 특강 만족도 조사 안내</span>
               <img
                 className="arrow-right"
-                src="src/assets/images/icon_chevron_right.svg"
+                src={RightArrow}
                 alt="fastcampus"
               />
             </Link>
@@ -33,7 +34,7 @@ function notices() {
               <span>훈련장려금 신청 지연 안내</span>
               <img
                 className="arrow-right"
-                src="src/assets/images/icon_chevron_right.svg"
+                src={RightArrow}
                 alt="fastcampus"
               />
             </Link>
@@ -44,7 +45,7 @@ function notices() {
               <span>그룹스터디 회고 이벤트 결과 발표</span>
               <img
                 className="arrow-right"
-                src="src/assets/images/icon_chevron_right.svg"
+                src={RightArrow}
                 alt="fastcampus"
               />
             </Link>

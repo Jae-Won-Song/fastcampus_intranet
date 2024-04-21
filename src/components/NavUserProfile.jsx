@@ -1,6 +1,7 @@
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { auth } from "../firebase/config";
 import { useState, useEffect } from "react";
+import UserIcon from '../assets/images/icon_user.svg'
 
 function NavUserProfile() {
   const navigate = useNavigate();
@@ -28,7 +29,7 @@ function NavUserProfile() {
           <span>{user?.displayName}</span>님
         </div>
         <div className="img-wrap">
-          <img src="src/assets/images/icon_user.svg" alt="user" />
+          <img src={UserIcon} alt="user" />
         </div>
       </Link>
     </div>
