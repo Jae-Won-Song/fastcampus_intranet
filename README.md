@@ -37,7 +37,7 @@ PW : 123456
 <br>
 <br>
 
-<center>
+<p align="center">
 
 ## 🔨 사용한 기술 스택
 
@@ -51,7 +51,7 @@ PW : 123456
 | 배포      | <img src="https://img.shields.io/badge/netlify-00C7B7?style=for-the-badge&logo=firebase&logoColor=white">                                                                                           |
 |   협업툴   | <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white"> <img src="https://img.shields.io/badge/Github-181717?style=for-the-badge&logo=Github&logoColor=white">                                                                                                                   |
 
-</center>
+</p>
 
 ## ✨프로젝트 소개
 
