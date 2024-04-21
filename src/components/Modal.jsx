@@ -1,116 +1,100 @@
-// import Button from "./Button";
-// import { useState, useEffect } from "react";
-// import { addDoc, collection, getDocs, onSnapshot, query, where } from "firebase/firestore";
-// import { firestoreDb } from "../firebase/config";
-// import { auth } from "../firebase/config";
+import { useState, useEffect } from "react";
+import { addDoc, collection, query, where, getDocs } from "firebase/firestore";
+import { firestoreDb } from "../firebase/config";
+import { auth } from "../firebase/config";
+import Button from "./Button";
 
-// let count = 0;
+function Modal({ isOpen, onSubmit, onClose, children }) {
+  if (!isOpen) return null;
 
-// const formatDate = () => {
-//   return new Date().toLocaleDateString("ko-KR", {
-//     year: "numeric",
-//     month: "2-digit",
-//     day: "2-digit",
-//   })
-// }
+  const [user, setUser] = useState(null);
+  const [hasRecordedIn, setHasRecordedIn] = useState(false);
+  const [hasRecordedOut, setHasRecordedOut] = useState(false);
 
-// function Modal({ isOpen, onSubmit, onClose, children }) {
-//   if (!isOpen) return null;
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setUser(user);
+    });
+    return () => unsubscribe();
+  }, []);
 
-//   const [recordInTime, setRecordInTime] = useState(new Date());
-//   const [recordOutTime, setRecordOutTime] = useState(new Date());
-//   const [timeRecord, setTimeRecord] = useState([]);
-//   const [clickCount, setClickCount] = useState(count);
+  useEffect(() => {
+    if (!user) return;
+    checkRecordsForToday(user.displayName).then(({ inRecord, outRecord }) => {
+      setHasRecordedIn(inRecord);
+      setHasRecordedOut(outRecord);
+    });
+  }, [user]);
 
-//   const [user, setUser] = useState(null);
+  const checkRecordsForToday = async (displayName) => {
+    const today = new Date().toLocaleDateString("ko-KR", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    });
+    const qIn = query(
+      collection(firestoreDb, "recordInTime"),
+      where("user", "==", displayName),
+      where("date", "==", today)
+    );
+    const qOut = query(
+      collection(firestoreDb, "recordOutTime"),
+      where("user", "==", displayName),
+      where("date", "==", today)
+    );
 
-//   useEffect(() => {
-//     const unsubscribe = auth.onAuthStateChanged((user) => {
-//       setUser(user);
-//     });
-//     return () => unsubscribe();
-//   }, []);
+    const inSnapshot = await getDocs(qIn);
+    const outSnapshot = await getDocs(qOut);
+    return {
+      inRecord: !inSnapshot.empty,
+      outRecord: !outSnapshot.empty,
+    };
+  };
 
-//   const onRecordIn = async () => {
-//     const docRef = await addDoc(collection(firestoreDb, "recordInTime"), {
-//       hour: recordInTime.getHours(),
-//       minute: recordInTime.getMinutes(),
-//       user: user?.displayName,
-//       date: new Date().toLocaleString("ko-KR", {
-//         year: "numeric",
-//         month: "2-digit",
-//         day: "2-digit",
-//       })
-//     })
-//     setTimeRecord((prevRecords) => [
-//       ...prevRecords,
-//       { hour: recordInTime.getHours(), minute: recordInTime.getMinutes() },
-//     ]);
-//   };
+  const onRecordInOrOut = async (type) => {
+    const now = new Date();
+    await addDoc(collection(firestoreDb, `record${type}Time`), {
+      hour: now.getHours(),
+      minute: now.getMinutes(),
+      user: user?.displayName,
+      date: now.toLocaleDateString("ko-KR", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+      }),
+    });
+    onSubmit();
+    onClose();
+  };
 
-//   const onRecordOut = async () => {
-//     const docRef = await addDoc(collection(firestoreDb, "recordOutTime"), {
-//       hour: recordOutTime.getHours(),
-//       minute: recordOutTime.getMinutes(),
-//       user: user?.displayName,
-//       date: new Date().toLocaleString("ko-KR", {
-//         year: "numeric",
-//         month: "2-digit",
-//         day: "2-digit",
-//       })
-//     });
-//     setTimeRecord((prevRecords) => [
-//       ...prevRecords,
-//       { hour: recordOutTime.getHours(), minute: recordOutTime.getMinutes() },
-//     ]);
-//   };
+  const handleClick = async () => {
+    if (!hasRecordedIn) {
+      await onRecordInOrOut("In");
+      setHasRecordedIn(true);
+    } else if (!hasRecordedOut) {
+      await onRecordInOrOut("Out");
+      setHasRecordedOut(true);
+    } else {
+      alert('오늘은 더이상 입/퇴실을 할 수 없습니다.');
+      onClose();
+    }
 
-//   const handleClick = async () => {
-//     const dateFormatted = formatDate();
+    if (isRecordTimeUpdated !== undefined && typeof isRecordTimeUpdated === 'function') {
+      isRecordTimeUpdated(true);
+    }
+  };
 
-//     const hasInRecord = await checkAlreadyInOut(user.displayName, dateFormatted, "recordInTime");
-//     if (!hasInRecord) {
-//       onSubmit();
-//       onClose();
-//       onRecordIn();
-//       return;
-//     }
+  return (
+    <div className="modal">
+      <div className="modal__wrapper">
+        <p className="modal__wrapper_p">{children}</p>
+        <div className="modal__wrapper_buttons">
+          <Button onClick={handleClick}>확인</Button>
+          <Button color="black" onClick={onClose}>취소</Button>
+        </div>
+      </div>
+    </div>
+  );
+}
 
-//     const hasOutRecord = await checkAlreadyInOut(user.displayName, dateFormatted, "recordOutTime");
-//     if (!hasOutRecord) {
-//       onSubmit();
-//       onClose();
-//       onRecordOut();
-//       return;
-//     }
-//     onClose();
-//     alert('오늘은 더이상 입/퇴실을 할 수 없습니다.')
-//   };
-
-//   const checkAlreadyInOut = async (userDisplayName, dateFormatted, collectionName) => {
-//     const q = query(
-//       collection(firestoreDb, collectionName),
-//       where('user', '==', userDisplayName),
-//       where('date', '==', dateFormatted)
-//     );
-//     const querySnapshot = await getDocs(q);
-//     return !querySnapshot.empty;
-//   }
-
-
-//   return (
-//     <div className="modal">
-//       <div className="modal__wrapper">
-//         <p className="modal__wrapper_p">{children}</p>
-//         <div className="modal__wrapper_buttons">
-//           <Button onClick={handleClick}>확인</Button>
-//           <Button color="black" onClick={onClose}>
-//             취소
-//           </Button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Modal;
+export default Modal;

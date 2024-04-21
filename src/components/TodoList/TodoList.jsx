@@ -1,7 +1,7 @@
 import Editor from "./Editor";
 import List from "./List";
 import { useState, useEffect } from "react";
-import { addDoc, collection, doc, updateDoc, deleteDoc, getDocs, QuerySnapshot, onSnapshot } from "firebase/firestore";
+import { addDoc, collection, doc, updateDoc, deleteDoc, getDocs, onSnapshot, query, where } from "firebase/firestore";
 import { firestoreDb } from "../../firebase/config";
 import { auth } from "../../firebase/config";
 
@@ -26,22 +26,24 @@ function TodoList() {
   }
 
   useEffect(() => {
+    if(!user) return;
     const today = formatDate();
+    const q = query(
+      collection(firestoreDb, "todolist"),
+      where("user", "==", user.displayName),
+      where("date", "==", today)
+    );
 
-    const unsubscribe = onSnapshot(collection(firestoreDb, 'todolist'), (snapshot) => {
-      const newRecords = snapshot.docs
-        .map(doc => ({
-          id: doc.id,
-          content: doc.data().content,
-          isDone: doc.data().isDone,
-          user: doc.data().user,
-          date: doc.data().date,
-        }))
-        .filter(record => record.user === user?.displayName && record.date === today)
-        setTodos(newRecords);
+    const unsubscribe = onSnapshot(q, (snapshot) => {
+      const newTodos = snapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setTodos(newTodos);
     });
+
     return () => unsubscribe();
-  }, [todos]);
+  }, [user])
 
   const onCreate = async (content) => {
     const docRef = await addDoc(collection(firestoreDb, "todolist"), {

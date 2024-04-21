@@ -23,7 +23,7 @@ function SideBar() {
   };
   const handleLogout = () => {
     auth.signOut();
-    navigate("/login");
+    navigate("/");
   };
   useEffect(() => {
     const handleResize = () => {

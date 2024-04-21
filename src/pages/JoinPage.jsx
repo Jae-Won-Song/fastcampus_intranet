@@ -106,14 +106,12 @@ function JoinPage() {
         email,
         password
       );
-      await updateProfile(credentials.user, {
-        displayName: userName,
-      });
       await set(ref(db, `users/${credentials.user.uid}`), {
         email: email,
         userName: userName,
         phone: phone,
       });
+      alert("회원가입이 완료되었습니다.");
       navigate("/main");
     } catch (error) {
       if (error instanceof FirebaseError) {
@@ -266,7 +264,7 @@ function JoinPage() {
             </label>
             <div className="input-wrap">
               <input
-                type="phone"
+                type="number"
                 name="phone"
                 id="phone"
                 placeholder="010부터 숫자만 입력하세요(&lsquo;-&rsquo;제외)"

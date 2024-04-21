@@ -1,46 +1,52 @@
-function NoticeSatisfaction() {
+function NoticeToy() {
   return (
-    <div className="notice-satisfaction">
-      <div className="notice-satisfaction-area">
-        <span className="title">
-          이정환 강사님 현직자 특강 만족도 조사 안내
-        </span>
-        <div className="line"></div>
-        <ul className="content">
-          [ 이정환 강사님 현직자 특강 만족도 조사 안내]
-          <li>여러분들~! 강의 모두 잘 들으셨기를 바라며,</li>
-          <li>만족스러우셨다면 의견 부탁드리겠습니다~</li>
-          <li>여러분들의 만족도를 아래 설문폼을 통해 작성해 주세요!</li>
-          <a
-            className="satisfaction"
-            href="https://forms.gle/Zb7hNXUMZJrAufyy9"
-          >
-            이정환 강사님 현직자 특강 만족도 조사
-          </a>
-        </ul>
-        <ul className="content">
-          Google Docs
-          <li>
-            <a
-              className="satisfaction"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfHysdUTgIGLuD96dsnxK5dZ0i63Ffq7LPgzpXNjF5zxLsJRQ/viewform"
-            >
-              [패스트캠퍼스] 프론트엔드 개발 부트캠프 8기 특강 만족도 설문 조사
-            </a>
-          </li>
-          <li>안녕하세요. 패스트캠퍼스입니다.</li>
-          <li>특강은 만족스러우셨나요??</li>
-          <li>특강에 대한 여러분들의 의견과 만족도를 작성해 주세요!</li>
-          <li>
-            설문을 기반으로 여러분들께 더욱 발전된, 좋은 교육을 제공드리고자
-            하오니 성실한 답변 부탁
-          </li>
-          <li>드립니다.♥</li>
-          <li>감사합니다^ㅡ^ </li>
-        </ul>
+    <>
+      <div className="notice-toy">
+        <div className="notice-toy-area">
+          <span className="title">토이 프로젝트 I 안내</span>
+          <div className="line"></div>
+          <ul className="content">
+            ✔️ 과제 주제
+            <li>직원들을 위한 인트라넷 페이지</li>
+            <li>구현사항 확인하기 </li>
+            <li>깃허브 페이지는 차주 월요일에 안내 드리겠습니다!</li>
+          </ul>
+          <ul className="content">
+            ✔️ 진행 기간
+            <li>~ 24. 04. 21 (일)</li>
+            <li>구현사항 확인하기 </li>
+          </ul>
+          <ul className="content">
+            ✔ ️팀 안내
+            <li>토이 프로젝트는 팀별로 진행됩니다!</li>
+            <li>
+              팀 편성은 해당 스레드 첨부 파일 사진과 수강생 공유용 시트를 확인해
+              주시길 바랍니다.
+            </li>
+            <li>수강생 공유용 시트</li>
+          </ul>
+          <ul className="content">
+            ✔ ️멘토링 안내
+            <li>
+              <img src="src/assets/images/group_list.png" alt="list" />
+            </li>
+            <li>주차별로 토이 프로젝트 실시간 멘토링을 받을 수 있습니다.</li>
+            <li>담당 멘토는 스레드 첨부 파일 사진에서 확인 가능합니다</li>
+            <li>기존 멘토링 방식(사전 요청서, 일정 안내)과 동일합니다.</li>
+          </ul>
+          <ul className="content">
+            ✔️ 대면 강의장 안내
+            <li>
+              프로젝트 기간에는 대면 강의장을 사용하실 수 있습니다! 자유롭게
+              사용해 보세요! 위치
+            </li>
+            <li>서울 강남구 강남대로 364 (미왕빌딩1층 11D 강의장)</li>
+            <li>차주 월요일부터 사용 가능합니다.</li>
+          </ul>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
-export default NoticeSatisfaction;
+export default NoticeToy;
