@@ -1,3 +1,5 @@
+import groupList from "../assets/images/group_list.png";
+
 function NoticeToy() {
   return (
     <>
@@ -28,7 +30,7 @@ function NoticeToy() {
           <ul className="content">
             ✔ ️멘토링 안내
             <li>
-              <img src="src/assets/images/group_list.png" alt="list" />
+              <img src={groupList} alt="list" />
             </li>
             <li>주차별로 토이 프로젝트 실시간 멘토링을 받을 수 있습니다.</li>
             <li>담당 멘토는 스레드 첨부 파일 사진에서 확인 가능합니다</li>

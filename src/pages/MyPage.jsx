@@ -6,6 +6,11 @@ import { auth } from "../firebase/config";
 import RecordInTime from "../components/RecordInTime";
 import RecordOutTime from "../components/RecordOutTime";
 import icon_user from "../assets/images/icon_user.svg";
+import icon_graduate from "../assets/images/icon_user_graduate.svg";
+import icon_clock_border from "../assets/images/icon_clock_border.svg";
+import icon_clock from "../assets/images/icon_clock.svg";
+import icon_umbrella from "../assets/images/icon_umbrella_beach.svg";
+import icon_clipboard from "../assets/images/icon_clipboard_check.svg";
 import { getDatabase, ref, get, update } from "firebase/database";
 import { updateProfile } from "firebase/auth";
 
@@ -245,10 +250,7 @@ const MyPage = () => {
               <div className="status-data-wrapper">
                 <div className="current-className">
                   <div className="text-data">
-                    <img
-                      src="src/assets/images/icon_user_graduate.svg"
-                      alt=""
-                    />
+                    <img src={icon_graduate} alt="graduate icon" />
                     현재 수강중인 클래스
                   </div>
                   프론트엔드 부트캠프 8기
@@ -257,7 +259,7 @@ const MyPage = () => {
               <div className="status-data-wrapper">
                 <div className="check-in-time">
                   <div className="text-data">
-                    <img src="src/assets/images/icon_clock_border.svg" alt="" />
+                    <img src={icon_clock_border} alt="clock icon" />
                     오늘 입실 시간
                   </div>
                   <RecordInTime></RecordInTime>
@@ -266,8 +268,8 @@ const MyPage = () => {
               <div className="status-data-wrapper">
                 <div className="check-out-time">
                   <div className="text-data">
-                    <img src="src/assets/images/icon_clock.svg" alt="" /> 오늘
-                    퇴실 시간
+                    <img src={icon_clock} alt="clock icon" />
+                    오늘 퇴실 시간
                   </div>
                   <RecordOutTime></RecordOutTime>
                 </div>
@@ -275,10 +277,7 @@ const MyPage = () => {
               <div className="status-data-wrapper">
                 <div className="vacation-status">
                   <div className="text-data">
-                    <img
-                      src="src/assets/images/icon_umbrella_beach.svg"
-                      alt=""
-                    />
+                    <img src={icon_umbrella} alt="umbrella" />
                     4월 휴가 신청 상태
                   </div>
                   <div className="status--btn">
@@ -292,7 +291,7 @@ const MyPage = () => {
             </div>
             <div className="right-page-bottom__data">
               <div className="attendance-status">
-                <img src="src/assets/images/icon_clipboard_check.svg" alt="" />
+                <img src={icon_clipboard} alt="clipboard icon" />
                 출결 현황
                 <br />
                 <div className="status-num">
