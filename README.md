@@ -26,13 +26,20 @@ PW : 123456
 제작기간 : `2024.04.08 ~ 2024.04.21`
 제작인원 : `5명 [김여진B 박민주 박성현 송재원 이동희]`
 
+<br>
+<br>
+
 ### 로그인/회원가입
 
   - `회원가입 후 로그인`을 해서 나만의 패스트캠퍼스를 관리 해 보아요!
   - `Firebase Authentication`을 이용하여 가입한 `유저 정보 관리`
   - `Realtime Database`로 유저의 이메일(아이디), 이름 등의 정보 저장
   - 회원가입 시 `유효성 검사(Form validation)` 처리
-    
+
+![join](https://github.com/Jae-Won-Song/toy-prj/assets/106307387/e608926e-0f9b-47df-848e-ce2c6c29b2f2)
+
+<hr/>
+
 ### 메인
 
 - 좌측 상단에 `시계`를 통해 입실/퇴실에 늦지 않도록 해요!
@@ -40,13 +47,23 @@ PW : 123456
 - `공지사항` 한눈에 확인!
 - `ToDoList📋`를 통해 알찬 하루를 보내보세요!
 - 사용자, 날짜별로 해당하는 `데이터베이스`를 불러와요!
-  
+
+![main](https://github.com/Jae-Won-Song/toy-prj/assets/106307387/4df61e59-69d4-4307-a88c-c216aba10232)
+
+![main_modal](https://github.com/Jae-Won-Song/toy-prj/assets/106307387/5d3c503b-36b3-4216-a0a2-72cbbc117d73)
+
+<hr/>
+
 ### 마이프로필
 
 - `프로필사진 업로드` 및 `프로필 변경`
 - 나의 입실/퇴실 시간을 체크✔할 수 있어요!
 - 나의 `잔여휴가`와 `출결상황` 확인
-  
+
+![mypage](https://github.com/Jae-Won-Song/toy-prj/assets/106307387/3c79f7dd-7d44-46f3-9ddc-cbe02c5c70d8)
+
+<hr/>
+
 ### 휴가관리
 
 - `휴가 신청페이지`를 통해 휴가/조퇴/외출 신청을 간편하게
@@ -57,14 +74,29 @@ PW : 123456
 -  휴가 종료일, 휴가 신청란 `예외처리`
 -  유저의 편의성을 위해 휴가 신청 후 휴가리스트로 이동
 
+![apply](https://github.com/Jae-Won-Song/toy-prj/assets/106307387/e5752290-6457-477b-80ed-fb769c93be80)
+
+![applylist](https://github.com/Jae-Won-Song/toy-prj/assets/106307387/7a875cce-48be-4075-8557-6a59f1d9279d)
+
+<hr/>
+
 ### 공지사항
 
 - `공지사항의 자세한 내용`은 여기서 확인 📣
+
+![notice](https://github.com/Jae-Won-Song/toy-prj/assets/106307387/91f0fa86-90fc-49b7-9399-93567e012cb3)
+
+![notice-detail](https://github.com/Jae-Won-Song/toy-prj/assets/106307387/51c0de18-81b5-443d-9250-48eb2ea00f77)
+
+<hr/>
   
 ### 자료실
 
 - 패스트캠퍼스에서 `제공하는 강의`들을 한눈에 볼 수 있어요!
 - 필요한 강의를 선택하여 해당페이지로 빠른이동
+
+![자료실](https://github.com/Jae-Won-Song/toy-prj/assets/106307387/ba72ab70-47c3-4b2f-9d39-ccfa3173210e)
+
   
 <br>
 <br>
