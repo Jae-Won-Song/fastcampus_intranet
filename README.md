@@ -37,7 +37,7 @@ PW : 123456
 <br>
 <br>
 
-<p align="center">
+
 
 ## 🔨 사용한 기술 스택
 
@@ -51,7 +51,7 @@ PW : 123456
 | 배포      | <img src="https://img.shields.io/badge/netlify-00C7B7?style=for-the-badge&logo=firebase&logoColor=white">                                                                                           |
 |   협업툴   | <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white"> <img src="https://img.shields.io/badge/Github-181717?style=for-the-badge&logo=Github&logoColor=white">                                                                                                                   |
 
-</p>
+
 
 ## ✨프로젝트 소개
 
@@ -110,10 +110,12 @@ PW : 123456
 -  휴가 종료일, 휴가 신청란 `예외처리`
 -  유저의 편의성을 위해 휴가 신청 후 휴가리스트로 이동
 
-<img width="100%" alt="apply" src="https://github.com/Jae-Won-Song/toy-prj/assets/157576281/cb1388f5-65ae-46dd-97ee-8e5588e50b7c">
+
+<img width="100%" alt="apply" src="https://github.com/Jae-Won-Song/toy-prj/assets/120430844/8f793205-66b5-4492-aff6-02990fd6cf46">
 
 
-<img width="100%" alt="applylist" src="https://github.com/Jae-Won-Song/toy-prj/assets/157576281/95115940-51e6-4829-bf1b-4d7954a14214">
+<img width="100%" alt="applylist" src="https://github.com/Jae-Won-Song/toy-prj/assets/120430844/8ae7db7d-3d51-4f3b-80b2-5123c082e250">
+
 
 
 <hr/>
