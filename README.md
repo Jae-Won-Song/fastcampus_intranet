@@ -1,7 +1,7 @@
 # :상처받은_마음:수강생들을 위한 패스트캠퍼스 인트라넷:상처받은_마음:
 <br>
 <div align=center>
-  <a href="https://master--fastcampus-intrenet.netlify.app/login" target="_blank">
+  <a href="https://master--fastcampus-intrenet.netlify.app" target="_blank">
     <img src="https://img.shields.io/badge/배포 링크-ed234b?style=for-the-badge&logoColor=white" alt="example"/>
   </a>
 </div>
