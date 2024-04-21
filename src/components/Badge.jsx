@@ -1,7 +1,6 @@
 // Badge.jsx
 import React from "react";
 
-
 const Badge = ({ type }) => {
   let badgeText = "";
 

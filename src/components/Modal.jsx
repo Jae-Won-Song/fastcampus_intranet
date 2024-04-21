@@ -35,12 +35,12 @@ function Modal({ isOpen, onSubmit, onClose, children }) {
     const qIn = query(
       collection(firestoreDb, "recordInTime"),
       where("user", "==", displayName),
-      where("date", "==", today)
+      where("date", "==", today),
     );
     const qOut = query(
       collection(firestoreDb, "recordOutTime"),
       where("user", "==", displayName),
-      where("date", "==", today)
+      where("date", "==", today),
     );
 
     const inSnapshot = await getDocs(qIn);
@@ -75,11 +75,14 @@ function Modal({ isOpen, onSubmit, onClose, children }) {
       await onRecordInOrOut("Out");
       setHasRecordedOut(true);
     } else {
-      alert('오늘은 더이상 입/퇴실을 할 수 없습니다.');
+      alert("오늘은 더이상 입/퇴실을 할 수 없습니다.");
       onClose();
     }
 
-    if (isRecordTimeUpdated !== undefined && typeof isRecordTimeUpdated === 'function') {
+    if (
+      isRecordTimeUpdated !== undefined &&
+      typeof isRecordTimeUpdated === "function"
+    ) {
       isRecordTimeUpdated(true);
     }
   };
@@ -90,7 +93,9 @@ function Modal({ isOpen, onSubmit, onClose, children }) {
         <p className="modal__wrapper_p">{children}</p>
         <div className="modal__wrapper_buttons">
           <Button onClick={handleClick}>확인</Button>
-          <Button color="black" onClick={onClose}>취소</Button>
+          <Button color="black" onClick={onClose}>
+            취소
+          </Button>
         </div>
       </div>
     </div>

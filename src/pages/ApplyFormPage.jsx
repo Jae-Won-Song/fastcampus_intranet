@@ -22,7 +22,13 @@ const FormTitle = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!formData.title || !formData.type || !formData.reason || !formData.startDate || !formData.endDate) {
+    if (
+      !formData.title ||
+      !formData.type ||
+      !formData.reason ||
+      !formData.startDate ||
+      !formData.endDate
+    ) {
       setError("입력 필드를 모두 작성해주세요.");
       return;
     }
@@ -33,7 +39,7 @@ const FormTitle = () => {
       .then(() => {
         console.log("폼 제출 완료");
         alert("제출이 완료되었습니다.");
-        navigate("/apply-list"); 
+        navigate("/apply-list");
       })
       .catch((error) => {
         console.error("Error saving data: ", error);
@@ -45,7 +51,7 @@ const FormTitle = () => {
       ...formData,
       [name]: value,
     });
-    setError(""); 
+    setError("");
   };
 
   const handleRadioChange = (selectedType) => {
@@ -53,7 +59,7 @@ const FormTitle = () => {
       ...formData,
       type: selectedType,
     });
-    setError(""); 
+    setError("");
   };
 
   const handleDateChange = (name, value) => {
@@ -61,7 +67,7 @@ const FormTitle = () => {
       ...formData,
       [name]: value,
     });
-    setError(""); 
+    setError("");
   };
 
   return (

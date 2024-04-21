@@ -1,7 +1,17 @@
 import Editor from "./Editor";
 import List from "./List";
 import { useState, useEffect } from "react";
-import { addDoc, collection, doc, updateDoc, deleteDoc, getDocs, onSnapshot, query, where } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  doc,
+  updateDoc,
+  deleteDoc,
+  getDocs,
+  onSnapshot,
+  query,
+  where,
+} from "firebase/firestore";
 import { firestoreDb } from "../../firebase/config";
 import { auth } from "../../firebase/config";
 
@@ -22,20 +32,20 @@ function TodoList() {
       year: "numeric",
       month: "2-digit",
       day: "2-digit",
-    })
-  }
+    });
+  };
 
   useEffect(() => {
-    if(!user) return;
+    if (!user) return;
     const today = formatDate();
     const q = query(
       collection(firestoreDb, "todolist"),
       where("user", "==", user.displayName),
-      where("date", "==", today)
+      where("date", "==", today),
     );
 
     const unsubscribe = onSnapshot(q, (snapshot) => {
-      const newTodos = snapshot.docs.map(doc => ({
+      const newTodos = snapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
       }));
@@ -43,7 +53,7 @@ function TodoList() {
     });
 
     return () => unsubscribe();
-  }, [user])
+  }, [user]);
 
   const onCreate = async (content) => {
     const docRef = await addDoc(collection(firestoreDb, "todolist"), {
@@ -54,7 +64,7 @@ function TodoList() {
         year: "numeric",
         month: "2-digit",
         day: "2-digit",
-      })
+      }),
     });
 
     setTodos([

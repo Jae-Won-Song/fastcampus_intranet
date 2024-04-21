@@ -51,6 +51,7 @@
   line-height: 2.5rem;
 }
 .modi-btn-wrapper {
+  gap: 1.5rem;
   @include flex;
   margin-top: 5rem;
 }

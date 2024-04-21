@@ -24,11 +24,11 @@ function RecordInTime() {
     const q = query(
       collection(firestoreDb, "recordInTime"),
       where("user", "==", user.displayName),
-      where("date", "==", today)
+      where("date", "==", today),
     );
 
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      const newRecords = querySnapshot.docs.map(doc => ({
+      const newRecords = querySnapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
       }));

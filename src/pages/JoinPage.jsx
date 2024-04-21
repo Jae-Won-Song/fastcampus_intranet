@@ -104,7 +104,7 @@ function JoinPage() {
       const credentials = await createUserWithEmailAndPassword(
         auth,
         email,
-        password
+        password,
       );
       await set(ref(db, `users/${credentials.user.uid}`), {
         email: email,

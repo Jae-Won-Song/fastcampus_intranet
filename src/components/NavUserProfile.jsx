@@ -1,7 +1,7 @@
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { auth } from "../firebase/config";
 import { useState, useEffect } from "react";
-import UserIcon from '../assets/images/icon_user.svg'
+import UserIcon from "../assets/images/icon_user.svg";
 
 function NavUserProfile() {
   const navigate = useNavigate();

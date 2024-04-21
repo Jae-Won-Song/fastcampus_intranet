@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import { auth } from "../firebase/config";
-import Logo from '../assets/images/logo_fastcampus_column.svg'
-import Profile from '../assets/images/icon_profile.svg'
-import Edit from '../assets/images/icon_edit.svg'
-import Bell from '../assets/images/icon_bell.svg'
-import Folder from '../assets/images/icon_folder.svg'
+import Logo from "../assets/images/logo_fastcampus_column.svg";
+import Profile from "../assets/images/icon_profile.svg";
+import Edit from "../assets/images/icon_edit.svg";
+import Bell from "../assets/images/icon_bell.svg";
+import Folder from "../assets/images/icon_folder.svg";
 
 function SideBar() {
   const navigate = useNavigate();
@@ -43,10 +43,7 @@ function SideBar() {
     <div className="nav">
       <div className="nav-logo" onClick={handleLogoClick}>
         <Link to="/main">
-          <img
-            src={Logo}
-            alt="fastcampusLogo"
-          />
+          <img src={Logo} alt="fastcampusLogo" />
         </Link>
         {activeIconIndex !== null && (
           <div className="slide" style={{ top: slideOffset + "px" }}></div>
@@ -55,7 +52,7 @@ function SideBar() {
       <div>
         <div className="nav-icon" onClick={() => handleIconClick(0)}>
           <Link to="/mypage">
-            <img src={Profile}alt="profile" />
+            <img src={Profile} alt="profile" />
           </Link>
         </div>
         <div className="word">마이페이지</div>
