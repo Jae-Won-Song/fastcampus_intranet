@@ -1,18 +1,17 @@
-@import "../../constants/colors";
-
 .Editor {
   display: flex;
-  gap: 10px;
-  margin-bottom: 40px;
+  gap: 0.625rem;
+  margin-bottom: 2rem;
 
   input {
+    @include text-style(16);
     width: 50%;
     margin-left: auto;
     border: 1px solid $border;
-    padding-left: 15px;
+    padding-left: 1rem;
 
     &:focus {
-      border-color: $primary;
+      border-color: $gray;
     }
   }
 }

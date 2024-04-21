@@ -1,5 +1,3 @@
-import "../styles/main.scss";
-import "../styles/components/MainPage.scss";
 import BlockBox from "../components/BlockBox";
 import CheckInOutRecord from "../components/CheckInOutRecord";
 import TodoList from "../components/TodoList/TodoList";
@@ -12,6 +10,8 @@ import { auth } from "../firebase/config";
 import RecordInTime from "../components/RecordInTime";
 import RecordOutTime from "../components/RecordOutTime";
 import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import UserIcon from "../../public/img_user.png"
 
 function MainPage() {
   const [user, setUser] = useState(null);
@@ -43,7 +43,7 @@ function MainPage() {
             {/* 프로필 박스 */}
             <BlockBox size="large">
               <div className="boxes__top_profile">
-                <img src="../../public/img_user.png" alt="img_user" />
+                <img src={UserIcon} alt="img_user" />
                 <span>{user?.displayName}님</span>
                 <ToggleButton record="입실하기"></ToggleButton>
               </div>
@@ -69,16 +69,10 @@ function MainPage() {
             {/* 공지사항 박스 */}
             <BlockBox size="medium">
               <div className="notice">공지사항</div>
-              <Notice date="2024.04.05" title="토이 프로젝트 I 안내" />
-              <Notice
-                date="2024.04.04"
-                title="이정환 강사님 현직자 특강 만족도 조사 안내"
-              />
-              <Notice date="2024.04.02" title="훈련장려금 신청 지연 안내" />
-              <Notice
-                date="2024.04.01"
-                title="그룹스터디 회고 이벤트 결과 발표"
-              />
+              <Link to='/notice-toy'><Notice date="2024.04.05" title="토이 프로젝트 I 안내" /></Link>
+              <Link to='/notice-satisfaction'><Notice date="2024.04.04" title="이정환 강사님 현직자 특강 만족도 조사 안내" /></Link>
+              <Link to='/notice-bonus'><Notice date="2024.04.02" title="훈련장려금 신청 지연 안내" /></Link>
+              <Link to='/notice-event'><Notice date="2024.04.01" title="그룹스터디 회고 이벤트 결과 발표" /></Link>
             </BlockBox>
             {/* 투두리스트 박스 */}
             <BlockBox size="medium">

@@ -1,6 +1,5 @@
 import Edit from "../../../public/icon_pen.svg";
 import Delete from "../../../public/icon_trash.svg";
-import "../../styles/components/TodoList/ListItem.scss";
 import { useState } from "react";
 
 function ListItem({ id, isDone, content, onUpdate, onDelete, onDone }) {

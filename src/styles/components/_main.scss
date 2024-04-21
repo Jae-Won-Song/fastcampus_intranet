@@ -1,5 +1,90 @@
-.main {
-  background-color: $yellow;
-  padding: 2.5rem;
-  padding-left: 15rem;
+.my-page {
+  @include flex(between, center);
+  margin-left: auto;
+}
+
+.boxes {
+  &__top {
+    @include flex;
+    gap: 2.5rem;
+
+    &_date {
+      @include text-style(28, $black, 500);
+      margin-bottom: 1rem;
+    }
+
+    &_time {
+      @include flex(between, center);
+      .ampm {
+        @include text-style(36, $black, 500);
+        margin-right: 1.25rem;
+      }
+
+      .time {
+        @include text-style(88, $black, 800);
+        font-size: 4.5rem;
+      }
+    }
+
+    &_profile {
+      @include column-flex;
+      flex-grow: 1;
+
+      img {
+        width: 8.125rem;
+        height: 8.125rem;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      span {
+        @include text-style(24, $black, 700);
+        @include flex;
+        margin-top: 0.875rem;
+      }
+
+      .Button {
+        margin-top: 1.875rem;
+      }
+    }
+  }
+
+  &__bottom {
+    @include flex;
+    gap: 2.5rem;
+
+    .notice {
+      @include text-style(28, $black, 700);
+      margin-bottom: 1.25rem;
+    }
+
+    .todoList {
+      @include flex;
+      margin-bottom: 1.25rem;
+
+      &_title {
+        @include text-style(28, $black, 700);
+      }
+    }
+  }
+}
+
+.record {
+  @include column-flex;
+  flex-grow: 1;
+
+  &__info {
+    @include flex;
+    @include text-style(18, $black, 500);
+    margin-bottom: 0.625rem;
+  }
+
+  &__time {
+    @include text-style(28, $black, 700);
+    max-height: 1rem;
+  }
+
+  img.clock {
+    margin-right: 0.625rem;
+  }
 }

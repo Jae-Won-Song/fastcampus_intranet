@@ -1,6 +1,5 @@
 .login {
-  @include flex(center, between);
-  flex-basis: 0;
+  @include flex(between, center);
   background-color: $white;
   overflow: hidden;
 
@@ -83,6 +82,20 @@
         margin-left: 0.5rem;
         text-decoration: underline;
       }
+    }
+  }
+}
+
+@include desktop {
+  .login {
+    height: 100vh;
+    padding: 2rem;
+    &__intro {
+      display: none;
+    }
+
+    &__form {
+      height: 100%;
     }
   }
 }

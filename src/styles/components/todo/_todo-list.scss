@@ -1,10 +1,3 @@
-@import "../../mixins/text-style";
-@import "../../constants/colors";
-@import "../../constants/typography";
-@import "../../mixins/flex";
-@import "../../base/reset";
-@import "../../base/fonts";
-
 .todoList__grid {
   display: grid;
   grid-template-columns: 1fr 7.6fr 0.7fr 0.7fr;
@@ -30,6 +23,13 @@
   img {
     width: 40%;
     margin: 0;
+  }
+}
+
+.todo {
+  &__wrapper {
+    max-height: 15rem;
+    overflow-y: auto;
   }
 }
 

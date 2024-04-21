@@ -1,4 +1,3 @@
-import "../../styles/components/TodoList/List.scss";
 import ListItem from "./ListItem";
 
 function List({ todos, onUpdate, onDelete, onDone }) {

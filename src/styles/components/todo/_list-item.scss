@@ -1,11 +1,8 @@
-@import "../../mixins/flex";
-@import "../../constants/colors";
-
 .ListItem {
   @include flex(start, center);
-  gap: 20px;
-  padding: 10px;
-  margin: 5px 0;
+  gap: 1.25rem;
+  padding: 0.625rem;
+  margin-top: 1rem;
   border: 1px solid $border;
   border-radius: 6px;
 

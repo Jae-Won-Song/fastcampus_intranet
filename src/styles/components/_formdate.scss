@@ -1,11 +1,14 @@
 .date-wrap {
   @include flex;
+  gap: 2rem;
   align-items: baseline;
 }
 
 .date-title {
   @include flex(between, center);
+  @include text-style(18, $black, 500);
   width: calc(100vw / 2);
+  margin-bottom: 1rem;
 }
 
 .date__wrapper {
@@ -20,7 +23,6 @@
   }
 
   .date {
-    // @include flex(around, center);
     color: $black;
     border: 1px solid $gray;
   }

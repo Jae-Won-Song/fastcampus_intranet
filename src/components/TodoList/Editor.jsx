@@ -1,4 +1,3 @@
-import "../../styles/components/TodoList/Editor.scss";
 import Button from "../Button";
 import { useState, useRef } from "react";
 

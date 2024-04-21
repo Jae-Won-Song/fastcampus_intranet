@@ -1,4 +1,3 @@
-import "../styles/components/Notice.scss";
 import ArrowRight from "../../public/icon_arrow_right.svg";
 function Notice(props) {
   return (

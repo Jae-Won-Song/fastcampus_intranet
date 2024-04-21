@@ -1,31 +1,58 @@
 import Editor from "./Editor";
 import List from "./List";
-import "../../styles/components/TodoList/TodoList.scss";
 import { useState, useEffect } from "react";
-import { addDoc, collection, doc, updateDoc, deleteDoc, getDocs, QuerySnapshot } from "firebase/firestore";
+import { addDoc, collection, doc, updateDoc, deleteDoc, getDocs, QuerySnapshot, onSnapshot } from "firebase/firestore";
 import { firestoreDb } from "../../firebase/config";
+import { auth } from "../../firebase/config";
 
 function TodoList() {
   const [todos, setTodos] = useState([]);
 
+  const [user, setUser] = useState(null);
+
   useEffect(() => {
-    getDocs(collection(firestoreDb, "todolist")).then((querySnapshot) => {
-      const firestoreTodoItemList = [];
-      querySnapshot.forEach((doc) => {
-        firestoreTodoItemList.push({
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setUser(user);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  const formatDate = () => {
+    return new Date().toLocaleDateString("ko-KR", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    })
+  }
+
+  useEffect(() => {
+    const today = formatDate();
+
+    const unsubscribe = onSnapshot(collection(firestoreDb, 'todolist'), (snapshot) => {
+      const newRecords = snapshot.docs
+        .map(doc => ({
           id: doc.id,
           content: doc.data().content,
           isDone: doc.data().isDone,
-        });
-      });
-      setTodos(firestoreTodoItemList);
+          user: doc.data().user,
+          date: doc.data().date,
+        }))
+        .filter(record => record.user === user?.displayName && record.date === today)
+        setTodos(newRecords);
     });
-  }, []);
+    return () => unsubscribe();
+  }, [todos]);
 
   const onCreate = async (content) => {
     const docRef = await addDoc(collection(firestoreDb, "todolist"), {
       content: content,
       isDone: false,
+      user: user?.displayName,
+      date: new Date().toLocaleString("ko-KR", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+      })
     });
 
     setTodos([

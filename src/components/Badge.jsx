@@ -1,6 +1,6 @@
 // Badge.jsx
 import React from "react";
-import "../styles/components/_badge.scss";
+
 
 const Badge = ({ type }) => {
   let badgeText = "";
