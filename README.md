@@ -27,7 +27,6 @@ PW : 123456
 
 ## 👨🏻팀원 소개 및 분담👩🏻
 
-
 | 김여진B                                                                                                          | 박민주                                                                                   | 박성현                                                                                   | 송재원                                                                                                                             | 이동희                                                                                                                     |
 | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | <img src="https://i.pinimg.com/236x/69/0d/28/690d288b651b78ecf09e776c05d977e3.jpg" width="100px" height="50px"/> | <img src="https://pbs.twimg.com/media/D4uU-i7U4AEyiZX.jpg" width="100px" height="50px"/> | <img src="https://pbs.twimg.com/media/EnXJUgGXMAUIB77.jpg" width="100px" height="50px"/> | <img src="https://file3.instiz.net/data/file3/2018/03/12/c/4/b/c4b5c0df037caa0309fd27a89abb45b4.jpg" width="100px" height="50px"/> | <img src="https://file.instiz.net/data/file/20120811/6/2/8/6282d4566bcb97203f451a2572a758ae" width="100px" height="50px"/> |
@@ -38,27 +37,16 @@ PW : 123456
 <br>
 <br>
 
-## 🔨 기술|스택
-<div align=center  >
-	<div>
-			<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
-		  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
-		 <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E">
-	    <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white">
-	    <img src="https://img.shields.io/badge/firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white">
-      <img src ="https://img.shields.io/badge/SASS-cc6699.svg?&style=for-the-badge&logo=Sass&logoColor=white"/>
-		 <img src="https://img.shields.io/badge/netlify-00C7B7?style=for-the-badge&logo=firebase&logoColor=white">
-    <img src="https://img.shields.io/badge/vite-646CFF?style=for-the-badge&logo=vite&logoColor=white">
-    <img src="https://img.shields.io/badge/ESlint-4B32C3?style=for-the-badge&logo=ESlint&logoColor=white">
-    <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white">
-    <img src="https://img.shields.io/badge/Github-181717?style=for-the-badge&logo=Github&logoColor=white">
-    <img src="https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=Prettie&logoColor=white">
-    <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white">
-		<img src="https://img.shields.io/badge/figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white">
-		
-  </div>
-</div>
-
+## 🔨 기술 스택
+|            | Stack                                                                                                                                                                                                                                                                                                                      |
+| :--------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|    개발 환경    | <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white"> <img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=node.js&logoColor=white"> <img src="https://img.shields.io/badge/vite-646CFF?style=for-the-badge&logo=vite&logoColor=white">     
+|   유틸리티   | <img src="https://img.shields.io/badge/ESlint-4B32C3?style=for-the-badge&logo=ESlint&logoColor=white"><img src="https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=Prettie&logoColor=white">                                                                                                                                                                                                                  |
+|   디자인   | <img src="https://img.shields.io/badge/figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white">                                                                                                                                                                                                                      |
+|    서버    | <img src="https://img.shields.io/badge/firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white">                                                                                                                                                                                                            |
+| 라이브러리 | <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white"> <img src ="https://img.shields.io/badge/SASS-cc6699.svg?&style=for-the-badge&logo=Sass&logoColor=white"/>                                                                                           |
+| 배포      | <img src="https://img.shields.io/badge/netlify-00C7B7?style=for-the-badge&logo=firebase&logoColor=white">                                                                                           |
+|   협업툴   | <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white"> <img src="https://img.shields.io/badge/Github-181717?style=for-the-badge&logo=Github&logoColor=white">                                                                                                                   |
 <br>
 <br>
 
