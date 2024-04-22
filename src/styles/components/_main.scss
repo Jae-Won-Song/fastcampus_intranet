@@ -81,7 +81,6 @@
 
   &__time {
     @include text-style(28, $black, 700);
-    max-height: 1rem;
   }
 
   img.clock {

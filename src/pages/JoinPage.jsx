@@ -106,6 +106,9 @@ function JoinPage() {
         email,
         password,
       );
+      await updateProfile(credentials.user, {
+        displayName: userName,
+      });
       await set(ref(db, `users/${credentials.user.uid}`), {
         email: email,
         userName: userName,
